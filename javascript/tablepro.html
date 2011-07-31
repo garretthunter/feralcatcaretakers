@@ -1,0 +1,210 @@
+<html>
+<head>
+<title>TABLE PROPERTIES</title>
+<style>
+td {color:white; font-family:Arial; font-size:14px}
+input,select {color:blue; background:#eeffee; width:65px}
+</style>
+
+<script src="qblib.js"></script>
+
+<script language="Jscript">
+
+function rettablePropert()
+{
+ var fobj= document.FO
+
+ var reg= /gif|jpg|png/  ;
+ if(fobj.TX_background.value!='' &&  !reg.test(fobj.TX_background.value) )
+  { alert('File type was not a image type.'); return; }
+
+ with(TABLE)
+ {
+  bgColor= fobj.CO_bgcolor.value
+  if(fobj.CO_bgcolor.value)
+   {
+    runtimeStyle.backgroundColor = "";
+    runtimeStyle.color = "";
+   }
+  background= fobj.TX_background.value
+  height= fobj.PI_height.value
+  width= fobj.PI_width.value
+  align= fobj.OP_align.value
+  if(fobj.PI_cellspacing.value) cellSpacing= fobj.PI_cellspacing.value
+  else cellSpacing= 2
+  if(fobj.PI_cellpadding.value) cellPadding= fobj.PI_cellpadding.value
+  else cellPadding= 2
+  border= fobj.PI_border.value
+  borderColor= fobj.CO_bordercolor.value
+  borderColorDark= fobj.CO_bordercolordark.value
+  borderColorLight= fobj.CO_bordercolorlight.value
+  rules= fobj.OP_borderrules.value
+  frame= fobj.OP_borderframe.value
+  summary= fobj.summary.value
+ }
+
+
+}
+
+
+function init()
+{
+ if(window.opener.TABLE) TABLE= window.opener.TABLE
+ else
+  {
+   var cell=window.opener.cellSelect ;
+   if(!cell){ alert('Please select a table'); return}
+   TABLE= cell.parentElement.parentElement.parentElement
+  }
+ 
+ var fobj= document.FO
+ 
+ with(TABLE) 
+ {
+  fobj.CO_bgcolor.value= bgColor ;
+  fobj.TX_background.value= background
+  fobj.PI_height.value= height
+  fobj.PI_width.value= width
+  fobj.PI_cellspacing.value= cellSpacing
+  fobj.PI_cellpadding.value= cellPadding
+  fobj.PI_border.value= border
+  fobj.CO_bordercolor.value= borderColor
+  fobj.CO_bordercolordark.value= borderColorDark
+  fobj.CO_bordercolorlight.value= borderColorLight
+  fobj.summary.value= summary
+
+  var al = align; al= al.toUpperCase()
+  fobj.OP_align.value = al
+  
+  al = frame; al= al.toUpperCase()
+  fobj.OP_borderframe.value = al
+  
+  al = rules; al= al.toUpperCase()
+  fobj.OP_borderrules.value = al
+ }
+
+}
+
+</script>
+
+
+</head>
+
+<body bgcolor=menu onFocus="init()" scroll=no>
+
+<center>
+<FORM name="FO">
+
+<TABLE bgColor=#999999 border=1 width=100% cellpading=0 cellspacing=0>
+<TBODY>
+
+<TR>
+<TD align=middle bgColor=#aa4444 colSpan=10>Table Properties</TD></TR>
+
+<TR>
+<TD align=right>bgcolor</TD>
+<TD><INPUT name=CO_bgcolor onchange="rettablePropert()"></TD>
+<TD align=right>width</TD>
+<TD><INPUT name=PI_width onchange="rettablePropert()"></TD>
+<TD align=right>height</TD>
+<TD><INPUT name=PI_height onchange="rettablePropert()"></TD>
+<TD align=right>cellpadding</TD>
+<TD><INPUT name=PI_cellpadding onchange="rettablePropert()"></TD>
+<TD align=right>cellspacing</TD>
+<TD><INPUT name=PI_cellspacing onchange="rettablePropert()"></TD>
+</TR>
+
+
+
+<TR>
+<TD align=right>hspace</TD>
+<TD><INPUT name=PI_hspace onchange="rettablePropert()"></TD>
+<TD align=right>vspace</TD>
+<TD><INPUT name=PI_vspace onchange="rettablePropert()"></TD>
+<TD align=right>align</TD>
+<TD>
+<select name=OP_align onchange="rettablePropert()">
+<option value=''>
+<option value='LEFT'>LEFT
+<option value='CENTER'>CENTER
+<option value='RIGHT'>RIGHT
+</select>
+</TD>
+
+<TD align=right>border</TD>
+<TD><INPUT name=PI_border onchange="rettablePropert()"></TD>
+<TD align=right>bordercolor</TD>
+<TD><INPUT name=CO_bordercolor onchange="rettablePropert()"></TD>
+
+</TR>
+
+
+
+<TR>
+<TD align=right>border rules</TD>
+<TD>
+<select name=OP_borderrules onchange="rettablePropert()">
+<option value=''>
+<option value='NONE'>NONE
+<option value='ROWS'>ROWS
+<option value='COLS'>COLS
+<option value='GROUPS'>GROUPS
+<option value='ALL'>ALL
+</select>
+</TD>
+
+<TD align=right>border frame</TD>
+<TD>
+<select name=OP_borderframe onchange="rettablePropert()">
+<option value=''>
+<option value='BOX'>BOX
+<option value='BORDER'>BORDER
+<option value='VOID'>VOID
+<option value='ABOVE'>ABOVE
+<option value='BELOW'>BELOW
+<option value='HSIDES'>HSIDES
+<option value='VSIDES'>VSIDES
+<option value='LHS'>LHS
+<option value='RHS'>RHS
+</select>
+</TD>
+
+<TD align=right>bcolordark</TD>
+<TD><INPUT name=CO_bordercolordark onchange="rettablePropert()"></TD>
+
+<TD align=right>bcolorlight</TD>
+<TD><INPUT name=CO_bordercolorlight onchange="rettablePropert()"></TD>
+<TD align=right>summary</TD>
+<TD><INPUT name=summary onchange="rettablePropert()"></TD></TR>
+
+
+<tr><TD colspan=10 align=center>
+<INPUT onMouseDown=setObjectColor(0,'red','rettablePropert()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#FF0000; color:white">
+<INPUT onMouseDown=setObjectColor(1,'red','rettablePropert()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#FF0000; color:white">
+&nbsp;&nbsp;
+<INPUT onMouseDown=setObjectColor(0,'green','rettablePropert()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#00FF00; color:black">
+<INPUT onMouseDown=setObjectColor(1,'green','rettablePropert()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#00FF00; color:black">
+&nbsp;&nbsp;
+<INPUT onMouseDown=setObjectColor(0,'blue','rettablePropert()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#0000FF; color:white">
+<INPUT onMouseDown=setObjectColor(1,'blue','rettablePropert()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#0000FF; color:white">
+&nbsp;&nbsp;
+
+<INPUT onclick=rettablePropert() title=Button type=button value="Do" style="width:70px; height:22px; background:#aa4444; color:white">
+<INPUT onclick=self.close() title=Back type=button value="Close" style="width:70px; height:22px; background:#aa4444; color:white">
+&nbsp;&nbsp;
+
+<INPUT onmousedown=setValueSmaller('rettablePropert()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#aa4444; color:white">
+<INPUT onmousedown=setValueBigger('rettablePropert()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#aa4444; color:white">
+
+
+</TD></tr>
+
+
+
+
+</TBODY></TABLE>
+
+</FORM>
+</center>
+</body>
+</html>

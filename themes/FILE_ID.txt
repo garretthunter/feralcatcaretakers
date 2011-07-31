@@ -1,0 +1,113 @@
+All Themes Pack - dehardcoded
+
+>>PART III - Themes #290++<<
+
+>>PostNuke Version<<
+
+Last changed 28th February 2002
+ 
+Check for more and updated Themes at
+
+    http://www.nukethemes.de
+    http://www.passions.de
+
+Theme Pack Part I - 180 Themes for PostNuke + PHP Nuke 5.x (de-hardcoded)
+Theme Pack Part II - 109 Themes
+Theme Pack Part III - 59 Themes
+
+Update Packs available for PostNuke/PHP-Nuke which contain only
+PHP files/style.css/styleNN.css for all themes.
+
+Postnuke Update pack also has updated module links
+(eg. modules.php?op=modload&name=Downloads&file=index > modules.php?op=modload&name=Downloads&file=index)
+
+30+ Languages for Postnuke + PHP Nuke 5.x
+autodetecting browser language through index.hmtl
+centerblock + whatsnew module (hack version / module version)
+German Translation for My_eGallery 2.7.0, PHPBB 
+Theme Screenshots, Postnuke, PHPBB Stuff
+Modifications, Modules Misc. News & More
+
+Recent Additions in Theme Pack III (Themes #290+):
+-------------------------
+Pupitre
+Compuor
+galapagos
+BiZ
+bluesteel
+ADS-UltraLite
+Inspire-Verde
+Inspire-Citrus
+Inspire
+KS1
+PHP-Report-Blue
+PHP-Report-Gelb
+PHP-Report-Orange
+XP-Style-Silver
+Icey
+DreamerBlue
+PCtech
+PurpleOdyssey
+smack
+attitude
+Townbus-RX
+LovelyDay
+MTMod
+NetSoft-Blue
+Atlantic
+StyleBox
+Nukeland_Rainbow
+
+Recent Additions in Theme Pack II (Themes #181-#289+):
+-------------------------
+XP-Silver(links fixed)
+Optic-Corporate
+Giga_insetable_rogue
+Giga_tech_rogue
+Optic-Dark
+PixelOne
+MrCaase
+sara_sand_com
+m3deepblue
+m2dbrown
+m3blue
+Bahraini
+light_pxlartist
+DJ_LocalFoo
+Somara/Pixelmayhem Themes updated for Rogue
+casper
+military
+newyork
+Radical v0.7
+somara themes v 0.7
+m2boyellow
+Geigant-de
+BlueTrevor
+ADS-AfterBlue
+dj-professionalbrown
+lima
+m2orange
+Minutes
+NamLiab
+Queen
+Giga_gui_signal
+NukeNews_<colors>
+MorphNuke
+uw_iceblue
+Newspaper
+Trevor
+GothicAngel
+
+swd(simplywebdesign)
+myphpnuke
+Oscar
+BlueGlow
+BlueGum(colors)
+Tranquil
+Tusciano
+Radical
+Druido
+
+styleNN.css files added to most themes
+image path's corrected, images moved to subdirs
+

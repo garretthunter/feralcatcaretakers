@@ -1,0 +1,225 @@
+<HTML
+><HEAD
+><TITLE
+>AutoLinks</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Advanced Website Configuration & Use"
+HREF="config-advanced.html"><LINK
+REL="PREVIOUS"
+TITLE="Admin Messages"
+HREF="adminmessages.html"><LINK
+REL="NEXT"
+TITLE="Banners"
+HREF="banners.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="adminmessages.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 16. Advanced Website Configuration &#38; Use</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="banners.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="autolinks">AutoLinks</H1
+><P
+>AutoLinks is a feature that, when Activated, generates web links related to the content on-the-fly in modules (for example, News or Sections) from text within the module (text in the article). By default, AutoLinks is not active and must be activated through Administration -&#62; Modules.
+</P
+><P
+>For example, if you have AutoLinks turned on, "Beatles" defined as a Keyword, and "http://www.beatles.com" as the auto-link URL, PostNuke will automatically replace occurrences of "Beatles" within your articles with "&#60;a href="http://www.beatles.com"&#62;Beatles&#60;/a&#62;".
+</P
+><P
+>When AutoLinks are Activated, the option to Activate/Deactivate AutoLinks for particular modules will appear when editing modules (from Administration -&#62; Modules -&#62; List -&#62; &#60;module name&#62;). Activate AutoLinks for the modules you wish, such as News. AutoLinks has a slight performance cost when activated.
+</P
+><P
+>Once AutoLinks have been activated, an AutoLinks link will appear in your Administration screen with the following options.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Add AutoLink: Enter the keyword in the Key (link) Word field. This is the text that will be matched in an article (for example, "beatles").
+</P
+><P
+>NOTE: Capitalization is not important in the Key (link) Word field.</P
+><P
+>Enter the title of the site in the Title field (for example, "The Beatles Site"). This is the name that will be displayed as a mouse-over and in the listing of all AutoLinks.
+</P
+><P
+>Enter the complete URL for the site in the URL field (for example, "http://www.beatles.com"). Make sure to enter "http://" at the beginning of the link if the site is external to your site; otherwise it will not function as expected.
+</P
+><P
+>If the URL is located on your web site, you can enter the path to the file or the complete URL. For example, if the file is on your site, you can enter "music.html" and AutoLinks will automatically prepend the "http://www.yoursite.com", resulting in an AutoLink of "http://www.yoursite.com/music.html". You could also enter "http://www.yoursite.com/music.html".
+</P
+><P
+>Finally, use the Comments field to enter optional free-form alphanumeric comments about the link. Comments are visable only to the site Administrator.
+</P
+><P
+>Click "Create AutoLink" to add the autolink to the database.
+</P
+></LI
+><LI
+><P
+>View AutoLinks: To view, edit, or delete AutoLinks, click the "View AutoLinks" link. All the AutoLinks in your database will be displayed sorted by Key (link) Word. If you wish to edit an AutoLink, click on the "Edit" link for that AutoLink. A page will be displayed where you can edit all the information about that particular link. Click "Update AutoLink" to save your changes.
+</P
+><P
+>To delete an AutoLink, click on the "Delete" link for that AutoLink. A page will be displayed asking you to confirm your request to delete the AutoLink. If you wish to delete the AutoLink, click "Confirm"; otherwise click "Cancel deletion of AutoLink" and the link will not be removed.
+</P
+></LI
+><LI
+><P
+>Modify AutoLinks Configuration: This section allows configuration of how AutoLinks appear on your site.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Only link each item once in each piece of text: If this option is checked, then only the FIRST occurrence of a matching Key (link) Word in the article will be changed into an AutoLink. If this option is unchecked, ALL occurrences of matching Key (link) Words in the article will be changed into AutoLinks.</P
+><P
+>For example, if your news article had the text:</P
+><P
+>"The Beatles are a band. The Beatles played music, and the Beatles were very good"</P
+><P
+>...and this function was CHECKED, it would become:</P
+><P
+>"The &#60;a href="http://www.beatles.com"&#62;Beatles&#60;/a&#62; are a band. The Beatles played music, and the Beatles were very good".</P
+><P
+>However, if the function was UNCHECKED, the text of the article would be changed to:</P
+><P
+>"The &#60;a href="http://www.beatles.com"&#62;Beatles&#60;/a&#62; are a band. The &#60;a href="http://www.beatles.com"&#62;Beatles&#60;/a&#62; played music, and the &#60;a href="http://www.beatles.com"&#62;Beatles&#60;/a&#62; were very good".</P
+></LI
+><LI
+><P
+>Remove decoration from AutoLinks: If you want your AutoLinks to be underlined in your news article, UNCHECK this option. If you do not want your AutoLinks underlined, CHECK this option.</P
+></LI
+></UL
+></LI
+></UL
+><P
+>TO ADD AUTOLINKS TO A SPECIFIC MODULE: Select the module(s) that you wish to use AutoLinks and "Edit" them. For example, Administrators may want the News module to feature AutoLinks. Go to Administration -&#62; Modules -&#62; Regenerate. Select "Edit" next to the News module. From the page that is displayed, check the box next to "Activate AutoLinks for this module" and click "Commit Changes" to save your changes. Repeat for any other modules that you wish to use AutoLinks.
+</P
+><P
+>Click "Update AutoLinks Configuration" to save changes.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="adminmessages.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="banners.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Admin Messages</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="config-advanced.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Banners</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,156 @@
+<HTML
+><HEAD
+><TITLE
+>APPENDIX E: Enable GZIP compression in php.ini</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="APPENDIX D: Configure PHP"
+HREF="appendix-d.html"><LINK
+REL="NEXT"
+TITLE="APPENDIX F: Getting development versions of PostNuke using the CVS server at developer.hostnuke.com"
+HREF="appendix-f.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="appendix-d.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="appendix-f.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="appendix-e">Chapter 23. APPENDIX E: Enable GZIP compression in php.ini</H1
+><P
+>Within php.ini (usually /etc/php.ini), add the following lines to activate GZIP compression (<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>*NIX ONLY -- DOES NOT WORK ON WINDOWS SERVERS</I
+></SPAN
+>):
+</P
+><P
+>--- CUT HERE ---</P
+><PRE
+CLASS="programlisting"
+>&#13;	# GZIP COMPRESSION
+	#
+	output_handler          = ob_gzhandler
+	</PRE
+><P
+>--- CUT HERE ---</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="appendix-d.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="appendix-f.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>APPENDIX D: Configure PHP</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>APPENDIX F: Getting development versions of PostNuke using the CVS server at developer.hostnuke.com</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

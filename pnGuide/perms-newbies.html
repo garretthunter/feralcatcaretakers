@@ -1,0 +1,588 @@
+<HTML
+><HEAD
+><TITLE
+>Permissions for Newbies</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Groups & Permissions"
+HREF="permissions.html"><LINK
+REL="PREVIOUS"
+TITLE="Permissions FAQ"
+HREF="perms-faq.html"><LINK
+REL="NEXT"
+TITLE="Conclusion"
+HREF="conclusion.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="perms-faq.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 17. Groups &#38; Permissions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="conclusion.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="perms-newbies">Permissions for Newbies</H1
+><P
+>After looking around I noticed a lot of you are trying to do what I have done... Create a sub-administrator for certain parts of the site by creating a Sub-Admin group. Below is some information that may assist in configuring your permissions.
+</P
+><P
+>For example, assume that you have a group of people you wish to place into a sub-administrator group. Here is a step-by-step example of creating this group and giving them permission to approve stories (articles) for the site.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Go to the Administration menu and click "<TT
+CLASS="userinput"
+><B
+>Groups</B
+></TT
+>".</P
+></LI
+><LI
+><P
+>Create a Group with a descriptive name (for example, "<TT
+CLASS="userinput"
+><B
+>subadmins</B
+></TT
+>").</P
+></LI
+><LI
+><P
+>Add the users that you want in the "subadmin" Group (examples: John Doe, Jane Doe).</P
+></LI
+></UL
+><P
+>Now that you have created the Group, you must grant the Group permission to do what you want them to do. In this example, we wish to allow them to be able to approve an Article for the site:
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Go to Administration -&#62; Permissions.</P
+></LI
+><LI
+><P
+>Click "New Group Permissions" to create a new set of permissions.</P
+></LI
+><LI
+><P
+>Select the "subadmins" group.</P
+></LI
+><LI
+><P
+>Under "Component", type "Stories::".</P
+></LI
+><LI
+><P
+>Under "Instance", type ".*".</P
+></LI
+><LI
+><P
+>Under "Permission Level", select "Admin" from the drop-down list.</P
+></LI
+><LI
+><P
+>Click on "New Permission" to save your changes.</P
+></LI
+></UL
+><P
+>Graphically this is:</P
+><P
+CLASS="literallayout"
+><br>
+Function&nbsp;&nbsp;&nbsp;Setting&nbsp;&nbsp;	Notes<br>
+-----------------------------------------<br>
+Group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subadmins&nbsp;&nbsp;&nbsp;	Setting&nbsp;the&nbsp;permissions&nbsp;for&nbsp;Group&nbsp;subadmins<br>
+Component&nbsp;&nbsp;Stories::&nbsp;&nbsp;	Using&nbsp;the&nbsp;Stories&nbsp;Module<br>
+Instance&nbsp;&nbsp;&nbsp;.*&nbsp;&nbsp;&nbsp;	The&nbsp;permission&nbsp;level&nbsp;applies&nbsp;to&nbsp;everything&nbsp;in&nbsp;this&nbsp;<br>
+component<br>
+Permission&nbsp;Admin&nbsp;&nbsp;&nbsp;	Highest&nbsp;level&nbsp;of&nbsp;access<br>
+</P
+><P
+>Remember this is going to give anyone in your Subadmins Group TOTAL control over the Stories module.
+</P
+><P
+>Most of you have the first permission set as ADMIN ADMIN. Move this newly-created group directly below Admins to ensure that another permission does not override it.
+</P
+><P
+>For example:</P
+><P
+CLASS="literallayout"
+><br>
+Group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Component&nbsp;&nbsp;&nbsp;Instance&nbsp;&nbsp;&nbsp;Permissions&nbsp;Level<br>
+----------------------------------------------------<br>
+subadmins&nbsp;&nbsp;&nbsp;Stories::&nbsp;&nbsp;&nbsp;.*&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;Admin&nbsp;&nbsp;<br>
+Users&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Read&nbsp;&nbsp;<br>
+</P
+><P
+>...would allow subadmins group Admin permissions since those members in subadmins are also in the group Users, but the subadmins permission is above the Users permission.
+</P
+><P
+CLASS="literallayout"
+><br>
+Group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Component&nbsp;&nbsp;&nbsp;Instance&nbsp;&nbsp;&nbsp;Permissions&nbsp;Level<br>
+----------------------------------------------------<br>
+Users&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Read<br>
+subadmins&nbsp;&nbsp;&nbsp;Stories::&nbsp;&nbsp;&nbsp;.*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Admin<br>
+</P
+><P
+>...this, however, would be useless since the permissions were already defined 
+as Comment level for the Users before they were defined as Admin for subadmins. 
+Everyone in Users and subadmins would have the same access.
+</P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="perm-samples">Permission Samples</H2
+><P
+>Let's say I have a link to a feature called ANDROMEDA and I don't want a user called "JoeSmith" to see it. I will select "JoeSmith" as the User and remove that user's ability to view it. To every other user the menu would look like this:
+</P
+><P
+><TT
+CLASS="userinput"
+><B
+>Home</B
+></TT
+></P
+><P
+><TT
+CLASS="userinput"
+><B
+>Your Account</B
+></TT
+></P
+><P
+><TT
+CLASS="userinput"
+><B
+>ANDROMEDA</B
+></TT
+></P
+><P
+><TT
+CLASS="userinput"
+><B
+>News</B
+></TT
+></P
+><P
+>...however, by adding the following to the permissions system...</P
+><P
+><TT
+CLASS="userinput"
+><B
+>User   JoeSmith</B
+></TT
+></P
+><P
+><TT
+CLASS="userinput"
+><B
+>Component   Menublock::</B
+></TT
+></P
+><P
+><TT
+CLASS="userinput"
+><B
+>Instance   Main Menu:ANDROMEDA:</B
+></TT
+></P
+><P
+><TT
+CLASS="userinput"
+><B
+>Permission   None</B
+></TT
+></P
+><P
+>...that user's menu now looks like this:</P
+><P
+><TT
+CLASS="userinput"
+><B
+>Home</B
+></TT
+></P
+><P
+><TT
+CLASS="userinput"
+><B
+>Your Account</B
+></TT
+></P
+><P
+><TT
+CLASS="userinput"
+><B
+>News</B
+></TT
+></P
+><P
+>To make it so that a member of group 'Users' can no longer submit news yet another group, 'Submitters' (where Users are added to this group at the discretion of the admin) can Submit News.
+</P
+><P
+>Let's break this issue down. There are four steps to this situation.</P
+><P
+></P
+><UL
+><LI
+><P
+>Change USERS group to DISALLOW users in this group to Submit News.</P
+></LI
+><LI
+><P
+>Change SUBMITTERS group to ALLOW users in this group to Submit News.</P
+></LI
+><LI
+><P
+>Add user(s) to the new SUBMITTERS group.</P
+></LI
+><LI
+><P
+>Get the ORDER of the permissions correct.</P
+></LI
+></UL
+><P
+>Now that we understand the steps, it is rather straightforward to implement 
+what you want.
+</P
+><P
+>1. Assuming that we have the following permissions structure set up:</P
+><P
+CLASS="literallayout"
+><br>
+Sequence&nbsp;	Group&nbsp;Component&nbsp;Instance&nbsp;			Permissions&nbsp;<br>
+level<br>
+================================================================================<br>
+=<br>
+Admins		Menublock::	Administration::*.		Admin<br>
+Admins&nbsp;		.*&nbsp;		.*&nbsp;				Admin<br>
+All&nbsp;groups&nbsp;	Menublock::&nbsp;	Administration::*.&nbsp;		None&nbsp;<br>
+Users&nbsp;		.*&nbsp;		.*&nbsp;				Comment&nbsp;<br>
+Unregistered&nbsp;	Menublock::&nbsp;	Main&nbsp;Menu:(Andromeda|Logout	None<br>
+				|Forums|Games|Submit&nbsp;News<br>
+				|Members&nbsp;List|Messages):<br>
+Unregistered&nbsp;	Polls::&nbsp;	.*&nbsp;				Comment<br>
+Unregistered&nbsp;	.*&nbsp;		.*&nbsp;				Read<br>
+</P
+><P
+>...we can DISALLOW Submit News by adding the following line (marked with "=-=-=-" above and below the added line):
+</P
+><P
+CLASS="literallayout"
+><br>
+Sequence&nbsp;	Group&nbsp;Component&nbsp;Instance&nbsp;			Permissions&nbsp;<br>
+level<br>
+================================================================================<br>
+=<br>
+Admins		Menublock::	Administration::*.		Admin<br>
+Admins&nbsp;		.*&nbsp;		.*&nbsp;				Admin<br>
+All&nbsp;groups&nbsp;	Menublock::&nbsp;	Administration::*.&nbsp;		None&nbsp;<br>
+=-=-=-<br>
+Users&nbsp;		Menublock::&nbsp;	Main&nbsp;Menu:(Submit&nbsp;News):	None&nbsp;&nbsp;#&nbsp;THIS&nbsp;IS&nbsp;<br>
+THE&nbsp;ADDED&nbsp;LINE!<br>
+=-=-=-<br>
+Users&nbsp;		.*&nbsp;		.*&nbsp;				Comment&nbsp;<br>
+Unregistered&nbsp;	Menublock::&nbsp;	Main&nbsp;Menu:(Andromeda|Logout	None<br>
+				|Forums|Games|Submit&nbsp;News<br>
+				|Members&nbsp;List|Messages):<br>
+Unregistered&nbsp;	Polls::&nbsp;	.*&nbsp;				Comment<br>
+Unregistered&nbsp;	.*&nbsp;		.*&nbsp;				Read<br>
+</P
+><P
+>The added line sets to "None" the ability for the Users group to see the Main Menu item "Submit News". If your main menu is called something other than "Main Menu", or your submit news link is called something other than "Submit News", change the instance text.
+</P
+><P
+>2. We create a Group called "Submitters". Go to Administration -&#62; Groups -&#62; Add New Group. Type the name of the new group (I used "Submitters") and click the "New Group" button.
+</P
+><P
+>3. When the Groups page re-appears, click the name of the new group ("Submitters"), then click "Add a user to group" to add user(s) to this new Group.
+</P
+><P
+>4. Finally, go back to Administration-&#62;Permissions for step four which pulls it all together. Add line that is marked with "=-=-=-" above and below.
+</P
+><P
+CLASS="literallayout"
+><br>
+Sequence&nbsp;	Group&nbsp;Component&nbsp;Instance&nbsp;			Permissions&nbsp;<br>
+level<br>
+================================================================================<br>
+=<br>
+Admins&nbsp;		Menublock::&nbsp;	Administration::*.&nbsp;		Admin<br>
+Admins&nbsp;		.*&nbsp;		.*&nbsp;				Admin<br>
+All&nbsp;groups&nbsp;	Menublock::&nbsp;	Administration::*.&nbsp;		None&nbsp;<br>
+=-=-=-<br>
+Submitters&nbsp;	.*&nbsp;		.*&nbsp;				Comment&nbsp;#&nbsp;THIS&nbsp;<br>
+IS&nbsp;THE&nbsp;ADDED&nbsp;LINE!<br>
+=-=-=-<br>
+Users&nbsp;		Menublock::&nbsp;	Main&nbsp;Menu:(Submit&nbsp;News):&nbsp;	None<br>
+Users&nbsp;		.*&nbsp;		.*&nbsp;				Comment<br>
+Unregistered&nbsp;	Menublock::&nbsp;	Main&nbsp;Menu:(Andromeda|Logout	None<br>
+				|Forums|Games|Submit&nbsp;News<br>
+				|Members&nbsp;List|Messages):<br>
+Unregistered&nbsp;	Polls::&nbsp;	.*&nbsp;				Comment<br>
+Unregistered&nbsp;	.*&nbsp;		.*&nbsp;				Read<br>
+</P
+><P
+>The added line gives specific permission to anyone in group "Submitters" to be able to use the Submit News function.
+</P
+><P
+CLASS="literallayout"
+><br>
+----------------------------------------------------------------------------<br>
+<br>
+Let&nbsp;user&nbsp;called&nbsp;"James"&nbsp;see&nbsp;the&nbsp;"Administration"&nbsp;link.&nbsp;Add&nbsp;a&nbsp;User&nbsp;permission&nbsp;<br>
+for&nbsp;the&nbsp;specific&nbsp;user:<br>
+<br>
+&nbsp;User/Group&nbsp;&nbsp;&nbsp;James<br>
+&nbsp;Component&nbsp;&nbsp;&nbsp;Menublock::<br>
+&nbsp;Instance&nbsp;&nbsp;&nbsp;Main&nbsp;Menu:Administration:<br>
+&nbsp;Permission&nbsp;&nbsp;&nbsp;Read<br>
+<br>
+If&nbsp;you&nbsp;renamed&nbsp;the&nbsp;"Administration"&nbsp;link&nbsp;to&nbsp;"Control",&nbsp;you&nbsp;would&nbsp;have&nbsp;to&nbsp;change&nbsp;<br>
+the&nbsp;permission&nbsp;to:<br>
+<br>
+&nbsp;User/Group&nbsp;&nbsp;&nbsp;James<br>
+&nbsp;Component&nbsp;&nbsp;&nbsp;Menublock::<br>
+&nbsp;Instance&nbsp;&nbsp;&nbsp;Main&nbsp;Menu:Control:<br>
+&nbsp;Permission&nbsp;&nbsp;&nbsp;Read<br>
+<br>
+----------------------------------------------------------------------------<br>
+<br>
+If&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;make&nbsp;certain&nbsp;Articles&nbsp;available&nbsp;only&nbsp;to&nbsp;specified&nbsp;groups,&nbsp;<br>
+you&nbsp;may&nbsp;do&nbsp;so&nbsp;by&nbsp;grouping&nbsp;the&nbsp;Articles&nbsp;under&nbsp;a&nbsp;specific&nbsp;category&nbsp;and&nbsp;declaring&nbsp;<br>
+the&nbsp;permission&nbsp;as&nbsp;follows:<br>
+<br>
+&nbsp;User/Group&nbsp;&nbsp;&nbsp;Unregistered<br>
+&nbsp;Component&nbsp;&nbsp;&nbsp;Stories::<br>
+&nbsp;Instance&nbsp;&nbsp;&nbsp;:&#60;Category&nbsp;Name&#62;:<br>
+&nbsp;Permission&nbsp;&nbsp;&nbsp;None<br>
+<br>
+...where&nbsp;"&#60;Category&nbsp;Name&#62;"&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;Category&nbsp;where&nbsp;the&nbsp;Articles&nbsp;were&nbsp;<br>
+grouped.<br>
+<br>
+----------------------------------------------------------------------------<br>
+<br>
+Adding&nbsp;Downloads&nbsp;Permissions&nbsp;to&nbsp;filter&nbsp;unregistered&nbsp;access.<br>
+<br>
+Here&nbsp;are&nbsp;the&nbsp;complete&nbsp;steps&nbsp;to&nbsp;do&nbsp;this&nbsp;:&nbsp;<br>
+*&nbsp;Locate&nbsp;the&nbsp;line&nbsp;80&nbsp;from&nbsp;modules/Downloads/lang/eng/global.php&nbsp;file.<br>
+<br>
+*&nbsp;Change&nbsp;the&nbsp;define&nbsp;to&nbsp;the&nbsp;following:<br>
+define('_DOWNLOADSACCESSNOAUTH',&nbsp;'You&nbsp;must&nbsp;be&nbsp;a&nbsp;registered&nbsp;member&nbsp;to&nbsp;access&nbsp;<br>
+downloads');<br>
+<br>
+*&nbsp;Go&nbsp;to&nbsp;Permissions&nbsp;Administration&nbsp;then&nbsp;Add&nbsp;a&nbsp;new&nbsp;group&nbsp;permissions&nbsp;as&nbsp;shown&nbsp;<br>
+below:<br>
+Groups:&nbsp;Unregistered<br>
+Component:&nbsp;Downloads::<br>
+Instance:&nbsp;.*<br>
+Permissions&nbsp;Level:&nbsp;None<br>
+<br>
+*&nbsp;Place&nbsp;the&nbsp;permission&nbsp;hierarchically&nbsp;just&nbsp;BEFORE&nbsp;default&nbsp;unregistered&nbsp;<br>
+permission&nbsp;as&nbsp;shown&nbsp;below:<br>
+Group:&nbsp;Unregistered<br>
+Component:&nbsp;.*<br>
+Instance:&nbsp;.*<br>
+Permission&nbsp;level:&nbsp;Read<br>
+<br>
+----------------------------------------------------------------------------<br>
+<br>
+Restrict&nbsp;Articles&nbsp;submitted&nbsp;by&nbsp;a&nbsp;specified&nbsp;author&nbsp;("uid&nbsp;2"&nbsp;in&nbsp;this&nbsp;case)&nbsp;from&nbsp;<br>
+being&nbsp;seen&nbsp;by&nbsp;Anonymous&nbsp;users:<br>
+<br>
+&nbsp;User/Group&nbsp;&nbsp;&nbsp;Unregistered<br>
+&nbsp;Component&nbsp;&nbsp;&nbsp;Stories::<br>
+&nbsp;Instance&nbsp;&nbsp;&nbsp;2::<br>
+&nbsp;Permission&nbsp;&nbsp;&nbsp;None<br>
+<br>
+----------------------------------------------------------------------------<br>
+<br>
+Restrict&nbsp;a&nbsp;specific&nbsp;article&nbsp;("sid&nbsp;50"&nbsp;in&nbsp;this&nbsp;case)&nbsp;from&nbsp;being&nbsp;read&nbsp;by&nbsp;a&nbsp;<br>
+specific&nbsp;user&nbsp;("Paul"&nbsp;in&nbsp;this&nbsp;case):&nbsp;<br>
+<br>
+&nbsp;User/Group&nbsp;&nbsp;&nbsp;Paul<br>
+&nbsp;Component&nbsp;&nbsp;&nbsp;Stories::<br>
+&nbsp;Instance&nbsp;&nbsp;&nbsp;::50<br>
+&nbsp;Permission&nbsp;&nbsp;&nbsp;None<br>
+<br>
+(interesting&nbsp;uses!)<br>
+<br>
+----------------------------------------------------------------------------<br>
+<br>
+To&nbsp;allow&nbsp;Anonymous&nbsp;users&nbsp;to&nbsp;vote&nbsp;in&nbsp;Polls:<br>
+<br>
+&nbsp;User/Group&nbsp;&nbsp;&nbsp;Unregistered<br>
+&nbsp;Component&nbsp;&nbsp;&nbsp;Polls::<br>
+&nbsp;Instance&nbsp;&nbsp;&nbsp;.*<br>
+&nbsp;Permission&nbsp;&nbsp;&nbsp;Comment<br>
+<br>
+----------------------------------------------------------------------------<br>
+<br>
+Member&nbsp;from&nbsp;group&nbsp;"users"&nbsp;can&nbsp;add&nbsp;stories&nbsp;(this&nbsp;will&nbsp;add&nbsp;a&nbsp;link&nbsp;to&nbsp;Add&nbsp;Stories&nbsp;<br>
+in&nbsp;the&nbsp;menu&nbsp;of&nbsp;group&nbsp;"users"):<br>
+<br>
+&nbsp;User/Group&nbsp;&nbsp;&nbsp;users<br>
+&nbsp;Component&nbsp;&nbsp;&nbsp;Stories::<br>
+&nbsp;Instance&nbsp;&nbsp;&nbsp;.*<br>
+&nbsp;Permission&nbsp;&nbsp;&nbsp;Add<br>
+<br>
+----------------------------------------------------------------------------<br>
+<br>
+Create&nbsp;a&nbsp;section&nbsp;available&nbsp;to&nbsp;certain&nbsp;members&nbsp;only.&nbsp;In&nbsp;this&nbsp;example,&nbsp;we&nbsp;first&nbsp;<br>
+created&nbsp;a&nbsp;group&nbsp;named&nbsp;"Paid&nbsp;Members"&nbsp;before&nbsp;doing&nbsp;the&nbsp;following:<br>
+<br>
+&nbsp;Group:&nbsp;Paid&nbsp;Users<br>
+&nbsp;Component:&nbsp;Sections::Section<br>
+&nbsp;Instance:&nbsp;.*::1&nbsp;(1&nbsp;is&nbsp;the&nbsp;section&nbsp;ID)<br>
+&nbsp;Permissions&nbsp;level:&nbsp;Read<br>
+<br>
+&nbsp;Group:&nbsp;All&nbsp;Groups<br>
+&nbsp;Component:&nbsp;Sections::Section<br>
+&nbsp;Instance:&nbsp;.*::1&nbsp;(1&nbsp;is&nbsp;the&nbsp;section&nbsp;ID)<br>
+&nbsp;Permissions&nbsp;Level:&nbsp;None<br>
+<br>
+Make&nbsp;sure&nbsp;that&nbsp;the&nbsp;first&nbsp;definition&nbsp;is&nbsp;above&nbsp;the&nbsp;second&nbsp;one&nbsp;and&nbsp;you've&nbsp;got&nbsp;a&nbsp;<br>
+section&nbsp;for&nbsp;paid&nbsp;members&nbsp;only.<br>
+<br>
+----------------------------------------------------------------------------<br>
+<br>
+Members&nbsp;from&nbsp;group&nbsp;"users"&nbsp;can&nbsp;add&nbsp;Polls&nbsp;(this&nbsp;will&nbsp;add&nbsp;a&nbsp;link&nbsp;to&nbsp;Add&nbsp;Polls&nbsp;in&nbsp;<br>
+the&nbsp;menu&nbsp;of&nbsp;group&nbsp;"users"):<br>
+<br>
+&nbsp;User/Group&nbsp;&nbsp;&nbsp;users<br>
+&nbsp;Component&nbsp;&nbsp;&nbsp;Polls::<br>
+&nbsp;Instance&nbsp;&nbsp;&nbsp;.*<br>
+&nbsp;Permission&nbsp;&nbsp;&nbsp;Add<br>
+<br>
+-----------------------------------------------------------------------------<br>
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="perms-faq.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="conclusion.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Permissions FAQ</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="permissions.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Conclusion</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

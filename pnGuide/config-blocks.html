@@ -1,0 +1,748 @@
+<HTML
+><HEAD
+><TITLE
+>Blocks</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Advanced Website Configuration & Use"
+HREF="config-advanced.html"><LINK
+REL="PREVIOUS"
+TITLE="Banners"
+HREF="banners.html"><LINK
+REL="NEXT"
+TITLE="Comments"
+HREF="config-comments.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="banners.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 16. Advanced Website Configuration &#38; Use</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="config-comments.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="config-blocks">Blocks</H1
+><P
+>Within PostNuke, Blocks act as building blocks to construct your site. Blocks are provided by the core PostNuke engine, or virtually 'bolted on' by modules. Core PostNuke blocks provide basic system functionality, while modules provide enhanced functionality or new features. Using Blocks, the Administrator can customize the look of the site by adding, removing, or changing the position of Blocks.
+</P
+><P
+>Go to Administration -&#62; Blocks to  add, edit, view, or delete Blocks from your website. The Blocks display is sorted by Position.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>New block: To add a new Block to your website, click "New Block". Fill out the fields on the screen that appears. Each field is discussed below.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Title: In this field, enter the title that will be displayed for the new Block. Entry example: "Administration Menu".
+	</P
+></LI
+><LI
+><P
+>Block: From this drop-down list, select the Block type. There are several options for Block type provided by PostNuke, and additional Block types will be added as modules are 'bolted on' to PostNuke, though not every module will add Block types.
+	</P
+><P
+>Each Block type has different configuration options (displayed after you click "Commit" on this screen) that will be covered in this section. No Block may have content that is greater than 64K in size, and ALL Block types have the following configuration options in common:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>Title: The title of the Block as it will be displayed on the site.</P
+></LI
+><LI
+><P
+>Position: From this drop-down list, select where the Block should be displayed on the page, either left, right, or centre. The ORDER of the Blocks can be modified from Administration -&#62; Blocks -&#62; View Blocks.</P
+></LI
+><LI
+><P
+>Language: Select the language for which this Block will be displayed from the drop-down list. In this way, you could create English language blocks that are displayed only to your English users. Select "All" to cause the Block to be displayed in all languages.</P
+></LI
+><LI
+><P
+>Refresh time for block: If the Block pulls information from outside sources, this setting defines how frequently the Block will poll for updates. Entry example: "Half an hour".</P
+></LI
+></UL
+><P
+>The text in parenthesis after the Block type is the module/name combination used by PostNuke to specify the Block type.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Core/Today's Big Story: (Core/big): Today's Big Story displays the most popular (the most viewed) story for the day.
+		</P
+></LI
+><LI
+><P
+>Core/Button Link Block: (Core/button):</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>** CORE/BUTTON FUNCTIONALITY WILL BE REMOVED FROM POSTNUKE AND THEREFORE ARE NOT DOCUMENTED HERE. USE CORE/HTML INSTEAD. **
+		</I
+></SPAN
+></P
+></LI
+><LI
+><P
+>Core/Categories Menu: (Core/category): Displays a list of Categories as defined in the  Administration -&#62; News module. Shows either all defined Categories, or only the Categories for the currently selected language, depending on the setting for Multilingual options in Administration -&#62; Language -&#62; Language Configuration.
+		</P
+></LI
+><LI
+><P
+>Core/Ephemerids: (Core/ephem): If you have Ephemerids defined for your site, this Block instructs PostNuke to display Ephemerids in this Block. There are no additional configuration options for this Block type.
+		</P
+></LI
+><LI
+><P
+>Core/HTML: (Core/html): This is a general Block for displaying HTML. All HTML tags defined in Administration -&#62; Settings are permitted in this box.
+		</P
+><P
+></P
+><UL
+><LI
+><P
+>Content: Enter the HTML content that you wish to display in this field. Only HTML that is below 64K in size will function in this block.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Core/User's Login: (Core/login):</P
+></LI
+><LI
+><P
+>Core/Generic menu: (Core/menu):</P
+><P
+></P
+><UL
+><LI
+><P
+>Menu format: This setting determines if the menu will be displayed as a listing or if the menu items are selected from a drop-down list.</P
+></LI
+><LI
+><P
+>Display: Specify if specific elements should be displayed within this Block.</P
+><P
+></P
+><UL
+><LI
+><P
+>Modules:</P
+></LI
+><LI
+><P
+>Waiting content: If configured as an Administration menu, you can enable this field to have an indicator that shows if there is waiting content (stories, etc) on the site.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Content:</P
+><P
+></P
+><UL
+><LI
+><P
+>Title:</P
+></LI
+><LI
+><P
+>URL:</P
+></LI
+><LI
+><P
+>Description (optional):</P
+></LI
+><LI
+><P
+>Delete:</P
+></LI
+><LI
+><P
+>Insert Blank After:</P
+></LI
+></UL
+></LI
+></UL
+></LI
+><LI
+><P
+>Core/Online: (Core/online): Displays a listing of who is online on the site. There are no additional configuration options for this Block type.</P
+></LI
+><LI
+><P
+>Core/Past Articles: (Core/past): Displays a clickable listing of the past Articles on the site. The number of stories displayed depends on the setting in the user's Your Account -&#62; Homepage -&#62; Number of stories field, or if that is not set, on Settings -&#62; Number of articles on homepage. If the user wishes to read any of these Articles, click on the Article name to display the full Article.</P
+></LI
+><LI
+><P
+>Core/Livesupport: (Core/phplive): If you don't have an account with LivePeople.info (http://www.livepeople.info) yet, you may want to sign up now. It's free for PostNuke users only!</P
+><P
+></P
+><UL
+><LI
+><P
+>Your LivePeople company name:</P
+></LI
+><LI
+><P
+>Your LivePeople user ID:</P
+></LI
+></UL
+><P
+></P
+><UL
+><LI
+><P
+>Core/PHP Script: (Core/php): Executes a PHP script within the site. Meant to include small blocks of PHP code, like a Stock Ticker from <A
+HREF="http://www.hotscripts.com"
+TARGET="_top"
+>http://www.hotscripts.com</A
+> or similar.</P
+><P
+>IMPORTANT NOTES: Do not run scripts that access databases in this block. Only PHP scripts that are below 64K in size will function in this block.</P
+><P
+></P
+><UL
+><LI
+><P
+>Content: Cut and paste the entire PHP script you wish to execute into this field. A very simple example of a script that might be inserted here is:</P
+><P
+>"passthru("/usr/games/fortune -s");"</P
+><P
+>(This is for *NIX and assumes that the random 'fortune' program is in the /usr/games directory.)</P
+><P
+>IMPORTANT NOTE: Putting "" tags at the beginning &#38; end of code entered in the Content field will cause a parse error to be generated when the page is displayed.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Core/Display poll: (Core/poll): Display a Poll in this Block. You may configure if the Current Poll or a specific Poll is to be displayed.</P
+><P
+></P
+><UL
+><LI
+><P
+>Poll to Display: Choose the Poll to be displayed.</P
+><P
+></P
+><UL
+><LI
+><P
+>Current: Select this to have the current poll displayed.</P
+></LI
+><LI
+><P
+>Specific: From the drop-down list, select the specific Poll you wish to have displayed.</P
+></LI
+></UL
+></LI
+></UL
+></LI
+><LI
+><P
+>Core/Story Related Links: (Core/related): This Block displays the latest article with the same Topic as the story being displayed. The Block functions only when you display an Article; it is not useful on the front page of a site. Only the most recent Story in the Topic is shown.</P
+></LI
+></UL
+><P
+>RSS is a Web content syndication format. Using RSS, your site can 'pull' content in the form of headlines from other websites and display that content on your site. If a user of your site is interested in reading the article, they can click a link to be taken to the other site.</P
+><P
+></P
+><UL
+><LI
+><P
+>Core/RSS Extra: (Core/rss2): RSS is a Web content syndication format.</P
+><P
+></P
+><UL
+><LI
+><P
+>RSS File URL:</P
+><P
+></P
+><UL
+><LI
+><P
+>Select "Custom" to define your own RSS newsfeed or select from previously defined RSS newsfeeds from the drop-down list.</P
+></LI
+></UL
+></LI
+></UL
+></LI
+></UL
+><P
+>Unfortunately, there are multiple versions of RSS feeds available, and the only way to determine which of these two Blocks will work with your particular RSS feed is by trial-and-error. If you enter a known-good RSS link into one of these two Block types and it doesn't work, try the other Block type.</P
+><P
+></P
+><UL
+><LI
+><P
+>Core/RSS Newsfeed: (Core/rss): RSS is a Web content syndication format.</P
+><P
+></P
+><UL
+><LI
+><P
+>RSS File URL:</P
+><P
+></P
+><UL
+><LI
+><P
+>List of available feeds: (www.syndic8.com)</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Maximum number of articles shown:</P
+></LI
+><LI
+><P
+>Display site image:</P
+></LI
+><LI
+><P
+>Display site search:</P
+></LI
+><LI
+><P
+>Display article descriptions:</P
+></LI
+><LI
+><P
+>Use alternate display style:</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Core/Search Box: (Core/search): Displays a Search box. In PostNuke 0.713, the Search is limited to searching ONLY News articles. However, in a future release, this will be a full site search.</P
+></LI
+><LI
+><P
+>Core/SMS: (Core/sms): <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>** NOT CURRENTLY FUNCTIONAL **</I
+></SPAN
+> Uses Short Message Service (SMS) to send messages to mobile electronic devices. This is not useful in the United States.</P
+></LI
+><LI
+><P
+>Core/Story Titles: (Core/stories): Displays titles of News stories. Click the title to read the article.</P
+><P
+></P
+><UL
+><LI
+><P
+>Display all stories (or)</P
+></LI
+><LI
+><P
+>Display front-page stories (or)</P
+></LI
+><LI
+><P
+>Display non-front-page stories:</P
+></LI
+><LI
+><P
+>Topic: If a Topic is selected in this drop-down list, only Stories from that Topic will be displayed in the Block.</P
+></LI
+><LI
+><P
+>Category: If a Category is selected in this drop-down list, only Stories from that Category will be displayed in the Block. <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>** NOT CURRENTLY FUNCTIONAL **</I
+></SPAN
+></P
+></LI
+><LI
+><P
+>Maximum number of stories to display:</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Core/Plain Text: (Core/text): This Block type simply displays the text contents of the Content field. All HTML tags defined in Administration -&#62; Settings are permitted in this box.</P
+><P
+></P
+><UL
+><LI
+><P
+>Content: Enter the text you wish to display in this field.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Core/Languages: (Core/thelang): Displays a language selection Block. Depending on the configuration option selected in Administration -&#62; Languages -&#62; Languages Configuration, this Block will display either a drop-down list or flag graphics to allow the user to select their default language for the site.</P
+></LI
+><LI
+><P
+>Core/Topics Menu: (Core/topic): Displays all active Topics on the website and the date of the last addition to the Topic. Click the Topic name to see articles in that Topic, with a link at the top of the page to show ALL articles in that Topic.</P
+></LI
+><LI
+><P
+>Core/User's Custom Box: (Core/user): This is a box that your users can edit to display  items that are important to them. It is displayed only to the individual user. All HTML tags defined in Administration -&#62; Settings are permitted in this box, so users could put customized links, etc., here. Users can edit their Custom Box through Your Account -&#62; Change Homepage.</P
+></LI
+><LI
+><P
+>Core/Latest Web Links: (Core/weblinks): This Block displays the latest Web Links that have been added to the site.</P
+><P
+></P
+><UL
+><LI
+><P
+>Module Name: (usually "Web_Links")</P
+></LI
+><LI
+><P
+>Total links: Specify how many links to display in this Block. Defaults to "10". If you wish to display the 25 most recent Web Links, enter "25" here.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Admin Messages/Show admin messages: (Admin_Messages/messages): Displays the messages that the Administrator has defined in Administration -&#62; Admin Messages.</P
+></LI
+><LI
+><P
+>Quotes/Random Quote: (Quotes/quote): Displays a random Quote from the quotes defined in Administration -&#62; Quotes.</P
+></LI
+><LI
+><P
+>Wiki/WIKI: (Wiki/wiki): Text block allowing Wiki encoding. Wiki Encoding is an alternative to HTML code for display within articles and text on the site. A reference to the Wiki Text Formatting Rules is at: <A
+HREF="http://phpwiki.sourceforge.net/phpwiki/TextFormattingRules"
+TARGET="_top"
+>http://phpwiki.sourceforge.net/phpwiki/TextFormattingRules</A
+>.</P
+><P
+></P
+><UL
+><LI
+><P
+>Content: Enter Wiki-formatted text in this field.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Template/Show first example items (alphabetical): (Template/first):</P
+><P
+></P
+><UL
+><LI
+><P
+>Number of example items to display:</P
+></LI
+></UL
+></LI
+></UL
+></LI
+></UL
+></LI
+></UL
+><P
+>For our example, select "Core/Generic menu" from the drop-down list.</P
+><P
+></P
+><UL
+><LI
+><P
+>Position: You can specify where on your website the Block will be displayed. This setting determines if the Block will be displayed on the left, right, or center of your website. Later, you can change the display order of the blocks by clicking "View blocks" and changing the order using the arrows.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Left: This Block will be displayed on the left side.</P
+></LI
+><LI
+><P
+>Right: This Block will be displayed on the right side.</P
+></LI
+><LI
+><P
+>Centre: This Block will be displayed in the center.</P
+></LI
+></UL
+><P
+>For our example, select "Left" as the position for the block.</P
+></LI
+><LI
+><P
+>Language: From this drop-down list, select the default language for this Block. Entry example: "English".
+</P
+><P
+>Click "Commit" to save your changes. The new Block will be created, and it will be displayed on the website.
+</P
+></LI
+><LI
+><P
+>View blocks: Displays blocks in Position order.</P
+><P
+></P
+><UL
+><LI
+><P
+>Order: Click the arrow pointing UP to move this Block UP in the display order. Click the arrow pointing DOWN to move this Block DOWN in the display order.</P
+></LI
+><LI
+><P
+>Position:</P
+></LI
+><LI
+><P
+>Title:</P
+></LI
+><LI
+><P
+>Module:</P
+></LI
+><LI
+><P
+>Name:</P
+></LI
+><LI
+><P
+>Language:</P
+></LI
+><LI
+><P
+>State: Active/Inactive</P
+></LI
+><LI
+><P
+>Options:</P
+><P
+></P
+><UL
+><LI
+><P
+>Activate:</P
+></LI
+><LI
+><P
+>Deactivate:</P
+></LI
+><LI
+><P
+>Edit: Using this function, you can edit the settings for each Block.</P
+><P
+></P
+><UL
+><LI
+><P
+>Title: Change the displayed title of this Block in this field.</P
+></LI
+><LI
+><P
+>Position: From this drop-down list, select if the Block should be displayed on the left, right, or center of the page.</P
+></LI
+><LI
+><P
+>Language: Select the language for this Block from the drop-down list.</P
+></LI
+><LI
+><P
+>Refresh time for block: If the Block pulls information from outside sources, this setting defines how frequently the Block will check for updates. Entry example: "Half an hour".</P
+></LI
+></UL
+></LI
+></UL
+></LI
+></UL
+><P
+>Click "Commit" to save your changes.</P
+><P
+></P
+><UL
+><LI
+><P
+>Delete:</P
+></LI
+></UL
+><P
+></P
+><UL
+><LI
+><P
+>Show active/all blocks: This is a toggle switch that selects between showing ALL blocks and only those blocks that are ACTIVE on your site.
+</P
+><P
+>To remove the Reminder block that says "Please remember to remove the following files from your PostNuke directory...", follow these steps:
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Log in as Administrator with your Administrator username and password.</P
+></LI
+><LI
+><P
+>Click on the "Administration" link on the Main Menu.</P
+></LI
+><LI
+><P
+>Click on the "Blocks" link.</P
+></LI
+><LI
+><P
+>Click "View Blocks".</P
+></LI
+><LI
+><P
+>Find "Reminder" on the listing that appears, and click "Delete" under Options for that block.</P
+></LI
+><LI
+><P
+>Click "Confirm" to verify that you wish to delete that block.</P
+></LI
+></UL
+></LI
+></UL
+></LI
+></UL
+></LI
+></UL
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="banners.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="config-comments.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Banners</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="config-advanced.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Comments</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

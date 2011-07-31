@@ -1,0 +1,608 @@
+<html>
+<head>
+<title>DIV FILTER STYLE</title>
+<style>
+td {color:white; font-family:Arial; font-size:14px}
+input,select {color:blue; background:#eeffee; width:120px}
+</style>
+
+<script src="qblib.js"></script>
+
+<script language="Jscript">
+
+function retdivFilter()
+{
+  var fobj= document.forms[0]
+
+  if(fobj.elements[0].selectedIndex==1 || fobj.elements[1].selectedIndex==0 ) return; 
+
+  var filter= fobj.elements[1].value
+
+  if(fobj.elements.length==2){ DIVSTYLE.filter= filter + '()' ; return; }
+
+  var na, paar, param='';
+  for(var i=2; i<fobj.elements.length; i++)
+  {
+    if(fobj.elements[i].type=='button') continue
+    na= fobj.elements[i].name
+    paar= na.split('_')
+	if(paar[1] && fobj.elements[i].value) param += paar[1] +'='+fobj.elements[i].value +','
+  }
+
+  param = param.substring(0,param.length-1)
+
+
+  if(DIVSTYLE.filter=='') DIVSTYLE.filter= 'progid:DXImageTransform.Microsoft.' + filter + '('+ param +')'
+  else
+   {
+    var filterx= DIVSTYLE.filter
+	var idx= filterx.indexOf(filter+'(')
+	if(idx<0) DIVSTYLE.filter += ', progid:DXImageTransform.Microsoft.' + filter + '('+ param +')'
+	else 
+	 {
+	   idx= idx + filter.length + 1
+	   var strx= filterx.substr(idx) 
+	   filterx= filterx.substring(0, idx) 
+	   idx= strx.indexOf(')')
+	   strx= strx.substr(idx+1)
+	   filterx += param +')' + strx
+	   DIVSTYLE.filter=filterx
+	 }
+   }
+
+
+  initColor()
+
+}
+
+
+
+
+function deleteFilter()
+{
+  var oSel= document.forms[0].OP_filter
+
+  var fSel= oSel.value
+  if(fSel=='') return;
+
+  var filter=DIVSTYLE.filter;
+  if(filter=='') return
+
+
+  if( filter.indexOf(fSel +'(' )<0 ) return;
+
+  filter= filter.replace(/ /g,"") ;
+  
+  var filterA= filter.split('progid:DXImageTransform.Microsoft.')
+
+  filter= ''
+
+  for(var i=1; i<filterA.length; i++)
+  {
+    if( filterA[i].indexOf(fSel +'(' )>=0 ) continue
+    filter += ' progid:DXImageTransform.Microsoft.' + filterA[i]
+  }
+
+  filter= filter.replace(/^\ /,'') 
+  filter= filter.replace(/\,$/,'') 
+
+  DIVSTYLE.filter= filter
+
+  initColor()
+
+}
+
+
+
+function initFormValues(oSel)
+{
+  var fSel= oSel.value
+  if(fSel=='') return;
+
+  var filter=DIVSTYLE.filter;
+  if(filter=='') return
+
+  if( filter.indexOf(fSel +'(' )<0 ) return;
+
+  filter= filter.replace(/ /g,"") ;
+  filter= filter.replace(/\)/g,"") ;
+
+  var filterA= filter.split('progid:DXImageTransform.Microsoft.')
+
+  for(var i=0; i<filterA.length; i++)
+  {
+    if( filterA[i].indexOf(fSel +'(' )>=0 ) break
+  }
+
+  var twice= filterA[i].split('('); 
+  twice[1]= twice[1].replace(/,$/,''); // options string
+
+  val= twice[1] 
+
+  // val= "xxx=...,yyy=....,zzzz=...."
+  if(val=='') return
+
+  var fobj= document.forms[0]
+  var valA= val.split(',');
+
+  var twice, ename, namex;
+  for(var i=0; i<valA.length; i++)
+  {
+    //valA[i]= "xxx=..."
+    twice= valA[i].split('=')
+	for(var j=2; j<fobj.elements.length; j++)
+	 {
+	  if(fobj.elements[j].type=='button') continue
+	  ename= fobj.elements[j].name;
+	  namex= ename.split('_');
+	  if(twice[0]==namex[1])
+	   {
+	   	fobj.elements[j].value= twice[1]
+	    break;
+	   }
+	 }
+  }
+
+}
+
+
+
+
+function initColor()
+{
+ var oSel= document.forms[0].OP_filter; 
+ 
+ for(var i=0; i<oSel.options.length; i++) // default color
+  { oSel.options[i].style.backgroundColor=''  }
+
+ var filter=DIVSTYLE.filter;
+
+ if(filter=='') return
+ filter= filter.replace(/ /g,"") ;
+ filter= filter.replace(/\)/g,"") ;
+
+ var filterA= filter.split('progid:DXImageTransform.Microsoft.')
+
+ var twice, idx;
+ for(var i=1; i<filterA.length; i++)
+ {
+  twice= filterA[i].split('('); 
+  idx= getOptionIndex(oSel,twice[0])
+  oSel.options[idx].style.backgroundColor='#f0d0d0' 
+ }
+}
+
+
+
+
+
+function init()
+{
+ var fID= window.opener.fID;
+ if(!fID){alert('Please click to select the editor');return}
+
+ var objF= window.opener.document.frames[fID];
+ if(!objF){alert('Please click to select the editor');return}
+
+ var sel = objF.document.selection;
+ if(sel.type=='None'){alert('Please click once to select a div-layer');return} 
+
+ var Range = sel.createRange();
+
+ DIVSTYLE= Range(0).style
+
+ initColor()
+
+ var filter=DIVSTYLE.filter;
+ if(filter=='') return
+ filter= filter.replace(/ /g,"") ;
+ filter= filter.replace(/\)/g,"") ;
+
+ var filterA= filter.split('progid:DXImageTransform.Microsoft.')
+
+ var oSel= document.forms[0].OP_filter; 
+ 
+ var twice= filterA[1].split('('); 
+ twice[1]= twice[1].replace(/,$/,''); // options string
+
+ oSel.value= twice[0]; // Select option
+
+ changeOptionTable(oSel)
+ 
+}
+
+
+
+
+
+
+/****************************************************/
+/****************************************************/
+function changeOptionTable(oSel)
+{
+  var selvalue= oSel.value
+
+  switch(selvalue)
+  {
+    case 'None': selvalue='&nbsp;'; break;
+	case 'Alpha': selvalue=getAlphaTable() ; break;
+    case 'AlphaImageLoader': selvalue=getAlphaImageLoaderTable(); break;
+    case 'BasicImage': selvalue=getBasicImageTable(); break;
+	case 'Blur': selvalue=getBlurTable(); break;
+    case 'Chroma': selvalue=getChromaTable(); break;
+    case 'DropShadow': selvalue=getDropShadowTable(); break;
+	case 'Emboss': selvalue='&nbsp;'; break;
+	case 'Engrave': selvalue='&nbsp;'; break;
+	case 'Glow': selvalue=getGlowTable(); break;
+	case 'Gradient': selvalue=getGradientTable(); break;
+	case 'MotionBlur': selvalue=getMotionBlurTable(); break;
+	case 'Pixelate': selvalue=getPixelateTable(); break;
+	case 'Shadow': selvalue=getShadowTable(); break;
+	case 'Wave': selvalue=getWaveTable(); break;
+  }
+
+  document.all['optable'].innerHTML= selvalue
+
+  initFormValues(oSel)
+}
+
+
+
+/****************************************************/
+/****************************************************/
+function getAlphaTable()
+{
+  var html="<table border=1 cellpadding=0 cellspacing=0>\
+  <tr><td>Style</td><td colspan=3>\
+  <select name='OP_style' onchange='retdivFilter()'>\
+   <option value=0>0-Uniform Opacity\
+   <option value=1>1-Linear Opacity Change\
+   <option value=2>2-Radial Opacity Change\
+   <option value=3>3-Rectangular Opacity Change\
+  </select></td></tr>\
+  <tr>\
+   <td>Start Opacity</td><td><input name='PE_opacity' onchange='retdivFilter()'></td>\
+   <td>Finish Opacity</td><td><input name='PE_finishopacity' onchange='retdivFilter()'></td>\
+  </tr>\
+  <tr>\
+   <td>Start X</td><td><input name='PE_startx' onchange='retdivFilter()'></td>\
+   <td>Finish X</td><td><input name='PE_finishx' onchange='retdivFilter()'></td>\
+  </tr>\
+  <tr>\
+   <td>Start Y</td><td><input name='PE_starty' onchange='retdivFilter()'></td>\
+   <td>Finish Y</td><td><input name='PE_finishy' onchange='retdivFilter()'></td>\
+  </tr>\
+  </table>\
+  ";
+
+  return html
+}
+
+
+
+function getAlphaImageLoaderTable()
+{
+  var html="<table border=1 cellpadding=0 cellspacing=0>\
+  <tr><td>Source Image</td><td>\
+  <INPUT name='TX_src' style='width:350px' onchange='retdivFilter()'>\
+  <INPUT type=file name='f_src' style='width:0px' onchange='checkFiletype(this.form,this.name);retdivFilter()'>\
+  </td></tr>\
+  <tr><td>Sizing Method</td><td>\
+  <select name='OP_sizingmethod' style='width:150px' onchange='retdivFilter()'>\
+   <option value='crop'>Crop At Boundary\
+   <option value='image'>Normal Image Size\
+   <option value='scale'>Scale To Window\
+  </select></td></tr>\
+  </table>\
+  ";
+
+  return html
+}
+
+
+
+
+function getBasicImageTable()
+{
+  var html="<table border=1 cellpadding=0 cellspacing=0>\
+  <tr><td>Rotation</td>\
+  <td><select name='OP_rotation' onchange='retdivFilter()'>\
+   <option value='0'>0°\
+   <option value='1'>90°\
+   <option value='2'>180°\
+   <option value='3'>270°\
+  </select></td>\
+  <td>Opacity</td><td><input name='PE_opacity' onchange='retdivFilter()'></td>\
+  </tr>\
+  <tr><td>Mirror</td><td>\
+  <select name='OP_mirror' onchange='retdivFilter()'>\
+   <option value=''>No\
+   <option value=1>Yes\
+  </select></td>\
+  <td>Invert</td><td>\
+  <select name='OP_invert' onchange='retdivFilter()'>\
+   <option value=''>No\
+   <option value=1>Yes\
+  </select></td>\
+  </tr>\
+  <tr><td>X-Ray</td><td>\
+  <select name='OP_xray' onchange='retdivFilter()'>\
+   <option value=''>No\
+   <option value=1>Yes\
+  </select></td>\
+  <td>Gray Scale</td><td>\
+  <select name='OP_grayscale' onchange='retdivFilter()'>\
+   <option value=''>No\
+   <option value=1>Yes\
+  </select></td>\
+  </tr>\
+  </table>\
+  ";
+
+  return html
+
+}
+
+
+
+function getBlurTable()
+{
+  var html="<table border=1 cellpadding=0 cellspacing=0>\
+  <tr><td>Pixel Radius</td><td>\
+  <input name='PI_pixelradius' onchange='retdivFilter()'>\
+  </td></tr>\
+  <tr><td>Make Shadow</td><td>\
+  <select name='OP_makeshadow' onchange='retdivFilter()'>\
+   <option value=''>No\
+   <option value=1>Yes\
+  </select>\
+  </td></tr>\
+  <tr><td>Shadow Opacity</td><td>\
+  <input name='PE_shadowopacity' onchange='retdivFilter()'>\
+  </td></tr>\
+  </table>\
+  ";
+
+  return html
+
+}
+
+
+function getChromaTable()
+{
+  var html="<table border=1 cellpadding=0 cellspacing=0>\
+  <tr><td>Color</td><td>\
+  <input name='CO_color' onchange='retdivFilter()'>\
+  </td></tr>\
+  </table>\
+  ";
+
+  return html
+}
+
+
+
+function getDropShadowTable()
+{
+  var html="<table border=1 cellpadding=0 cellspacing=0>\
+  <tr><td>Color</td><td>\
+  <input name='CO_color' onchange='retdivFilter()'></td>\
+  <td>Positive</td><td>\
+  <select name='OP_positive' onchange='retdivFilter()'>\
+   <option value=''>No\
+   <option value=1>Yes\
+  </select>\
+  </td></tr>\
+  <tr><td>OffX</td><td>\
+  <input name='PI_offX' onchange='retdivFilter()'></td>\
+  <td>OffY</td><td>\
+  <input name='PI_offY' onchange='retdivFilter()'></td>\
+  </tr>\
+  </table>\
+  ";
+
+  return html
+
+}
+
+
+
+function getGlowTable()
+{
+  var html="<table border=1 cellpadding=0 cellspacing=0>\
+  <tr><td>Color</td><td><input name='CO_color' onchange='retdivFilter()'></td></tr>\
+  <tr><td>Strength</td><td><input name='PI_strength' onchange='retdivFilter()'></td></tr>\
+  </table>\
+  ";
+
+  return html
+}
+
+
+function getGradientTable()
+{
+  var html="<table border=1 cellpadding=0 cellspacing=0>\
+  <tr><td>GradientType</td><td>\
+  <select name='OP_gradienttype' onchange='retdivFilter()'>\
+   <option value=''>0\
+   <option value=1>1\
+  </select>\
+  </td></tr>\
+  <tr><td>StartColor</td><td><input name='CO_startcolorstr' onchange='retdivFilter()'></td></tr>\
+  <tr><td>EndColor</td><td><input name='CO_endcolorstr' onchange='retdivFilter()'></td></tr>\
+  </table>\
+  ";
+
+  return html
+
+}
+
+function getMotionBlurTable()
+{
+  var html="<table border=1 cellpadding=0 cellspacing=0>\
+  <tr><td>Direction</td><td><select name='OP_direction' onchange='retdivFilter()'>\
+   <option value='0'>0\
+   <option value='45'>45\
+   <option value='90'>90\
+   <option value='135'>135\
+   <option value='180'>180\
+   <option value='225'>225\
+   <option value='270'>270\
+   <option value='315'>315\
+  </select></td></tr>\
+  <tr><td>Strength</td><td><input name='PI_strength' onchange='retdivFilter()'></td></tr>\
+  </table>\
+  ";
+
+  return html
+
+}
+
+
+
+function getPixelateTable()
+{
+  var html="<table border=1 cellpadding=0 cellspacing=0>\
+  <tr><td>MaxSquare</td><td><input name='PI_maxsquare' onchange='retdivFilter()'></td></tr>\
+  </table>\
+  ";
+
+  return html
+
+}
+
+
+
+
+function getShadowTable()
+{
+  var html="<table border=1 cellpadding=0 cellspacing=0>\
+  <tr><td>Direction</td>\
+  <td><select name='OP_direction' onchange='retdivFilter()'>\
+   <option value='0'>0\
+   <option value='45'>45\
+   <option value='90'>90\
+   <option value='135'>135\
+   <option value='180'>180\
+   <option value='225'>225\
+   <option value='270'>270\
+   <option value='315'>315\
+  </select></td></tr>\
+  <tr><td>Color</td><td><input name='CO_color' onchange='retdivFilter()'></td></tr>\
+  <tr><td>Strength</td><td><input name='PI_strength' onchange='retdivFilter()'></td></tr>\
+  </table>\
+  ";
+
+  return html
+
+}
+
+function getWaveTable()
+{
+  var html="<table border=1 cellpadding=0 cellspacing=0>\
+  <tr><td>Frequenz</td><td><input name='PI_freq' onchange='retdivFilter()'></td></tr>\
+  <tr><td>LightStrength</td><td><input name='PI_lightstrength' onchange='retdivFilter()'></td></tr>\
+  <tr><td>Phase</td><td><input name='PI_phase' onchange='retdivFilter()'></td></tr>\
+  <tr><td>Strength</td><td><input name='PI_strength' onchange='retdivFilter()'></td></tr>\
+  </table>\
+  ";
+
+  return html
+
+}
+
+
+/**********************************************************/
+
+</script>
+
+
+</head>
+
+<body bgcolor=menu onFocus="init()" scroll=no>
+
+<center>
+<FORM name="FO">
+
+<TABLE bgColor=#999999 border=1 width=100% cellpading=0 cellspacing=0>
+<TBODY>
+
+<!-- 1st row -->
+<TR>
+<TD align=middle bgColor=#aa4444 colSpan=2>DIV FILTER STYLE</TD>
+</TR>
+
+<!-- 2sd row -->
+<TR>
+<TD align=right>Effect Type
+<select name=OP_effecttype onchange="">
+<option>filters
+<option>transitions
+</select>
+</TD>
+
+<TD align=right>Filter
+<select name=OP_filter onchange="changeOptionTable(this)"> 
+ <option value=''>None
+ <option value='Alpha'>Alpha
+ <option value='AlphaImageLoader'>AlphaImageLoader
+ <option value='BasicImage'>BasicImage
+ <option value='Blur'>Blur
+ <option value='Chroma'>Chroma
+ <option value='DropShadow'>DropShadow
+ <option value='Emboss'>Emboss
+ <option value='Engrave'>Engrave
+ <option value='Glow'>Glow
+ <option value='Gradient'>Gradient
+ <option value='MotionBlur'>MotionBlur
+ <option value='Pixelate'>Pixelate
+ <option value='Shadow'>Shadow
+ <option value='Wave'>Wave
+</select>
+</TD>
+
+</TR>
+
+
+
+<!-- Last row -->
+<TR>
+<TD colspan=2 align=center>
+<INPUT onMouseDown=setObjectColor(0,'red','retdivFilter()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#FF0000; color:white">
+<INPUT onMouseDown=setObjectColor(1,'red','retdivFilter()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#FF0000; color:white">
+&nbsp;&nbsp;
+<INPUT onMouseDown=setObjectColor(0,'green','retdivFilter()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#00FF00; color:black">
+<INPUT onMouseDown=setObjectColor(1,'green','retdivFilter()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#00FF00; color:black">
+&nbsp;&nbsp;
+<INPUT onMouseDown=setObjectColor(0,'blue','retdivFilter()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#0000FF; color:white">
+<INPUT onMouseDown=setObjectColor(1,'blue','retdivFilter()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#0000FF; color:white">
+&nbsp;&nbsp;
+
+<INPUT onmousedown=setValueSmaller('retdivFilter()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#aa4444; color:white">
+<INPUT onmousedown=setValueBigger('retdivFilter()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#aa4444; color:white">
+&nbsp;&nbsp;
+
+<INPUT onclick=retdivFilter() title=Button type=button value="Do" style="width:70px; height:22px; background:#aa4444; color:white">
+<INPUT onclick=deleteFilter() title=Delete type=button value="Delete" style="width:70px; height:22px; background:#aa4444; color:white">
+&nbsp;&nbsp;
+
+<INPUT onclick=self.close() title=Back type=button value="Close" style="width:70px; height:22px; background:#aa4444; color:white">
+
+</TD></TR>
+
+
+
+<TR>
+<TD id=optable colspan=2 align=center>
+<!-- Here is place for runtime display option table -->
+</TD>
+</TR>
+
+
+
+</TBODY></TABLE>
+
+</FORM>
+</center>
+</body>
+</html>

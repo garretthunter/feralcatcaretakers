@@ -1,0 +1,191 @@
+<HTML
+><HEAD
+><TITLE
+>Testing The Installation/Upgrade</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Upgrade Installation"
+HREF="upgradeinstall.html"><LINK
+REL="NEXT"
+TITLE="A Lesson in PostNuke Terminology"
+HREF="terminology.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="upgradeinstall.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="terminology.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="testinginstall">Chapter 12. Testing The Installation/Upgrade</H1
+><P
+>Before we can declare the installation/upgrade a success and begin configuring 
+your site, we need to test its basic functionality. The first way to test it is 
+to click the "Go to your PostNuke site" and see if PostNuke comes up.
+</P
+><P
+>If you do not see a PostNuke page, something went wrong. The first thing to 
+check is that no "index.html" file exists in your web directory. If there is 
+such a file, rename it (or delete it) to prevent it from overriding the 
+"index.php" file. Also, if you performed an upgrade to PostNuke, you may need 
+to clear the cookies in your browser, and then restart your browser.
+</P
+><P
+>If you get a message that says something like: "Warning: Access denied for 
+user: 'root@localhost' (Using password: YES) in newinstall.php on line 36 
+Unable to make database", then your database username and/or password is 
+incorrectly defined.
+</P
+><P
+>You may wish to visit the PostNuke live support site located at 
+<A
+HREF="http://www.postnuke.com/modules.php?op=modload&name=IRC_Chat&file=index  "
+TARGET="_top"
+>http://www.postnuke.com/modules.php?op=modload&#38;name=IRC_Chat&#38;file=index</A
+> 
+for more assistance with this and other installation problems. Before accessing 
+this page, it is necessary to register for a free account on 
+<A
+HREF="http://www.postnuke.com"
+TARGET="_top"
+>http://www.postnuke.com</A
+>.
+</P
+><P
+>If you see a PostNuke page, then the installation/upgrade was a success. You 
+should now do the following:
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Delete the entire install directory from the DocumentRoot (for example, /var/www/html/install). It is a security risk to leave it on the website.
+	</P
+></LI
+><LI
+><P
+>Delete the install.php file from the DocumentRoot (for example, /var/www/html/install.php). It is a security risk to leave it on the website.
+	</P
+></LI
+></UL
+><P
+>We can move forward into configuration, after a quick lesson in terminology.
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="upgradeinstall.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="terminology.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Upgrade Installation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>A Lesson in PostNuke Terminology</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

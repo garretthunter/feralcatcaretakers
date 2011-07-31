@@ -1,0 +1,474 @@
+<HTML
+><HEAD
+><TITLE
+>Advanced Website Configuration &#38; Use</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Understanding Modules"
+HREF="modules-understanding.html"><LINK
+REL="NEXT"
+TITLE="Admin Messages"
+HREF="adminmessages.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="modules-understanding.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="adminmessages.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="config-advanced">Chapter 16. Advanced Website Configuration &#38; Use</H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="config-advanced.html#addstory"
+>Add Story</A
+></DT
+><DT
+><A
+HREF="adminmessages.html"
+>Admin Messages</A
+></DT
+><DT
+><A
+HREF="autolinks.html"
+>AutoLinks</A
+></DT
+><DT
+><A
+HREF="banners.html"
+>Banners</A
+></DT
+><DT
+><A
+HREF="config-blocks.html"
+>Blocks</A
+></DT
+><DT
+><A
+HREF="config-comments.html"
+>Comments</A
+></DT
+><DT
+><A
+HREF="config-downloads.html"
+>Downloads</A
+></DT
+><DT
+><A
+HREF="config-ephemerids.html"
+>Ephemerids</A
+></DT
+><DT
+><A
+HREF="config-faq.html"
+>FAQ</A
+></DT
+><DT
+><A
+HREF="config-groups.html"
+>Groups</A
+></DT
+><DT
+><A
+HREF="config-referers.html"
+>HTTP Referers</A
+></DT
+><DT
+><A
+HREF="config-lang.html"
+>Languages</A
+></DT
+><DT
+><A
+HREF="config-mailusers.html"
+>Mail Users</A
+></DT
+><DT
+><A
+HREF="config-quotes.html"
+>Quotes</A
+></DT
+><DT
+><A
+HREF="config-reviews.html"
+>Reviews</A
+></DT
+><DT
+><A
+HREF="config-sections.html"
+>Sections</A
+></DT
+><DT
+><A
+HREF="config-news.html"
+>Submit News</A
+></DT
+><DT
+><A
+HREF="config-surveys.html"
+>Surveys</A
+></DT
+><DT
+><A
+HREF="config-topics.html"
+>Topics</A
+></DT
+><DT
+><A
+HREF="config-toplist.html"
+>Top List</A
+></DT
+><DT
+><A
+HREF="config-useradmin.html"
+>User Administration</A
+></DT
+><DT
+><A
+HREF="config-weblinks.html"
+>Web Links</A
+></DT
+></DL
+></DIV
+><P
+>Once the basic configuration of your website is complete and you have a good understanding of how Modules can add functionality to PostNuke, and how to use them, it is time to move into Advanced Website Configuration. Not all Administrators will use all these features, so feel free to skip around!
+</P
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="addstory">Add Story</H1
+><P
+>Whenever you wish to post new information to your website, go to the Administration menu and click "Add Story". You will be taken to the Add Story screen, where you can write (or cut &#38; paste) the story you wish to add.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Title: The title of the story as it will be displayed to the user. Free-form alphanumeric text. Entry example: "Cooking Basics".
+</P
+></LI
+><LI
+><P
+>Topic: From the drop-down list, select the Topic for your story. Topics allow you to divide your content into logical groupings, and they are discussed in detail in the Topics section, below.
+</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>** BE AWARE THAT STARTING IN VERSION 0.713, THE NEXT TWO OPTIONS, 'CATEGORIES' &#38; 'PUBLISH ON HOMEPAGE', ARE INCOMPLETELY IMPLEMENTED AND WILL CHANGE DRAMATICALLY IN FUTURE VERSIONS OF POSTNUKE. **</I
+></SPAN
+>
+</P
+></LI
+><LI
+><P
+>Category: From the drop-down list, select the Category for this story. Most Administrators will be able to leave this field set at the default of "Articles". The default category, "Articles", is the 'master' category, and cannot be edited or deleted. To use Categories functionality, first define additional Categories for the site.
+</P
+><P
+>To add a new Category to the site, follow these steps:</P
+><P
+></P
+><UL
+><LI
+><P
+>From the Administration menu, click on "Add Story".</P
+></LI
+><LI
+><P
+>From the Add Story screen, click "Add" next to Categories.</P
+></LI
+><LI
+><P
+>Enter the name for the new Category. For example, "<TT
+CLASS="userinput"
+><B
+>Cooking with Drew</B
+></TT
+>".</P
+></LI
+><LI
+><P
+>From the drop-down list, select the theme (from your currently installed themes) in which to display this Category.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>** NOT CURRENTLY FUNCTIONING **</I
+></SPAN
+></P
+></LI
+><LI
+><P
+>Click "Save" to save the new Category.</P
+></LI
+><LI
+><P
+>Go to the Administration page (click on "Go to admin section")</P
+></LI
+></UL
+><P
+>Click "Add Story", and the new Category will be available from the Category drop-down list.
+</P
+></LI
+><LI
+><P
+>Publish on homepage?: Should this story be published on the homepage? The majority of Administrators will leave this field set at the default of "Yes". If the Category field (above) is set to the default of "Articles", this field does nothing. If the Category field (above) is set to something OTHER than "Articles", set this field to "Yes" to cause the Article to be displayed on the home page. Set to "No" if the Article will only be available within the Category.
+</P
+></LI
+><LI
+><P
+>Allow comments?: Click "Yes" to allow users to post comments on this story. Click "No" to prohibit users from posting comments on this story. If set to "Yes", a link called "comments?" will appear at the bottom of the story. Once comments have been posted for a particular story, the link title will change to indicate the number of comments for the story.
+</P
+></LI
+><LI
+><P
+>Language: From the drop-down list, select the language for this story, or "All" to indicate that this story is shown to users regardless of the user's language settings. The default setting of "All" is a good choice unless you have specific reason to change it.
+</P
+></LI
+><LI
+><P
+>Story text: Enter the text of the story in this field. Permitted HTML is allowed (as defined in Administration -&#62; Settings -&#62; HTML Options) in this field. Text entered here will be displayed on the front page of the site. Story text is used for the summary of the story, or to display one (or more) introductory paragraphs on the homepage. Extended text is where the details of the story are communicated.
+</P
+></LI
+><LI
+><P
+>Extended text: Enter extended text of the story in this field. Permitted HTML is allowed (as defined in Administration -&#62; Settings -&#62; HTML Options) in this field. Text entered in this field will NOT be displayed on the front page of the site; it is displayed only when the user clicks "Read More" at the bottom of the story.
+</P
+></LI
+><LI
+><P
+>Notes: Permitted HTML is allowed (as defined in Administration -&#62; Settings -&#62; HTML Options) in this field. Enter notes for the story in this field. Text entered in this field will be displayed in italicized text on the front page of the site at the bottom of the story. The Notes field is useful in a variety of ways. For example, the site Administrator can re-visit the article and add extra information for emphasis.
+</P
+></LI
+><LI
+><P
+>Do you want to program this story?: If you want to delay the publication of this story until a specific time or date, click "Yes" and define the time or date when the story will be published in the following fields. Note that you may not program a story in the past. If you wish to post the story immediately, leave this field set to the default of "No".
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Time: Enter the hour (in 24-hour format) and minute (in 5-minute intervals) that this story should be posted. For example, hour: "<TT
+CLASS="userinput"
+><B
+>13</B
+></TT
+>", minute: "<TT
+CLASS="userinput"
+><B
+>35</B
+></TT
+>".</P
+></LI
+><LI
+><P
+>Day: Enter the day of the month that this story should be posted. For example, "<TT
+CLASS="userinput"
+><B
+>4</B
+></TT
+>".</P
+></LI
+><LI
+><P
+>Month: Enter the month that this story should be posted. For example, "<TT
+CLASS="userinput"
+><B
+>7</B
+></TT
+>".</P
+></LI
+><LI
+><P
+>Year: Enter the year that this story should be posted. For example, "<TT
+CLASS="userinput"
+><B
+>2010</B
+></TT
+>".</P
+></LI
+></UL
+><P
+>In the examples above, the story would be programmed to be posted on July 4, 2010 at 1:35pm.
+</P
+></LI
+><LI
+><P
+>Preview story: The default for the drop-down list is to Preview the story. Choose Preview to show the complete story as it will be displayed to users. Click "OK" to preview the story. Check spelling, grammar, and URLs.
+</P
+></LI
+><LI
+><P
+>Post story: When you are satisfied that the story is correct, select "Post story" from the drop-down list. Click "OK" to post the story and make it immediately available to users.
+</P
+></LI
+></UL
+><P
+>TIP: If you wish to present a series of articles (Part 1, Part 2, Part 3...) and link them all together to allow users to read the second article after finishing the first (etc.), follow these steps.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Write your first article. Note the Article ID.</P
+><P
+>(To determine an article's Article ID, locate the Article on the main page of the site and "hover" the mouse over the Article title. In the browser's status bar, you will see the URL for the link, for example: http://www.yoursite.com/modules.php?op=modload&#38;name=News&#38;file=article&#38;sid=112. Look near the end of the line for "sid=##", where "##" is the Article ID. In this example, your Article ID is "112".)
+</P
+></LI
+><LI
+><P
+>Write the second article. Note the Article ID. For this example, we will assume that the second article has an Article ID of "126".
+</P
+></LI
+><LI
+><P
+>Edit the first Article and add the following to the bottom of the article:
+</P
+><P
+>&#60;span style="text-align:center"&#62;lt;a href="modules.php?op=modload&#38;name=News&#38;file=article&#38;sid=126"&#62;::Part 2::&#60;/a&#62;&#60;/span&#62;
+</P
+></LI
+><LI
+><P
+>Edit the second Article and add the following to the bottom of the article:
+</P
+><P
+>&#60;span style="text-align:center"&#62;&#60;a href="modules.php?op=modload&#38;name=News&#38;file=article&#38;sid=112"&#62;::Back to Part 1::&#60;/a&#62;&#60;/span&#62;
+</P
+></LI
+></UL
+><P
+>Follow these steps to add additional Articles in your series.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="modules-understanding.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="adminmessages.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Understanding Modules</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Admin Messages</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

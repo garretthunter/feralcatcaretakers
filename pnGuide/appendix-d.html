@@ -1,0 +1,186 @@
+<HTML
+><HEAD
+><TITLE
+>APPENDIX D: Configure PHP</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="APPENDIX C: Configure the webserver"
+HREF="appendix-c.html"><LINK
+REL="NEXT"
+TITLE="APPENDIX E: Enable GZIP compression in php.ini"
+HREF="appendix-e.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="appendix-c.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="appendix-e.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="appendix-d">Chapter 22. APPENDIX D: Configure PHP</H1
+><P
+>You need to ensure that your site has a working installation of PHP (version 4.0.1pl2 or higher) compiled with MySQL support. PHP is the language in which PostNuke is developed. Without PHP support, the web server would not be able to parse the PHP files and your site would not work.
+</P
+><P
+>To determine which version of PHP you've got installed, or if it is installed at all, create a file called "test.php" in your web directory. The file should contain the following:
+</P
+><P
+>--- CUT HERE ---</P
+><PRE
+CLASS="programlisting"
+>&#13;	
+	</PRE
+><P
+>--- CUT HERE ---</P
+><P
+>Point your browser to this page (for example, http://www.yoursite.com/test.php). The version of PHP will be displayed at the top of the page. If it is earlier than 4.0.1pl2, you MUST upgrade or PostNuke will not function. More recent versions of PHP have significant security and functionality enhancements.
+</P
+><P
+>PHP also requires that a few settings exist in php.ini (usually /etc/php.ini for *NIX, or C:\Windows\PHP.ini for Windows). These settings are usually correct within php.ini by default, but please check to make sure your php.ini has the following entries to ensure proper operation:
+</P
+><P
+>--- CUT HERE ---</P
+><PRE
+CLASS="programlisting"
+>&#13;	include_path='.'
+	magic_quotes_gpc = Off
+	register_globals = On
+	short_open_tag  = On
+	session.auto_start = 0
+	debugger.enabled = False
+	</PRE
+><P
+>--- CUT HERE ---</P
+><P
+>The following line in php.ini must be commented out or deleted, if it exists, or PostNuke will not function.
+</P
+><P
+><PRE
+CLASS="programlisting"
+>session.save_handler = php</PRE
+></P
+><P
+>PLEASE NOTE: If you make any changes to your php.ini file, it is necessary to restart your webserver so that the changes are incorporated into the system. Restart your webserver from the command line (for example, "<TT
+CLASS="userinput"
+><B
+>httpd restart</B
+></TT
+>"), or restart your computer.
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="appendix-c.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="appendix-e.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>APPENDIX C: Configure the webserver</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>APPENDIX E: Enable GZIP compression in php.ini</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

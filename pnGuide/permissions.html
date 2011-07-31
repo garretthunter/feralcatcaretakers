@@ -1,0 +1,250 @@
+<HTML
+><HEAD
+><TITLE
+>Groups &#38; Permissions</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Web Links"
+HREF="config-weblinks.html"><LINK
+REL="NEXT"
+TITLE="Default PostNuke Permissions Explained"
+HREF="perms-explained.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="config-weblinks.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="perms-explained.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="permissions">Chapter 17. Groups &#38; Permissions</H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="permissions.html#perms-overview"
+>Overview of the Permissions System</A
+></DT
+><DT
+><A
+HREF="perms-explained.html"
+>Default PostNuke Permissions Explained</A
+></DT
+><DT
+><A
+HREF="perms-advanced.html"
+>Advanced Group Permissions</A
+></DT
+><DT
+><A
+HREF="perms-user.html"
+>User Permissions</A
+></DT
+><DT
+><A
+HREF="perms-config.html"
+>Setting up and configuring Groups</A
+></DT
+><DT
+><A
+HREF="perms-levels.html"
+>Permission Levels</A
+></DT
+><DT
+><A
+HREF="perms-group-example.html"
+>An example of Group Permissions</A
+></DT
+><DT
+><A
+HREF="perms-user-example.html"
+>An example of User Permissions</A
+></DT
+><DT
+><A
+HREF="perms-faq.html"
+>Permissions FAQ</A
+></DT
+><DT
+><A
+HREF="perms-newbies.html"
+>Permissions for Newbies</A
+></DT
+></DL
+></DIV
+><P
+>It is easy to forget that websites have more than "visitors". As the line between design &#38; programming for the web continues to blur, we must think of "websites" more like "software". Webmasters offer an interface to their product. Each "visitor" is actually a "user" of the product. When we think of them as "users" instead of "visitors", the relationship becomes a bit more personal. As we encourage the users to become "registered users", that personal relationship builds.
+</P
+><P
+>For most site administrators, PostNuke's default Permissions System will be sufficient right "out of the box" with no additional configuration. The default Permissions System provides two 'tiers' of access to the site, and a special unregistered visitors (Anonymous) group (which, for this document, is referred to as "Tier 0", because it's not really an access group per se, as much as it is the ABSENCE of membership in other access groups).
+</P
+><P
+>The unregistered visitors group is defined as visitors to your site that have not registered for an account. This Anonymous group does not appear in the Group administration, but the Anonymous group always exists within any Permissions configuration. This group can be given its own set of permissions -- from no access at all to full Administrator access. The unregistered users group is distinct from the "users" group, which is defined in the default distribution as users who have registered for an account on your system. As an example of the difference between the "anonymous" and "users" groups, PostNuke, by default, does not allow Anonymous users to vote on Polls while members of the "users" group are permitted to vote in Polls.
+</P
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="perms-overview">Overview of the Permissions System</H1
+><P
+>A "two-tier" permissions system (such as PostNuke's default Permissions) is fine &#38; well if you are running a simple news site.
+</P
+><P
+>However, PostNuke's Permissions system allows far greater flexibility. By allowing or denying access to certain areas of the site, the Permissions system allows very fine management of access to content. For example, PostNuke may be configured in such a way that non-registered users do not have access to certain areas -- forums, reviews, polls, etc -- on the site until they register. This control extends all the way to particular News Article -- you could, if you wish, configure PostNuke to NOT allow a certain user to view a specific News Article.
+</P
+><P
+>Examples of Permissions Tiers:
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Simple News Site: Anonymous (Guests), Registered Users, Admin (this is the default permissions system in the PostNuke distribution)
+	</P
+></LI
+><LI
+><P
+>Advanced News Site: Anonymous (Guests), Registered Users, Subscribed Users, Admin
+	</P
+></LI
+><LI
+><P
+>Corporate web site: Anonymous (Guests), Registered Users, Customers, Admin
+	</P
+></LI
+><LI
+><P
+>Advanced Corporate web site: Anonymous (Guests), Registered Users, Customers, Customers Eligible for Support, Admin
+	</P
+></LI
+><LI
+><P
+>Corporate Intranet: Anonymous (Guests), Registered Users, Admin, Store Associates, Marketing Dept., Finance Dept., etc.
+	</P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="config-weblinks.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="perms-explained.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Web Links</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Default PostNuke Permissions Explained</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

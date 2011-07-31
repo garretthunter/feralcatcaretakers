@@ -1,0 +1,319 @@
+<html>
+<head>
+<title>DIV BORDER</title>
+<style>
+td {color:white; font-family:Arial; font-size:14px}
+input,select {color:blue; background:#eeffee; width:80px}
+</style>
+
+<script src="qblib.js"></script>
+
+<script language="Jscript">
+
+function setAllFields(propx)
+{
+  var fobj= document.FO
+
+  if(propx=='style')
+  {
+   fsty=  fobj.OP_borderstyle.selectedIndex; 
+   fobj.OP_bordertopstyle.selectedIndex=fsty;
+   fobj.OP_borderleftstyle.selectedIndex= fsty
+   fobj.OP_borderbottomstyle.selectedIndex= fsty
+   fobj.OP_borderrightstyle.selectedIndex= fsty
+  }
+ else if(propx=='width')
+  {
+   fwi=  fobj.IN_borderwidth.value; 
+   fobj.IN_bordertopwidth.value=fwi; 
+   fobj.IN_borderleftwidth.value= fwi
+   fobj.IN_borderbottomwidth.value= fwi
+   fobj.IN_borderrightwidth.value= fwi  
+  }
+ else if(propx=='color')
+  {
+   fcol=  fobj.CO_bordercolor.value;
+   fobj.CO_bordertopcolor.value=fcol
+   fobj.CO_borderleftcolor.value= fcol
+   fobj.CO_borderbottomcolor.value= fcol
+   fobj.CO_borderrightcolor.value= fcol
+  }
+}
+
+
+
+function retCurrentObj(dobj,fsty,fwi,fcol)
+{
+ var temp
+   
+ eval('DIVSTYLE.'+dobj+'Style= fsty.options[fsty.selectedIndex].text')
+
+ temp= fwi.value;
+ if(temp<=0){ temp=1; fwi.value=temp; }
+ eval('DIVSTYLE.'+dobj+'Width=temp')
+
+ eval('DIVSTYLE.'+dobj+'Color= fcol.value')
+
+}
+
+
+
+
+
+
+function retdivBorder()
+{
+  var fobj= document.FO
+
+  var dobj, fsty, fwi, fcol ;
+
+  dobj= 'border'
+  fsty=  fobj.OP_borderstyle; fwi=  fobj.IN_borderwidth; fcol=  fobj.CO_bordercolor;
+  retCurrentObj(dobj,fsty,fwi,fcol)
+
+       if(CURRENT.name=='OP_borderstyle') setAllFields('style')
+  else if(CURRENT.name=='IN_borderwidth') setAllFields('width')
+  else if(CURRENT.name=='CO_bordercolor') setAllFields('color')
+  else
+  {
+   dobj= 'borderTop'
+   fsty=  fobj.OP_bordertopstyle; fwi=  fobj.IN_bordertopwidth; fcol=  fobj.CO_bordertopcolor
+   retCurrentObj(dobj,fsty,fwi,fcol)
+
+   dobj= 'borderLeft'
+   fsty=  fobj.OP_borderleftstyle; fwi=  fobj.IN_borderleftwidth; fcol=  fobj.CO_borderleftcolor
+   retCurrentObj(dobj,fsty,fwi,fcol)
+
+   dobj= 'borderBottom'
+   fsty=  fobj.OP_borderbottomstyle; fwi=  fobj.IN_borderbottomwidth; fcol=  fobj.CO_borderbottomcolor
+   retCurrentObj(dobj,fsty,fwi,fcol)
+
+   dobj= 'borderRight'
+   fsty=  fobj.OP_borderrightstyle; fwi=  fobj.IN_borderrightwidth; fcol=  fobj.CO_borderrightcolor
+   retCurrentObj(dobj,fsty,fwi,fcol)
+  }
+
+  window.opener.setHiddenValue();
+
+}
+
+
+
+
+function init()
+{
+ var objF= window.opener.document.frames[window.opener.fID];
+ if(!objF){alert('Please click to select the editor');return}
+  
+ var sel = objF.document.selection;
+ if(sel.type=='None'){alert('Please select a outer of div-layer');return} 
+
+ var Range = sel.createRange();
+
+ DIVSTYLE= Range(0).style
+ var fobj= document.FO
+ var temp;
+
+ 
+ with(DIVSTYLE) 
+ {
+   temp= borderWidth;
+   if(isNaN(temp))
+    {
+	 temp=temp.toLowerCase()
+	 if(temp!='thin' && temp!='medium' && temp!='thick') temp= parseInt(temp);
+	}
+
+   if(temp<=0) temp=1;
+   fobj.IN_borderwidth.value= temp
+
+   fobj.CO_bordercolor.value= borderColor
+   setTextOption(fobj.OP_borderstyle,borderStyle)
+ }
+
+}
+
+
+
+
+
+
+/****************************************************/
+
+</script>
+
+
+</head>
+
+<body bgcolor=menu onFocus="init()" scroll=no>
+
+<center>
+<FORM name="FO">
+
+<TABLE bgColor=#999999 border=1 width=100% cellpading=0 cellspacing=0>
+<TBODY>
+
+<!-- 1st row -->
+<TR>
+<TD align=middle bgColor=#aa4444 colSpan=7>DIV BORDER STYLE</TD>
+</TR>
+
+<!-- 2sd row -->
+<TR>
+<TD>Border</TD>
+
+<TD align=right>borderStyle</TD>
+<TD>
+<select name=OP_borderstyle onchange="retdivBorder()">
+<option>none
+<option>solid
+<option>dotted
+<option>dashed
+<option>double
+<option>groove
+<option>ridge
+<option>inset
+<option>outset
+</select>
+</TD>
+
+<TD align=right>borderWidth</TD><TD><INPUT name=IN_borderwidth onchange="retdivBorder();"></TD>
+<TD align=right>borderColor</TD><TD><INPUT name=CO_bordercolor onchange="retdivBorder();"></TD>
+
+</TR>
+
+
+<!-- 3sd row -->
+<TR>
+<TD>borderLeft</TD>
+
+<TD align=right>borderLeftStyle</TD>
+<TD>
+<select name=OP_borderleftstyle onchange="retdivBorder()">
+<option>none
+<option>solid
+<option>dotted
+<option>dashed
+<option>double
+<option>groove
+<option>ridge
+<option>inset
+<option>outset
+</select>
+</TD>
+
+<TD align=right>borderLeftWidth</TD><TD><INPUT name=IN_borderleftwidth onchange="retdivBorder()"></TD>
+<TD align=right>borderLeftColor</TD><TD><INPUT name=CO_borderleftcolor onchange="retdivBorder()"></TD>
+
+</TR>
+
+
+
+<!-- 4sd row -->
+<TR>
+<TD>borderTop</TD>
+
+<TD align=right>borderTopStyle</TD>
+<TD>
+<select name=OP_bordertopstyle onchange="retdivBorder()">
+<option>none
+<option>solid
+<option>dotted
+<option>dashed
+<option>double
+<option>groove
+<option>ridge
+<option>inset
+<option>outset
+</select>
+</TD>
+
+<TD align=right>borderTopWidth</TD><TD><INPUT name=IN_bordertopwidth onchange="retdivBorder()"></TD>
+<TD align=right>borderTopColor</TD><TD><INPUT name=CO_bordertopcolor onchange="retdivBorder()"></TD>
+
+</TR>
+
+
+
+
+<!-- 5sd row -->
+<TR>
+<TD>borderRight</TD>
+
+<TD align=right>borderRightStyle</TD>
+<TD>
+<select name=OP_borderrightstyle onchange="retdivBorder()">
+<option>none
+<option>solid
+<option>dotted
+<option>dashed
+<option>double
+<option>groove
+<option>ridge
+<option>inset
+<option>outset
+</select>
+</TD>
+
+<TD align=right>borderRightWidth</TD><TD><INPUT name=IN_borderrightwidth onchange="retdivBorder()"></TD>
+<TD align=right>borderRightColor</TD><TD><INPUT name=CO_borderrightcolor onchange="retdivBorder()"></TD>
+
+</TR>
+
+
+
+<!-- 6sd row -->
+<TR>
+<TD>borderBottom</TD>
+
+<TD align=right>borderBottomStyle</TD>
+<TD>
+<select name=OP_borderbottomstyle onchange="retdivBorder()">
+<option>none
+<option>solid
+<option>dotted
+<option>dashed
+<option>double
+<option>groove
+<option>ridge
+<option>inset
+<option>outset
+</select>
+</TD>
+
+<TD align=right>borderBottomWidth</TD><TD><INPUT name=IN_borderbottomwidth onchange="retdivBorder()"></TD>
+<TD align=right>borderBottomColor</TD><TD><INPUT name=CO_borderbottomcolor onchange="retdivBorder()"></TD>
+
+</TR>
+
+
+
+<!-- Last row -->
+<TR>
+<TD colspan=7 align=center>
+<INPUT onMouseDown=setObjectColor(0,'red','retdivBorder()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#FF0000; color:white">
+<INPUT onMouseDown=setObjectColor(1,'red','retdivBorder()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#FF0000; color:white">
+&nbsp;&nbsp;
+<INPUT onMouseDown=setObjectColor(0,'green','retdivBorder()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#00FF00; color:black">
+<INPUT onMouseDown=setObjectColor(1,'green','retdivBorder()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#00FF00; color:black">
+&nbsp;&nbsp;
+<INPUT onMouseDown=setObjectColor(0,'blue','retdivBorder()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#0000FF; color:white">
+<INPUT onMouseDown=setObjectColor(1,'blue','retdivBorder()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#0000FF; color:white">
+&nbsp;&nbsp;
+
+<INPUT onclick=retdivBorder() title=Button type=button value="Do" style="width:70px; height:22px; background:#aa4444; color:white">
+<INPUT onclick=self.close() title=Back type=button value="Close" style="width:70px; height:22px; background:#aa4444; color:white">
+&nbsp;&nbsp;
+
+<INPUT onmousedown=setValueSmaller('retdivBorder()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#aa4444; color:white">
+<INPUT onmousedown=setValueBigger('retdivBorder()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#aa4444; color:white">
+
+
+</TD></tr>
+
+</TBODY></TABLE>
+
+</FORM>
+</center>
+</body>
+</html>

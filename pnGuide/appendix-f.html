@@ -1,0 +1,187 @@
+<HTML
+><HEAD
+><TITLE
+>APPENDIX F: Getting development versions of PostNuke using the CVS server at developer.hostnuke.com</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="APPENDIX E: Enable GZIP compression in php.ini"
+HREF="appendix-e.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="appendix-e.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="appendix-f">Chapter 24. APPENDIX F: Getting development versions of PostNuke using the CVS server at developer.hostnuke.com</H1
+><P
+CLASS="literallayout"
+>This&nbsp;section&nbsp;will&nbsp;describe&nbsp;two&nbsp;methods&nbsp;to&nbsp;checkout&nbsp;code&nbsp;from&nbsp;the&nbsp;<br>
+CVS-respository&nbsp;on&nbsp;developer.hostnuke.com.&nbsp;The&nbsp;methods&nbsp;are:&nbsp;<br>
+	1.&nbsp;Checkout&nbsp;with&nbsp;TortoiseCVS<br>
+	2.&nbsp;Checkout&nbsp;with&nbsp;WinCVS<br>
+<br>
+1.&nbsp;Checkout&nbsp;with&nbsp;TortoiseCVS<br>
+<br>
+	TortoiseCVS&nbsp;works&nbsp;with&nbsp;Windows&nbsp;95,&nbsp;98,&nbsp;ME,&nbsp;NT,&nbsp;2000&nbsp;and&nbsp;XP,&nbsp;is&nbsp;very&nbsp;<br>
+similar&nbsp;to&nbsp;WinCVS.&nbsp;For&nbsp;an&nbsp;anonymous&nbsp;CVS-checkout,&nbsp;you&nbsp;do&nbsp;not&nbsp;need&nbsp;a&nbsp;developer&nbsp;<br>
+account.<br>
+<br>
+		a.&nbsp;Get&nbsp;TortoiseCVS&nbsp;(latest&nbsp;stable&nbsp;version&nbsp;is&nbsp;recommended).&nbsp;<br>
+Install&nbsp;TortiseCVS&nbsp;on&nbsp;your&nbsp;machine.&nbsp;Also&nbsp;install&nbsp;an&nbsp;ssh-ftp-client,&nbsp;for&nbsp;<br>
+example,&nbsp;from&nbsp;Ftp-Client.&nbsp;See&nbsp;the&nbsp;Tutorial&nbsp;for&nbsp;the&nbsp;PN-module-checkout.<br>
+<br>
+		b.&nbsp;Create&nbsp;a&nbsp;folder&nbsp;for&nbsp;checking&nbsp;out&nbsp;PostNuke&nbsp;and&nbsp;right-click&nbsp;on&nbsp;<br>
+it.&nbsp;In&nbsp;the&nbsp;content&nbsp;menu&nbsp;choose&nbsp;CVS&nbsp;-&#62;&nbsp;Preferences&nbsp;-&#62;&nbsp;Quirky&nbsp;and&nbsp;set&nbsp;Network&nbsp;<br>
+Compression&nbsp;to&nbsp;"0&nbsp;-&nbsp;None".&nbsp;Then,&nbsp;right&nbsp;click&nbsp;again&nbsp;on&nbsp;the&nbsp;folder&nbsp;created&nbsp;for&nbsp;<br>
+checking&nbsp;out&nbsp;PostNuke&nbsp;and&nbsp;select&nbsp;CVS&nbsp;Checkout&nbsp;and&nbsp;enter&nbsp;the&nbsp;following&nbsp;<br>
+information:<br>
+<br>
+			-&nbsp;Module&nbsp;tab<br>
+				Protocol&nbsp;-&nbsp;Internet&nbsp;(secure&nbsp;shell)<br>
+				Server&nbsp;-&nbsp;cvs.hostnuke.com<br>
+				Repository&nbsp;Directory&nbsp;-&nbsp;/home/cvsroot<br>
+				User&nbsp;name&nbsp;-&nbsp;anonymous<br>
+				Module&nbsp;-&nbsp;postnuke_official<br>
+<br>
+			-&nbsp;Revision&nbsp;tab<br>
+				Get&nbsp;tag/branch:&nbsp;-&nbsp;PostNuke_71<br>
+<br>
+		c.&nbsp;When&nbsp;checking&nbsp;out&nbsp;a&nbsp;DOS-window&nbsp;will&nbsp;open.&nbsp;Type&nbsp;'anonymous'&nbsp;<br>
+as&nbsp;password.&nbsp;(if&nbsp;checking&nbsp;out&nbsp;as&nbsp;registered&nbsp;developer,&nbsp;provide&nbsp;your&nbsp;<br>
+username/password).<br>
+<br>
+NOTE:&nbsp;It&nbsp;is&nbsp;strongly&nbsp;recommend&nbsp;that&nbsp;you&nbsp;use&nbsp;the&nbsp;latest&nbsp;stable&nbsp;version&nbsp;of&nbsp;<br>
+TortiseCVS&nbsp;to&nbsp;checkout&nbsp;from&nbsp;developer.hostnuke.com.&nbsp;With&nbsp;the&nbsp;newest&nbsp;(unstable)&nbsp;<br>
+development&nbsp;versions&nbsp;of&nbsp;TortoiseCVS,&nbsp;inconsistencies&nbsp;in&nbsp;performance&nbsp;can&nbsp;occur,&nbsp;<br>
+depending&nbsp;on&nbsp;your&nbsp;Windows&nbsp;environment.<br>
+<br>
+2.&nbsp;Checkout&nbsp;with&nbsp;WinCVS<br>
+<br>
+	Get&nbsp;WinCVS&nbsp;for&nbsp;your&nbsp;Windows&nbsp;or&nbsp;Macintosh.&nbsp;You&nbsp;also&nbsp;need&nbsp;a&nbsp;SSH-client&nbsp;<br>
+and&nbsp;the&nbsp;Python&nbsp;2.2xx-version.<br>
+<br>
+	The&nbsp;next&nbsp;step&nbsp;is&nbsp;to&nbsp;set&nbsp;up&nbsp;the&nbsp;WinCVS&nbsp;Admin-&#62;Preferences&nbsp;settings:<br>
+<br>
+	The&nbsp;WinCVS&nbsp;Admin-&#62;Preferences&nbsp;settings&nbsp;are:<br>
+		authentication:&nbsp;ssh<br>
+		path:&nbsp;/home/cvsroot<br>
+		host&nbsp;address:&nbsp;cvs.hostnuke.com<br>
+		username:&nbsp;anonymous<br>
+<br>
+	Select&nbsp;"Show&nbsp;CVS&nbsp;console&nbsp;(open&nbsp;TTY)"<br>
+<br>
+	See&nbsp;also&nbsp;the&nbsp;WinCVS&nbsp;--&nbsp;Daily&nbsp;Use&nbsp;Guide&nbsp;and&nbsp;the&nbsp;quick&nbsp;reference&nbsp;guides&nbsp;<br>
+on&nbsp;developer.hostnuke.com.&nbsp;For&nbsp;questions&nbsp;and&nbsp;further&nbsp;information&nbsp;see&nbsp;the&nbsp;latest&nbsp;<br>
+information&nbsp;on&nbsp;developer.hostnuke.com.<br>
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="appendix-e.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>APPENDIX E: Enable GZIP compression in php.ini</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

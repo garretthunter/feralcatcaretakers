@@ -1,0 +1,192 @@
+<HTML
+><HEAD
+><TITLE
+>Run On An Intranet</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Basic Website Configuration"
+HREF="config-basic.html"><LINK
+REL="PREVIOUS"
+TITLE="Security Options"
+HREF="config-security.html"><LINK
+REL="NEXT"
+TITLE="HTML Options"
+HREF="config-html.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="config-security.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 14. Basic Website Configuration</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="config-html.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="config-intranet">Run On An Intranet</H1
+><P
+></P
+><UL
+><LI
+><P
+>Intranet: Intranet should only be set to "<TT
+CLASS="userinput"
+><B
+>Yes</B
+></TT
+>" if you cannot access PostNuke with a fully-qualified host name (for example, http://www.yoursite.com). Setting Intranet to "<TT
+CLASS="userinput"
+><B
+>Yes</B
+></TT
+>" removes a number of security levels from PostNuke. It is NOT recommended to run in this mode unless you are behind a firewall and users are not permitted to access the site from outside the firewall. Entry example: "<TT
+CLASS="userinput"
+><B
+>No</B
+></TT
+>"
+</P
+></LI
+></UL
+><P
+>Another option for Intranet use without the need to set Intranet to "Yes" is as follows: Administrators can simulate a domain name by adding the IP address of the site and the desired domain name of the site to a HOSTS file (usually /etc/hosts for *NIX, under C:\WINDIR\system32\drivers\etc for Windows NT/2000/XP). 
+</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>IMPORTANT NOTE: Under Windows, be certain to modify the 'hosts' file and NOT 'lmhosts'. 'lmhosts' is for NetBIOS names.
+</I
+></SPAN
+>
+</P
+><P
+>For example, a HOSTS file entry might look like:</P
+><P
+><PRE
+CLASS="programlisting"
+>192.26.128.3 triton triton.tatooine.com</PRE
+></P
+><P
+>This means that typing http://triton or http://triton.tatooine.com would be pointed to 192.26.128.3. Hence, the site can be loaded on an Intranet without the need to downgrade security.
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="config-security.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="config-html.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Security Options</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="config-basic.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>HTML Options</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

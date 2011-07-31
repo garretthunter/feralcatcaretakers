@@ -1,0 +1,300 @@
+<HTML
+><HEAD
+><TITLE
+>Permissions FAQ</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Groups & Permissions"
+HREF="permissions.html"><LINK
+REL="PREVIOUS"
+TITLE="An example of User Permissions"
+HREF="perms-user-example.html"><LINK
+REL="NEXT"
+TITLE="Permissions for Newbies"
+HREF="perms-newbies.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="perms-user-example.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 17. Groups &#38; Permissions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="perms-newbies.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="perms-faq">Permissions FAQ</H1
+><P
+></P
+><UL
+><LI
+><P
+>Q1. What is the permissions system for?</P
+><P
+>A: The permissions system is designed to allow site administrators to protect their site content and restrict operations to their desired level of detail.
+</P
+><P
+>For more information on the permissions system, check out the online help within PostNuke. Log in as Administrator, go to Permissions, and click "View Group Permissions" or "View User Permissions". On the screen that is displayed, several of the text items are 'clickable'... Click them to open windows that provide additional explanation.
+</P
+></LI
+><LI
+><P
+>Q2. I don't like it! I prefer the way it worked before.
+</P
+><P
+>A: The permissions system is set up initially to work in a style very similar to the old PostNuke. To make a user an Administrator of a site, go to Administration -&#62; Groups and add that user to the 'Admins' Group.
+</P
+></LI
+><LI
+><P
+>Q3. Why are there so many warnings in the permissions manual about getting the permissions right?
+</P
+><P
+>A: It is critically important that you configure permissions properly. Failing to do so can open up the site to allow anyone to update, add, or even DELETE content on the site. However, provided that you read these instructions carefully and do not change the default permissions unless you are absolutely sure of what you are doing, this should not happen.
+</P
+></LI
+><LI
+><P
+>Q4. Why can't users access the Polls unless they log in? <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>or</I
+></SPAN
+> Why can't users comment on Stories unless they log in?
+</P
+><P
+>A: The permissions system is set up initially to only allow Unregistered users to have generic read-level access. To allow unregistered users to comment on items, look in the group permissions setup for a line that looks like this:
+</P
+><P
+><TT
+CLASS="userinput"
+><B
+>Unregistered  .*  .*  Read</B
+></TT
+></P
+><P
+>...and edit it so that it says:</P
+><P
+><TT
+CLASS="userinput"
+><B
+>Unregistered  .*  .*  Comment</B
+></TT
+></P
+><P
+>Be sure to save any changes.</P
+></LI
+><LI
+><P
+>Q5. Why do I need that '.*' on the end of my permissions?</P
+><P
+>A: You don't. Since PostNuke .710, '<TT
+CLASS="userinput"
+><B
+>Foo:</B
+></TT
+>' is the same as '<TT
+CLASS="userinput"
+><B
+>Foo:.*</B
+></TT
+>'.</P
+><P
+>The most obvious use of this is in the first entry for the group permissions, which is
+</P
+><P
+><TT
+CLASS="userinput"
+><B
+>Admins  .*  .*  Admin</B
+></TT
+></P
+><P
+>...which says 'Admins are allowed to administer anything'</P
+><P
+>For details on allowing different types of content, check out the online manual pages for the Permissions system.
+</P
+></LI
+><LI
+><P
+>Q6. How do I add a sub-admin to my site that has access to certain features, plus have the Administration menu accessible to them?
+</P
+><P
+>A: We're going to need two sets of permissions, one to actually edit a story, and one to allow the Administration link to show up in the 'main menu.'
+</P
+><P
+>The following permissions would allow this to happen (do not include the square brackets):
+</P
+><P
+CLASS="literallayout"
+><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Admins&nbsp;.*.*&nbsp;Admin&nbsp;Edit&nbsp;Delete<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SubAdmin&nbsp;[(Stories::)|(Modulename::)|(Modulename::)]&nbsp;.*&nbsp;Admin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SubAdmin&nbsp;Menublock::&nbsp;Main&nbsp;Menu:Administration:&nbsp;Read<br>
+&nbsp;&nbsp;&nbsp;&nbsp;All&nbsp;groups&nbsp;Menublock::&nbsp;Main&nbsp;Menu:Administration:&nbsp;None<br>
+</P
+><P
+>Replacing 'Modulename', above, with an actual module name would give your sub-admin access to those modules as well.
+</P
+><P
+>Remember NOT to include the square brackets!
+</P
+></LI
+><LI
+><P
+>Q7. How do I force users to enter login name and password at the homepage?
+</P
+><P
+>A: We must first allow Unregistered users to see the Login block (we have to allow them to login!), by adding:
+</P
+><P
+><TT
+CLASS="userinput"
+><B
+>Unregistered Loginblock:: .* Read</B
+></TT
+></P
+><P
+>We then change the default permission to not allow Unregistered users to read anything, thus
+</P
+><P
+><TT
+CLASS="userinput"
+><B
+>Unregistered .* .* Read</B
+></TT
+></P
+><P
+>...becomes...</P
+><P
+><TT
+CLASS="userinput"
+><B
+>Unregistered .* .* None</B
+></TT
+></P
+><P
+>Be certain to add the lines in the order as specified or else it will not function as expected.
+</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="perms-user-example.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="perms-newbies.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>An example of User Permissions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="permissions.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Permissions for Newbies</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<TITLE>ControlPanelExtras</TITLE>
+
+<STYLE TYPE="text/css">
+.,BODY,TD {font-family:Arial,Verdana; font-size:12;}
+TABLE  {cursor:hand}
+
+img.vdev {width:23; height:22}
+select.vdev {font-family:arial; font-size:12; height:22; background:#a0a080; color:#FFFFFF}
+input.vdev {font-family:arial; font-size:12; height:20; background:#a0a080; color:#FFFFFF}
+</STYLE>
+
+</HEAD>
+
+<body scroll=no leftmargin=0 topmargin=10 bgcolor=menu>
+<center>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0>
+
+<TR bgColor=#c0c0a0 valign=middle align=center>
+<TD>
+<img src='./imgedit/div.gif' alt='CreateDiv/DivStyle' class=vdev onclick='window.opener.insertDivLayer()'>
+<img src='./imgedit/divborder.gif' alt='DivBorder' class=vdev onclick='window.opener.editDivBorder()'>
+<img src='./imgedit/divfilter.gif' alt='DivFilter' class=vdev onclick='window.opener.editDivFilter()'>
+<img src='./imgedit/cool.gif' alt='Emotions' class=vdev onclick='window.opener.selectEmoticon()'>
+<img src='./imgedit/wow.gif' alt='Characters' class=vdev onclick='window.opener.characters()'>
+<img src='./imgedit/hr.gif' alt='HR' class=vdev onclick='window.opener.doFormatF("InsertHorizontalRule")'>
+<img src='./imgedit/pre.gif' alt='Pre-Block' class=vdev onclick='window.opener.doFormatF("formatBlock,PRE")'>
+<img src='./imgedit/unpre.gif' alt='Del Pre-Block' class=vdev onclick='window.opener.doFormatF("formatBlock,P")'>
+<img src='./imgedit/marquee.gif' alt='Marquee' class=vdev onclick='window.opener.doFormatF("InsertMarquee")'>
+<img src='./imgedit/delformat.gif' alt='Delete Format' class=vdev onclick='window.opener.doFormatF("RemoveFormat")'>
+<img src='./imgedit/undo.gif' alt='Undo' class=vdev onclick='alert("Please press Ctrl+Z")'>
+<img src='./imgedit/redo.gif' alt='Redo' class=vdev onclick='alert("Please press Ctrl+Y")'>
+<img src='./imgedit/search.gif' alt='Search/Replace' class=vdev onclick='window.opener.findText()'>
+</TD></TR>
+
+<script>
+if(window.opener.USETABLE==1)
+{
+var str= "\
+<TR bgColor=#c0c0a0 valign=middle align=center>\
+<TD nowrap>\
+<img src='./imgedit/instable.gif' alt='InsertTable' class=vdev onclick='window.opener.insertTable()'>\
+<img src='./imgedit/tabprop.gif' alt='TableProperties' class=vdev onclick='window.opener.tableProp()'>\
+<img src='./imgedit/cellprop.gif' alt='CellProperties' class=vdev onclick='window.opener.cellProp()'>\
+<img src='./imgedit/inscell.gif' alt='InsertCell' class=vdev onclick='window.opener.insertCell()'>\
+<img src='./imgedit/delcell.gif' alt='DeleteCell' class=vdev onclick='window.opener.deleteCell()'>\
+<img src='./imgedit/insrow.gif' alt='InsertRow' class=vdev onclick='window.opener.insertRow()'>\
+<img src='./imgedit/delrow.gif' alt='DeleteRow' class=vdev onclick='window.opener.deleteRow()'>\
+<img src='./imgedit/inscol.gif' alt='InsertCol' class=vdev onclick='window.opener.insertCol()'>\
+<img src='./imgedit/delcol.gif' alt='DeleteCol' class=vdev onclick='window.opener.deleteCol()'>\
+<img src='./imgedit/mrgcell.gif' alt='IncreaseColSpan' class=vdev onclick='window.opener.morecolSpan()'>\
+<img src='./imgedit/spltcell.gif' alt='DecreaseColSpan' class=vdev onclick='window.opener.lesscolSpan()'>\
+<img src='./imgedit/mrgrow.gif' alt='IncreaseRowSpan' class=vdev onclick='window.opener.morerowSpan()'>\
+<img src='./imgedit/spltrow.gif' alt='DecreaseRowSpan' class=vdev onclick='window.opener.lessrowSpan()'>\
+</TD></TR>\
+";
+document.writeln(str);
+}
+</script>
+
+
+<TR bgColor=#c0c0a0 valign=middle align=center>
+<TD>
+<INPUT name='QBCNTRL1' value='SwapCode' class=vdev onclick='window.opener.swapView()' type=button style='width:70'>
+<INPUT name='QBCNTRL3' value='Options' class=vdev onclick='window.opener.doEditorOptions()' type=button style='width:65'>
+<INPUT name='QBCNTRL4' value='Help' class=vdev onclick='window.opener.displayHelp()' type=button style='width:65'>
+</TD></TR>
+
+</TABLE>
+</center>
+</BODY>
+</HTML>

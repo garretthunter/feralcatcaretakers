@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<TITLE>Create Table (Rows X Columns)</TITLE>
+
+<STYLE TYPE="text/css">
+ BODY   {margin-left:10; font-family:Verdana; font-size:12; background:menu}
+ BUTTON {width:5em}
+ P      {text-align:center}
+ TABLE  {cursor:hand}
+</STYLE>
+
+<SCRIPT>
+function changeBgcolor(cell,bgcolor)
+{
+  var row= cell.parentElement
+  var tab= row.parentElement
+  var ridx= row.rowIndex
+  var cidx= cell.cellIndex
+
+  for(var i=0; i<=ridx; i++)
+  {
+   row= tab.rows[i]
+   for(var j=0; j<=cidx; j++)
+   	 row.cells[j].style.backgroundColor= bgcolor
+  }
+}
+</SCRIPT>
+
+
+<SCRIPT LANGUAGE=JavaScript FOR=RowColTable EVENT=onclick>
+  SelColor.value = event.srcElement.title;
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=RowColTable EVENT=onmouseover>
+  text = event.srcElement.title;
+  RGB.innerText = text;
+  changeBgcolor(event.srcElement,'cyan')
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=RowColTable EVENT=onmouseout>
+  RGB.innerText = " ";
+  changeBgcolor(event.srcElement,'')
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=Ok EVENT=onclick>
+  window.returnValue = SelColor.value;
+  window.close();
+</SCRIPT>
+
+</HEAD>
+
+<body scroll=no>
+
+<DIV> &nbsp; </DIV>
+<P>
+<TABLE ID=RowColTable
+ bgcolor=white
+ BORDER=1
+ BORDERCOLOR=SILVER
+ BORDERCOLORLIGHT=WHITE
+ BORDERCOLORDARK=BLACK
+ CELLSPACING=0 CELLPADDING=0>
+
+<script>
+
+  var temp=''
+  for(var i=1; i<=10; i++)
+   {
+	temp += "<TR align=center>"
+    for(var j=1; j<=10; j++) temp += "<TD TITLE='" + i +'x' + j + "' style='font-size:10px'>"+i+"x"+j+"</TD>"
+	temp += "</TR>"
+   }
+
+document.writeln(temp)
+
+</script>
+
+
+
+</TABLE>
+
+<P>
+<LABEL FOR=SelColor>Rows x Cols:</LABEL>
+<INPUT TYPE=TEXT SIZE=20 ID=SelColor>
+<BR>
+<SPAN ID=RGB>&nbsp;</SPAN>
+
+<P>
+<BUTTON ID=Ok TYPE=SUBMIT>OK</BUTTON>
+<BUTTON ONCLICK="window.close();">Cancel</BUTTON>
+
+</BODY>
+</HTML>

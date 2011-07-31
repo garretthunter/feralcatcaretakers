@@ -1,0 +1,340 @@
+<HTML
+><HEAD
+><TITLE
+>New Installation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Assumptions & Conventions"
+HREF="assumptions.html"><LINK
+REL="NEXT"
+TITLE="Upgrade Installation"
+HREF="upgradeinstall.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="assumptions.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="upgradeinstall.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="newinstall">Chapter 10. New Installation</H1
+><P
+>If you are new to the world of PostNuke or CMSs, WELCOME! You are about to embark upon a very exciting journey. Grab a big cup of coffee, sit back, and let's get this installed and configured!</P
+><P
+>Ensure that your system has the required software (and, optionally, the recommended software) installed and working before attempting installation of PostNuke.</P
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="firsttimeinstall-pn">Step-by-step: First-time installation of PostNuke</H1
+><P
+></P
+><UL
+><LI
+><P
+>Print this document and keep it handy during the installation.</P
+></LI
+><LI
+><P
+>Create the database that PostNuke will use. See Appendix 1 for assistance with this step.</P
+></LI
+><LI
+><P
+>Create the database username and password that PostNuke will use. See Appendix 2 for assistance with this step.</P
+></LI
+><LI
+><P
+>Obtain the latest PostNuke release from <A
+HREF="http://www.postnuke.com"
+TARGET="_top"
+>http://www.postnuke.com</A
+> in either ZIP or TAR.GZ format. Download the release to a temporary directory. Under *NIX, TAR.GZ is the preferred format since the files will possess the correct user privileges.</P
+></LI
+><LI
+><P
+>Using your compression program, VIEW the distribution file to make sure it will expand the files into the correct subdirectory path.</P
+></LI
+><LI
+><P
+>Extract the PostNuke archive into a temporary directory. Move the /html and 
+/sql directories into your DocumentRoot (as specified by Apache) (for example, 
+/var/www/html), preserving paths (for example, "<TT
+CLASS="userinput"
+><B
+>tar -xzvf 
+$lt;PostNuke-archive.tar.gz$gt;</B
+></TT
+>", "<TT
+CLASS="userinput"
+><B
+>mv -R html /var/www/</B
+></TT
+>", "<TT
+CLASS="userinput"
+><B
+>mv -R sql /var/www/</B
+></TT
+>").</P
+></LI
+></UL
+><P
+>-or-</P
+><P
+></P
+><UL
+><LI
+><P
+>Upload the extracted PostNuke files into your web directory, preserving paths.</P
+></LI
+></UL
+><P
+CLASS="literallayout"
+>*&nbsp;If&nbsp;you&nbsp;plan&nbsp;to&nbsp;offer&nbsp;multiple&nbsp;languages,&nbsp;download&nbsp;and&nbsp;install&nbsp;the&nbsp;appropriate&nbsp;<br>
+language&nbsp;packs.&nbsp;English&nbsp;is&nbsp;included&nbsp;in&nbsp;the&nbsp;distribution&nbsp;by&nbsp;default.&nbsp;Language&nbsp;<br>
+packs&nbsp;and&nbsp;installation&nbsp;instructions&nbsp;can&nbsp;be&nbsp;found&nbsp;on&nbsp;SourceForge's&nbsp;PostNuke&nbsp;<br>
+page:&nbsp;http://sourceforge.net/projects/post-nuke&nbsp;under&nbsp;"Files".<br>
+<br>
+*&nbsp;If&nbsp;you&nbsp;have&nbsp;a&nbsp;logo&nbsp;graphic&nbsp;for&nbsp;your&nbsp;site,&nbsp;upload&nbsp;it&nbsp;to&nbsp;the&nbsp;images&nbsp;directory&nbsp;<br>
+(for&nbsp;example,&nbsp;/var/www/html/images).&nbsp;You&nbsp;may&nbsp;name&nbsp;the&nbsp;file&nbsp;anything&nbsp;you&nbsp;want.&nbsp;<br>
+If&nbsp;you&nbsp;do&nbsp;not&nbsp;yet&nbsp;have&nbsp;a&nbsp;logo,&nbsp;you&nbsp;may&nbsp;skip&nbsp;this&nbsp;step&nbsp;and&nbsp;the&nbsp;default&nbsp;PostNuke&nbsp;<br>
+logo&nbsp;will&nbsp;be&nbsp;displayed.&nbsp;Generally,&nbsp;the&nbsp;dimensions&nbsp;of&nbsp;this&nbsp;file&nbsp;should&nbsp;be&nbsp;220&nbsp;<br>
+pixels&nbsp;wide&nbsp;by&nbsp;80&nbsp;pixels&nbsp;tall&nbsp;to&nbsp;fit&nbsp;into&nbsp;most&nbsp;pre-made&nbsp;themes.&nbsp;However,&nbsp;if&nbsp;you&nbsp;<br>
+are&nbsp;satisfied&nbsp;with&nbsp;how&nbsp;a&nbsp;larger&nbsp;graphic&nbsp;looks,&nbsp;you&nbsp;may&nbsp;use&nbsp;a&nbsp;logo&nbsp;graphic&nbsp;that&nbsp;<br>
+ignores&nbsp;these&nbsp;size&nbsp;recommendations.&nbsp;This&nbsp;graphic&nbsp;file&nbsp;is&nbsp;displayed&nbsp;at&nbsp;the&nbsp;top&nbsp;<br>
+of&nbsp;the&nbsp;page&nbsp;within&nbsp;some&nbsp;themes,&nbsp;and&nbsp;at&nbsp;the&nbsp;top&nbsp;of&nbsp;every&nbsp;page&nbsp;that&nbsp;is&nbsp;printed&nbsp;<br>
+from&nbsp;your&nbsp;site.&nbsp;<br>
+<br>
+The&nbsp;graphic&nbsp;file&nbsp;must&nbsp;be&nbsp;located&nbsp;in&nbsp;the&nbsp;/images/&nbsp;directory&nbsp;of&nbsp;your&nbsp;web&nbsp;site&nbsp;or&nbsp;<br>
+within&nbsp;the&nbsp;theme's&nbsp;/images/&nbsp;directory.&nbsp;The&nbsp;graphic&nbsp;file&nbsp;can&nbsp;be&nbsp;in&nbsp;PNG,&nbsp;GIF,&nbsp;or&nbsp;<br>
+JPG&nbsp;format.&nbsp;The&nbsp;canonical&nbsp;location&nbsp;will&nbsp;be&nbsp;determined&nbsp;in&nbsp;a&nbsp;future&nbsp;release.<br>
+<br>
+*&nbsp;Set&nbsp;the&nbsp;following&nbsp;permissions&nbsp;on&nbsp;these&nbsp;files&nbsp;located&nbsp;in&nbsp;your&nbsp;web&nbsp;directory:<br>
+	-&nbsp;"chmod&nbsp;666&nbsp;config.php"&nbsp;(Windows:&nbsp;Remove&nbsp;the&nbsp;read-only&nbsp;file&nbsp;attribute&nbsp;<br>
+with&nbsp;"attrib&nbsp;-r&nbsp;config.php".&nbsp;If&nbsp;using&nbsp;NTFS,&nbsp;be&nbsp;certain&nbsp;that&nbsp;the&nbsp;proper&nbsp;NTFS&nbsp;<br>
+permissions&nbsp;are&nbsp;set.)<br>
+	<br>
+	-&nbsp;"chmod&nbsp;666&nbsp;config-old.php"&nbsp;(Windows:&nbsp;Remove&nbsp;the&nbsp;read-only&nbsp;file&nbsp;<br>
+attribute&nbsp;with&nbsp;"attrib&nbsp;-r&nbsp;config-old.php".&nbsp;If&nbsp;using&nbsp;NTFS,&nbsp;be&nbsp;certain&nbsp;that&nbsp;the&nbsp;<br>
+proper&nbsp;NTFS&nbsp;permissions&nbsp;are&nbsp;set.)<br>
+<br>
+*&nbsp;Point&nbsp;your&nbsp;browser&nbsp;to&nbsp;the&nbsp;installation&nbsp;file&nbsp;(for&nbsp;example,&nbsp;<br>
+http://www.yoursite.com/install.php).<br>
+<br>
+*&nbsp;Follow&nbsp;the&nbsp;prompts&nbsp;to&nbsp;create&nbsp;databases,&nbsp;tables,&nbsp;and&nbsp;configuration&nbsp;options.<br>
+	-&nbsp;Select&nbsp;your&nbsp;language&nbsp;from&nbsp;the&nbsp;drop-down&nbsp;list.&nbsp;Click&nbsp;"Set&nbsp;Language"&nbsp;to&nbsp;<br>
+continue.<br>
+<br>
+	-&nbsp;Read&nbsp;the&nbsp;license.&nbsp;Click&nbsp;"Next"&nbsp;to&nbsp;agree&nbsp;with&nbsp;the&nbsp;license&nbsp;terms&nbsp;and&nbsp;<br>
+continue&nbsp;installation.&nbsp;If&nbsp;you&nbsp;do&nbsp;not&nbsp;agree&nbsp;with&nbsp;the&nbsp;license&nbsp;terms,&nbsp;abort&nbsp;the&nbsp;<br>
+installation.<br>
+<br>
+	-&nbsp;CHMOD&nbsp;Check:&nbsp;PostNuke&nbsp;checks&nbsp;to&nbsp;make&nbsp;sure&nbsp;that&nbsp;critical&nbsp;files&nbsp;are&nbsp;<br>
+appropriately&nbsp;writable&nbsp;in&nbsp;the&nbsp;web&nbsp;directory.&nbsp;If&nbsp;no&nbsp;errors&nbsp;are&nbsp;reported,&nbsp;click&nbsp;<br>
+"Continue".&nbsp;If&nbsp;there&nbsp;are&nbsp;errors&nbsp;reported,&nbsp;correct&nbsp;them&nbsp;and&nbsp;click&nbsp;"Re-check"&nbsp;to&nbsp;<br>
+perform&nbsp;the&nbsp;CHMOD&nbsp;check&nbsp;again.<br>
+<br>
+	-&nbsp;Database&nbsp;configuration<br>
+		-&nbsp;Database&nbsp;Host:&nbsp;Enter&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;host&nbsp;system&nbsp;where&nbsp;the&nbsp;<br>
+database&nbsp;files&nbsp;will&nbsp;be&nbsp;stored.&nbsp;This&nbsp;is&nbsp;the&nbsp;&#60;dbhost&#62;&nbsp;that&nbsp;was&nbsp;defined&nbsp;in&nbsp;<br>
+Appendix&nbsp;A.&nbsp;If&nbsp;your&nbsp;database&nbsp;is&nbsp;on&nbsp;your&nbsp;local&nbsp;machine,&nbsp;this&nbsp;entry&nbsp;will&nbsp;usually&nbsp;<br>
+be&nbsp;"localhost".<br>
+<br>
+		-&nbsp;Database&nbsp;Username:&nbsp;Enter&nbsp;the&nbsp;database&nbsp;username&nbsp;that&nbsp;will&nbsp;be&nbsp;<br>
+used&nbsp;to&nbsp;add,&nbsp;edit,&nbsp;and&nbsp;delete&nbsp;records&nbsp;from&nbsp;the&nbsp;database.&nbsp;This&nbsp;is&nbsp;the&nbsp;&#60;dbuser&#62;&nbsp;<br>
+that&nbsp;was&nbsp;defined&nbsp;in&nbsp;Appendix&nbsp;B.<br>
+<br>
+		-&nbsp;Database&nbsp;Password:&nbsp;Enter&nbsp;the&nbsp;database&nbsp;password&nbsp;for&nbsp;the&nbsp;user&nbsp;<br>
+defined&nbsp;above.&nbsp;This&nbsp;is&nbsp;the&nbsp;&#60;dbpass&#62;&nbsp;that&nbsp;was&nbsp;defined&nbsp;in&nbsp;Appendix&nbsp;B.<br>
+<br>
+		-&nbsp;Database&nbsp;Name:&nbsp;Enter&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;database&nbsp;to&nbsp;be&nbsp;created.&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;&#60;dbname&#62;&nbsp;that&nbsp;was&nbsp;defined&nbsp;in&nbsp;Appendix&nbsp;A.&nbsp;Entry&nbsp;example:&nbsp;"postnuke".<br>
+<br>
+		-&nbsp;Table&nbsp;Prefix&nbsp;(for&nbsp;Table&nbsp;Sharing):&nbsp;If&nbsp;you&nbsp;wish&nbsp;to&nbsp;prefix&nbsp;the&nbsp;<br>
+table&nbsp;names,&nbsp;enter&nbsp;the&nbsp;prefix&nbsp;here.&nbsp;For&nbsp;most&nbsp;users&nbsp;that&nbsp;are&nbsp;not&nbsp;sharing&nbsp;tables,&nbsp;<br>
+the&nbsp;recommended&nbsp;entry&nbsp;is&nbsp;"nuke".<br>
+<br>
+		-&nbsp;Database&nbsp;Type:&nbsp;Select&nbsp;the&nbsp;database&nbsp;type&nbsp;from&nbsp;this&nbsp;drop-down&nbsp;<br>
+list.&nbsp;Entry&nbsp;example:&nbsp;"MySQL"<br>
+<br>
+		-&nbsp;Site&nbsp;is&nbsp;for&nbsp;intranet&nbsp;or&nbsp;other&nbsp;local&nbsp;(non-internet)&nbsp;use:&nbsp;Check&nbsp;<br>
+this&nbsp;box&nbsp;if&nbsp;this&nbsp;site&nbsp;is&nbsp;intended&nbsp;for&nbsp;intranet&nbsp;or&nbsp;other&nbsp;local&nbsp;(non-internet)&nbsp;<br>
+use.<br>
+<br>
+Click&nbsp;"Continue"&nbsp;to&nbsp;move&nbsp;to&nbsp;the&nbsp;next&nbsp;step.<br>
+<br>
+You&nbsp;are&nbsp;presented&nbsp;a&nbsp;review&nbsp;of&nbsp;the&nbsp;database&nbsp;configuration&nbsp;selections&nbsp;that&nbsp;you&nbsp;<br>
+just&nbsp;made.&nbsp;If&nbsp;they&nbsp;are&nbsp;incorrect,&nbsp;click&nbsp;"Change&nbsp;Info"&nbsp;to&nbsp;modify&nbsp;the&nbsp;selections.&nbsp;<br>
+If&nbsp;the&nbsp;settings&nbsp;are&nbsp;correct,&nbsp;click&nbsp;"New&nbsp;Installation"&nbsp;to&nbsp;begin&nbsp;the&nbsp;installation.<br>
+<br>
+-&nbsp;If&nbsp;you&nbsp;were&nbsp;able&nbsp;to&nbsp;create&nbsp;the&nbsp;database&nbsp;as&nbsp;directed&nbsp;in&nbsp;Appendix&nbsp;A,&nbsp;leave&nbsp;<br>
+"Create&nbsp;the&nbsp;database"&nbsp;box&nbsp;UNCHECKED&nbsp;and&nbsp;click&nbsp;"Start".<br>
+<br>
+-&nbsp;If&nbsp;you&nbsp;did&nbsp;not&nbsp;create&nbsp;the&nbsp;database&nbsp;as&nbsp;directed&nbsp;in&nbsp;Appendix&nbsp;A,&nbsp;and&nbsp;have&nbsp;root&nbsp;<br>
+access&nbsp;to&nbsp;the&nbsp;database,&nbsp;check&nbsp;the&nbsp;"Create&nbsp;the&nbsp;database"&nbsp;box&nbsp;and&nbsp;click&nbsp;"Start".<br>
+<br>
+-&nbsp;If&nbsp;you&nbsp;do&nbsp;not&nbsp;have&nbsp;root&nbsp;access,&nbsp;you&nbsp;must&nbsp;create&nbsp;the&nbsp;database&nbsp;manually&nbsp;and&nbsp;the&nbsp;<br>
+installation&nbsp;script&nbsp;will&nbsp;automatically&nbsp;add&nbsp;the&nbsp;tables.&nbsp;See&nbsp;Appendix&nbsp;A&nbsp;for&nbsp;<br>
+assistance&nbsp;with&nbsp;creating&nbsp;the&nbsp;database.<br>
+<br>
+-&nbsp;If&nbsp;you&nbsp;are&nbsp;not&nbsp;sure&nbsp;if&nbsp;you&nbsp;have&nbsp;root&nbsp;access&nbsp;or&nbsp;not,&nbsp;check&nbsp;the&nbsp;"Create&nbsp;the&nbsp;<br>
+database"&nbsp;box&nbsp;and&nbsp;click&nbsp;on&nbsp;"Start"&nbsp;to&nbsp;try&nbsp;it.<br>
+<br>
+If&nbsp;you&nbsp;receive&nbsp;an&nbsp;error&nbsp;such&nbsp;as&nbsp;"Unable&nbsp;to&nbsp;make&nbsp;database",&nbsp;then&nbsp;you&nbsp;do&nbsp;not&nbsp;have&nbsp;<br>
+root&nbsp;access&nbsp;to&nbsp;the&nbsp;database&nbsp;and&nbsp;will&nbsp;need&nbsp;to&nbsp;create&nbsp;the&nbsp;database&nbsp;in&nbsp;another&nbsp;way&nbsp;<br>
+before&nbsp;the&nbsp;installation&nbsp;can&nbsp;continue.&nbsp;See&nbsp;Appendix&nbsp;A&nbsp;for&nbsp;assistance&nbsp;with&nbsp;<br>
+creating&nbsp;the&nbsp;database.<br>
+<br>
+Once&nbsp;the&nbsp;database&nbsp;has&nbsp;been&nbsp;created,&nbsp;installation&nbsp;can&nbsp;continue&nbsp;and&nbsp;the&nbsp;tables&nbsp;<br>
+will&nbsp;be&nbsp;created.&nbsp;Click&nbsp;"Continue"&nbsp;to&nbsp;move&nbsp;to&nbsp;the&nbsp;next&nbsp;step.<br>
+<br>
+You&nbsp;can&nbsp;now&nbsp;set&nbsp;up&nbsp;an&nbsp;Administrator&nbsp;account.&nbsp;If&nbsp;you&nbsp;skip&nbsp;this&nbsp;step,&nbsp;the&nbsp;login&nbsp;<br>
+for&nbsp;the&nbsp;Administrator&nbsp;account&nbsp;will&nbsp;be&nbsp;username:&nbsp;"Admin"&nbsp;and&nbsp;password:&nbsp;<br>
+"Password"&nbsp;(case&nbsp;sensitive).&nbsp;However,&nbsp;it&nbsp;is&nbsp;very&nbsp;strongly&nbsp;advised&nbsp;that&nbsp;you&nbsp;set&nbsp;<br>
+up&nbsp;an&nbsp;Administrator&nbsp;account&nbsp;now.<br>
+<br>
+	-&nbsp;Admin&nbsp;Login:&nbsp;Enter&nbsp;the&nbsp;login&nbsp;name&nbsp;of&nbsp;the&nbsp;Administrator&nbsp;here.&nbsp;The&nbsp;name&nbsp;<br>
+that&nbsp;is&nbsp;entered&nbsp;is&nbsp;displayed&nbsp;as&nbsp;a&nbsp;user&nbsp;on&nbsp;the&nbsp;site.&nbsp;Pick&nbsp;an&nbsp;appropriate&nbsp;name.&nbsp;<br>
+Entry&nbsp;examples:&nbsp;"siteadmin"&nbsp;or&nbsp;"joesmith".<br>
+<br>
+	-&nbsp;Admin&nbsp;Name:&nbsp;Enter&nbsp;the&nbsp;full&nbsp;name&nbsp;of&nbsp;the&nbsp;Administrator&nbsp;here.&nbsp;Entry&nbsp;<br>
+example:&nbsp;"Joe&nbsp;Smith".<br>
+<br>
+	-&nbsp;Admin&nbsp;Password:&nbsp;Enter&nbsp;the&nbsp;password&nbsp;for&nbsp;the&nbsp;Administrator&nbsp;here.<br>
+<br>
+	-&nbsp;Admin&nbsp;Password&nbsp;(verify):&nbsp;Enter&nbsp;the&nbsp;password&nbsp;for&nbsp;the&nbsp;Administrator&nbsp;<br>
+again&nbsp;here&nbsp;to&nbsp;verify&nbsp;that&nbsp;the&nbsp;correct&nbsp;password&nbsp;is&nbsp;saved.<br>
+<br>
+	-&nbsp;Admin&nbsp;Email:&nbsp;Enter&nbsp;the&nbsp;full&nbsp;email&nbsp;address&nbsp;for&nbsp;the&nbsp;Administrator&nbsp;here.&nbsp;<br>
+Entry&nbsp;example:&nbsp;"admin@yoursite.com".<br>
+<br>
+	-&nbsp;Admin&nbsp;URL:&nbsp;Enter&nbsp;the&nbsp;URL&nbsp;for&nbsp;the&nbsp;Administrator&nbsp;here,&nbsp;including&nbsp;<br>
+"http://".&nbsp;Usually,&nbsp;the&nbsp;URL&nbsp;will&nbsp;be&nbsp;the&nbsp;site&nbsp;that&nbsp;the&nbsp;Administrator&nbsp;is&nbsp;<br>
+administrating.&nbsp;Entry&nbsp;example:&nbsp;"http://www.yoursite.com".<br>
+<br>
+IMPORTANT&nbsp;NOTE:&nbsp;Write&nbsp;down&nbsp;the&nbsp;Administrator&nbsp;name&nbsp;&#38;&nbsp;password.&nbsp;You&nbsp;will&nbsp;need&nbsp;<br>
+them&nbsp;later.<br>
+<br>
+Click&nbsp;"Set&nbsp;Login"&nbsp;to&nbsp;save&nbsp;this&nbsp;information.&nbsp;You&nbsp;will&nbsp;be&nbsp;notified&nbsp;that&nbsp;the&nbsp;<br>
+update&nbsp;was&nbsp;successful.&nbsp;Click&nbsp;"Finish"&nbsp;to&nbsp;continue.<br>
+<br>
+Click&nbsp;"Go&nbsp;to&nbsp;your&nbsp;PostNuke&nbsp;site"&nbsp;to&nbsp;enter&nbsp;your&nbsp;PostNuke&nbsp;site&nbsp;for&nbsp;the&nbsp;first&nbsp;<br>
+time.&nbsp;Skip&nbsp;down&nbsp;to&nbsp;"TESTING&nbsp;THE&nbsp;INSTALLATION/UPGRADE",&nbsp;below.</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="assumptions.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="upgradeinstall.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Assumptions &#38; Conventions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Upgrade Installation</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,343 @@
+BODY  {
+BACKGROUND: #FFFFFF; 
+COLOR: #333333; 
+FONT-FAMILY: Verdana, Helvetica, sans-serif; 
+
+}
+TD {
+FONT-FAMILY: Verdana, Helvetica, sans-serif;
+FONT-SIZE: 8pt;
+}
+
+A {
+COLOR: #4C5EA8;
+text-decoration: underline;
+background: none;
+}
+
+A:active {
+COLOR: #CC6600;
+text-decoration: underline;
+background: none;
+}
+
+A:visited {
+COLOR: #4C5EA8;
+text-decoration: underline;
+background: none;
+}
+
+A:hover {
+COLOR: #CC6600;
+text-decoration: underline;
+background: none;
+}
+
+A.pn-normal {
+FONT-FAMILY: Verdana, Helvetica, sans-serif;
+FONT-SIZE: 8pt; 
+BACKGROUND: none; 
+COLOR: #191919;
+TEXT-DECORATION: underline;
+}
+
+A.pn-normal:active {
+BACKGROUND: none; 
+COLOR: #F3F3F3;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+TEXT-DECORATION: underline;
+}
+
+A.pn-normal:visited	{
+BACKGROUND: none; 
+FONT: 8pt Verdana,Helvetica,sans-serif;
+COLOR: #4C5EA8;
+TEXT-DECORATION: underline;
+}
+
+A.pn-normal:hover {
+BACKGROUND: none; 
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+COLOR: #CC6600;
+TEXT-DECORATION: underline;
+}
+
+A.pn-title {
+FONT: 10pt Verdana,Helvetica,sans-serif; 
+COLOR: #CC6600;
+text-decoration: underline;
+background: none;
+}
+A.pn-title:active {
+FONT: 9pt Verdana,Helvetica,sans-serif; 
+COLOR: #CC6600;
+text-decoration: underline;
+background: none;
+}
+A.pn-title:visited {
+FONT: 9pt Verdana,Helvetica,sans-serif; 
+color: #CC6600;
+text-decoration: underline;
+background: none;
+}
+A.pn-title:hover {
+COLOR: #4C5EA8;
+FONT: 9pt Verdana,Helvetica,sans-serif; 
+text-decoration: underline;
+background: none;
+}
+
+A.pn-hometext {
+BACKGROUND: none; 
+COLOR: #000000;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.pn-hometext:active {
+BACKGROUND: none; 
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+COLOR: #000000;
+TEXT-DECORATION: underline
+}
+
+A.pn-hometext:visited	{
+BACKGROUND: none; 
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+COLOR: #4C5EA8;
+TEXT-DECORATION: underline
+}
+
+A.pn-hometext:hover {
+BACKGROUND: none; 
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+COLOR: #CC6600;
+TEXT-DECORATION: underline
+}
+
+TD.pn-hometext {
+BACKGROUND: none; 
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+COLOR: #000000;
+TEXT-DECORATION: 
+none: line-height: 1
+}
+
+.pn-art {
+BACKGROUND: none; 
+COLOR: #191919;
+FONT: 8pt Verdana, Helvetica, sans-serif;
+TEXT-DECORATION: none; 
+line-height: 1.5
+}
+
+A.pn-sub {
+color: #000000;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+text-decoration: underline;
+background: none;
+}
+
+A.pn-sub:active {
+color: #FF9900;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+text-decoration: underline;
+background: none;
+}
+
+A.pn-sub:visited {
+COLOR: #4C5EA8;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+text-decoration: underline;
+background: none;
+}
+
+A.pn-sub:hover {
+COLOR: #CC6600;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+text-decoration: underline;
+background: none;
+}
+
+A.pn-logo {
+COLOR: #FFFFFF;
+font-weight: bold;
+FONT-FAMILY: Verdana, Helvetica, sans-serif; 
+letter-spacing: 3px;
+text-decoration: none;
+background: none;
+}
+
+A.pn-logo:active {
+COLOR: #FFFFFF;
+font-weight: bold;
+letter-spacing: 3px;
+FONT-FAMILY: Verdana, Helvetica, sans-serif; 
+text-decoration: none;
+background: none;
+}
+
+A.pn-logo:visited {
+COLOR: #FFFFFF;
+font-weight: bold;
+letter-spacing: 3px;
+text-decoration: none;
+background: none;
+}
+
+A.pn-logo:hover {
+COLOR: #CC6600; 
+font-weight: bold;
+letter-spacing: 3px;
+text-decoration: none;
+background: none;
+}
+
+A.pn-storytitle {
+BACKGROUND: none; 
+COLOR: #990000;
+LETTER-SPACING: 3px;
+TEXT-DECORATION: none
+}
+
+A.pn-storytitle:active {
+BACKGROUND: none; 
+COLOR: #FF0000;
+LETTER-SPACING: 3px;
+TEXT-DECORATION: none
+}
+
+A.pn-storytitle:visited {
+BACKGROUND: none; 
+COLOR: #660000;
+LETTER-SPACING: 3px;
+TEXT-DECORATION: none
+}
+
+A.pn-storytitle:hover {
+BACKGROUND: none; 
+COLOR: #FF0000;
+LETTER-SPACING: 3px;
+TEXT-DECORATION: none
+}
+
+.pn-logo {
+color: #000000;
+font-weight: bold;
+FONT: medium Verdana, Helvetica, sans-serif;
+letter-spacing: 3px;
+text-decoration: none;
+background: none;
+}
+
+.pn-logo-small {
+color: #000000;
+font-weight: bold;
+FONT: 8pt Verdana, Helvetica, sans-serif;
+text-decoration: none;
+background: none;
+}
+
+.pn-pagetitle {
+COLOR: #4C5EA8;
+FONT: medium Verdana, Helvetica, sans-serif;
+text-decoration: none;
+background: none;
+}
+
+.pn-title {
+color: #CC6600;
+FONT: medium Verdana, Helvetica, sans-serif;
+text-decoration: none;
+background: #FFFFFF;
+}
+
+.pn-storytitle {
+FONT-SIZE: 10pt; 
+BACKGROUND: none; 
+COLOR: #990000;
+FONT: bold 9pt Verdana, Helvetica, sans-serif; 
+LETTER-SPACING: 3px;
+TEXT-DECORATION: none
+}
+
+.pn-normal {
+color: #191919;
+FONT: 8pt Verdana, Helvetica, sans-serif;
+text-decoration: none;
+background: none;
+}
+
+.pn-sub {
+COLOR: #191919;
+FONT-SIZE: 7pt; 
+FONT: Verdana, Helvetica, sans-serif;
+text-decoration: none;
+background: none;
+}
+
+INPUT {
+background : #EBF2FD;
+color: #000000;
+font-size: 10px;
+}
+
+INPUT.pn-text {
+background : #F3F3F3;
+color: #000000;
+font-size: 10pt;
+}
+
+.pn-title-lblock { 
+COLOR: #4C5EA8;
+FONT: bold 10pt Verdana, Helvetica, sans-serif;
+LETTER-SPACING: 1.5px; 
+text-decoration: none;
+} 
+
+.pn-title-rblock {  
+font-family: Verdana, Tahoma, sans-serif; 
+FONT: bold 10pt Verdana, Helvetica, sans-serif; 
+COLOR: #4C5EA8; 
+text-decoration: none;
+} 
+
+.pn-rblock {  
+FONT: 8pt Verdana, Helvetica, sans-serif;
+color: #000000; 
+text-decoration: none;
+} 
+
+/* Centre blocks and admin messages */
+
+.message-centre
+{ 
+FONT: normal 10pt Verdana, Helvetica, sans-serif;
+border-style: none;
+}
+
+.message-centre .border2
+{
+border-style: none;
+border-width: 0;
+padding: 0;
+}
+
+TD.message-centre
+{
+FONT: normal 10pt Verdana, Helvetica, sans-serif;
+border-style: none;
+border: 1px;
+padding: 3px;
+}
+
+.message-centre .pn-title
+{
+FONT: bold 10pt Verdana, Helvetica, sans-serif;
+color: #4C5EA8;
+} 
+
+acronym {
+        border-bottom: 1px dashed #00cc00;
+        cursor: help;
+}

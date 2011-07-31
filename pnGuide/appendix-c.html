@@ -1,0 +1,161 @@
+<HTML
+><HEAD
+><TITLE
+>APPENDIX C: Configure the webserver</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="APPENDIX B: Create the MySQL username and password that PostNuke will use"
+HREF="appendix-b.html"><LINK
+REL="NEXT"
+TITLE="APPENDIX D: Configure PHP"
+HREF="appendix-d.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="appendix-b.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="appendix-d.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="appendix-c">Chapter 21. APPENDIX C: Configure the webserver</H1
+><P
+>You need to ensure that your webserver is configured to recognize PHP files. You may need to add the following to your Apache httpd.conf file (usually in /etc/httpd/conf for *NIX, or C:\Program Files\Apache Group\Apache\conf for Windows) to define the search order for files. It is recommended that "index.html" (or "default.htm" for Windows) be the first entry, followed by "index.php". If you edit your Apache configuration, you must restart Apache for the changes to be incorporated (for example, "httpd restart").
+</P
+><P
+>--- CUT HERE ---</P
+><P
+>#</P
+><P
+># DirectoryIndex: Name of the file or files to use as a pre-written HTML</P
+><P
+># directory index.  Separate multiple entries with spaces.</P
+><P
+>#</P
+><P
+>&#60;IfModule mod_dir.c&#62;</P
+><P
+>DirectoryIndex index.html index.php index.php3 index.pl index.htm</P
+><P
+>&#60;/IfModule&#62;</P
+><P
+>--- CUT HERE ---</P
+><P
+>For Windows IIS and Personal Webserver, there are several ways to configure PHP support. Please consult the 'install.txt' file that comes with the PHP distribution.
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="appendix-b.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="appendix-d.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>APPENDIX B: Create the MySQL username and password that PostNuke will use</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>APPENDIX D: Configure PHP</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

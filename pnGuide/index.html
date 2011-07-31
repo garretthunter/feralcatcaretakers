@@ -1,0 +1,588 @@
+<HTML
+><HEAD
+><TITLE
+>The Official PostNuke Installation &#38; Getting Started Guide</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="NEXT"
+TITLE="Important Note Regarding This Version Of The Guide"
+HREF="importantnote.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="book"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="BOOK"
+><A
+NAME="AEN1"><DIV
+CLASS="TITLEPAGE"
+><H1
+CLASS="title"
+><A
+NAME="AEN2">The Official PostNuke Installation &#38; Getting Started Guide</H1
+><H2
+CLASS="subtitle"
+>Revision 9939 / Preview</H2
+><H3
+CLASS="author"
+><A
+NAME="AEN7">Drew Vogel</H3
+><P
+CLASS="copyright"
+>Copyright &copy; 2002 by Drew Vogel. All rights reserved.</P
+><DIV
+CLASS="legalnotice"
+><A
+NAME="AEN13"><P
+></P
+><P
+>This edition was built on Wednesday, November 13 2002 :: 12:13:20 PM EST.
+</P
+><P
+>The Official PostNuke Installation and Getting Started Guide was written by Drew Vogel.
+</P
+><P
+>You may not distribute, modify, or translate this Guide without the prior consent of Drew Vogel (<TT
+CLASS="email"
+>&#60;<A
+HREF="mailto:drew@drewvogel.com"
+>drew@drewvogel.com</A
+>&#62;</TT
+>). The only approved use is review, comment, and personal use.
+</P
+><P
+>This material may be distributed only subject to the terms and conditions set forth in the Open Publication License, Draft v1.0, 8 June 1999 or later (the latest version is available at http://www.opencontent.org/openpub).
+</P
+><P
+>Distribution and/or sale of substantively modified versions of this document is prohibited without the explicit permission of the copyright holder.
+</P
+><P
+>Distribution and/or sale of the work or derivative of the work in any standard (paper) book or printed form is prohibited unless prior permission is obtained from the copyright holder.
+</P
+><P
+></P
+></DIV
+><HR></DIV
+><H1
+><A
+NAME="AEN21">Dedication</H1
+><P
+>This Guide is dedicated to Wendy, the keeper of my heart and the delight of my eyes.
+</P
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+>1. <A
+HREF="importantnote.html"
+>Important Note Regarding This Version Of The Guide</A
+></DT
+><DT
+>2. <A
+HREF="credits.html"
+>Credits</A
+></DT
+><DT
+>3. <A
+HREF="currentversion.html"
+>Most Current Versions</A
+></DT
+><DT
+>4. <A
+HREF="whoshoulduse.html"
+>Who Should Use This Guide</A
+></DT
+><DT
+>5. <A
+HREF="overview-cms.html"
+>An Overview of Content Management Systems (CMS)</A
+></DT
+><DT
+>6. <A
+HREF="overview-pn.html"
+>An Overview of PostNuke</A
+></DT
+><DT
+>7. <A
+HREF="pn-benefits.html"
+>Benefits of PostNuke</A
+></DT
+><DT
+>8. <A
+HREF="sysreq.html"
+>System Requirements</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="sysreq.html#hardwarereqs"
+>Hardware Requirements</A
+></DT
+><DT
+><A
+HREF="softwarereqs.html"
+>Software Requirements</A
+></DT
+><DT
+><A
+HREF="softrecs.html"
+>Software Recommendations</A
+></DT
+><DT
+><A
+HREF="toolsyoucanuse.html"
+>Tools You Can Use</A
+></DT
+></DL
+></DD
+><DT
+>9. <A
+HREF="assumptions.html"
+>Assumptions &#38; Conventions</A
+></DT
+><DT
+>10. <A
+HREF="newinstall.html"
+>New Installation</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="newinstall.html#firsttimeinstall-pn"
+>Step-by-step: First-time installation of PostNuke</A
+></DT
+></DL
+></DD
+><DT
+>11. <A
+HREF="upgradeinstall.html"
+>Upgrade Installation</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="upgradeinstall.html#upgradeinstall-pn"
+>Step-by-step: Upgrading PostNuke</A
+></DT
+></DL
+></DD
+><DT
+>12. <A
+HREF="testinginstall.html"
+>Testing The Installation/Upgrade</A
+></DT
+><DT
+>13. <A
+HREF="terminology.html"
+>A Lesson in PostNuke Terminology</A
+></DT
+><DT
+>14. <A
+HREF="config-basic.html"
+>Basic Website Configuration</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="config-basic.html#config-basicsetup"
+>Basic Site Setup</A
+></DT
+><DT
+><A
+HREF="config-footer.html"
+>Footer Messages</A
+></DT
+><DT
+><A
+HREF="config-backend.html"
+>Backend Configuration</A
+></DT
+><DT
+><A
+HREF="config-security.html"
+>Security Options</A
+></DT
+><DT
+><A
+HREF="config-intranet.html"
+>Run On An Intranet</A
+></DT
+><DT
+><A
+HREF="config-html.html"
+>HTML Options</A
+></DT
+></DL
+></DD
+><DT
+>15. <A
+HREF="modules-understanding.html"
+>Understanding Modules</A
+></DT
+><DT
+>16. <A
+HREF="config-advanced.html"
+>Advanced Website Configuration &#38; Use</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="config-advanced.html#addstory"
+>Add Story</A
+></DT
+><DT
+><A
+HREF="adminmessages.html"
+>Admin Messages</A
+></DT
+><DT
+><A
+HREF="autolinks.html"
+>AutoLinks</A
+></DT
+><DT
+><A
+HREF="banners.html"
+>Banners</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="banners.html#bannerreporting"
+>Banners -&#62; Banner Reporting</A
+></DT
+><DT
+><A
+HREF="banners.html#bannersconfig"
+>Banners -&#62; Banners Configuration</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="config-blocks.html"
+>Blocks</A
+></DT
+><DT
+><A
+HREF="config-comments.html"
+>Comments</A
+></DT
+><DT
+><A
+HREF="config-downloads.html"
+>Downloads</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="config-downloads.html#config-downloadconfig"
+>Downloads -&#62; Download Configuration</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="config-ephemerids.html"
+>Ephemerids</A
+></DT
+><DT
+><A
+HREF="config-faq.html"
+>FAQ</A
+></DT
+><DT
+><A
+HREF="config-groups.html"
+>Groups</A
+></DT
+><DT
+><A
+HREF="config-referers.html"
+>HTTP Referers</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="config-referers.html#config-referersconfig"
+>HTTP Referers -&#62; HTTP Referers Configuration</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="config-lang.html"
+>Languages</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="config-lang.html#config-langconfig"
+>Languages -&#62; Languages Configuration</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="config-mailusers.html"
+>Mail Users</A
+></DT
+><DT
+><A
+HREF="config-quotes.html"
+>Quotes</A
+></DT
+><DT
+><A
+HREF="config-reviews.html"
+>Reviews</A
+></DT
+><DT
+><A
+HREF="config-sections.html"
+>Sections</A
+></DT
+><DT
+><A
+HREF="config-news.html"
+>Submit News</A
+></DT
+><DT
+><A
+HREF="config-surveys.html"
+>Surveys</A
+></DT
+><DT
+><A
+HREF="config-topics.html"
+>Topics</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="config-topics.html#config-topicsconfig"
+>Topics -&#62; Topics Configuration</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="config-toplist.html"
+>Top List</A
+></DT
+><DT
+><A
+HREF="config-useradmin.html"
+>User Administration</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="config-useradmin.html#config-useradminconfig"
+>User Administration -&#62; User Configuration</A
+></DT
+><DT
+><A
+HREF="config-useradmin.html#config-dynuserdata"
+>User Administration -&#62; Dynamic User Data</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="config-weblinks.html"
+>Web Links</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="config-weblinks.html#config-weblinksconfig"
+>Web Links -&#62; Web Links Configuration</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>17. <A
+HREF="permissions.html"
+>Groups &#38; Permissions</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="permissions.html#perms-overview"
+>Overview of the Permissions System</A
+></DT
+><DT
+><A
+HREF="perms-explained.html"
+>Default PostNuke Permissions Explained</A
+></DT
+><DT
+><A
+HREF="perms-advanced.html"
+>Advanced Group Permissions</A
+></DT
+><DT
+><A
+HREF="perms-user.html"
+>User Permissions</A
+></DT
+><DT
+><A
+HREF="perms-config.html"
+>Setting up and configuring Groups</A
+></DT
+><DT
+><A
+HREF="perms-levels.html"
+>Permission Levels</A
+></DT
+><DT
+><A
+HREF="perms-group-example.html"
+>An example of Group Permissions</A
+></DT
+><DT
+><A
+HREF="perms-user-example.html"
+>An example of User Permissions</A
+></DT
+><DT
+><A
+HREF="perms-faq.html"
+>Permissions FAQ</A
+></DT
+><DT
+><A
+HREF="perms-newbies.html"
+>Permissions for Newbies</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="perms-newbies.html#perm-samples"
+>Permission Samples</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>18. <A
+HREF="conclusion.html"
+>Conclusion</A
+></DT
+><DT
+>19. <A
+HREF="appendix-a.html"
+>APPENDIX A: Create the MySQL database that PostNuke will use</A
+></DT
+><DT
+>20. <A
+HREF="appendix-b.html"
+>APPENDIX B: Create the MySQL username and password that PostNuke will use</A
+></DT
+><DT
+>21. <A
+HREF="appendix-c.html"
+>APPENDIX C: Configure the webserver</A
+></DT
+><DT
+>22. <A
+HREF="appendix-d.html"
+>APPENDIX D: Configure PHP</A
+></DT
+><DT
+>23. <A
+HREF="appendix-e.html"
+>APPENDIX E: Enable GZIP compression in php.ini</A
+></DT
+><DT
+>24. <A
+HREF="appendix-f.html"
+>APPENDIX F: Getting development versions of PostNuke using the CVS server at developer.hostnuke.com</A
+></DT
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="importantnote.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Important Note Regarding This Version Of The Guide</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

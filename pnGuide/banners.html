@@ -1,0 +1,389 @@
+<HTML
+><HEAD
+><TITLE
+>Banners</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Advanced Website Configuration & Use"
+HREF="config-advanced.html"><LINK
+REL="PREVIOUS"
+TITLE="AutoLinks"
+HREF="autolinks.html"><LINK
+REL="NEXT"
+TITLE="Blocks"
+HREF="config-blocks.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="autolinks.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 16. Advanced Website Configuration &#38; Use</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="config-blocks.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="banners">Banners</H1
+><P
+>Many websites rely on banner advertisement to generate revenue for the webmaster. PostNuke has features built in that provide banner display, reporting, and management. Administrators will find it easy to add, edit, or delete client &#38; banner information in this section.
+</P
+><P
+>Standard banner sizes, as determined by IAB Ad Standards (<A
+HREF="http://www.iab.net/iab_banner_standards/bannersizes.html"
+TARGET="_top"
+>http://www.iab.net/iab_banner_standards/bannersizes.html</A
+>), are defined as:
+</P
+><P
+></P
+><UL
+><LI
+><P
+>468 x 60 (Full Banner)</P
+></LI
+><LI
+><P
+>234 x 60 (Half Banner)</P
+></LI
+><LI
+><P
+>120 x 90 (Button 1)</P
+></LI
+><LI
+><P
+>120 x 60 (Button 2)</P
+></LI
+><LI
+><P
+>88 x 31  (Micro Bar)</P
+></LI
+><LI
+><P
+>160 x 600 (Wide Skyscraper)</P
+></LI
+><LI
+><P
+>120 x 600 (Skyscraper)</P
+></LI
+><LI
+><P
+>125 x 125 (Square Button)</P
+></LI
+><LI
+><P
+>180 x 50 (Rectangle)</P
+></LI
+><LI
+><P
+>120 x 240 (Vertical Banner)</P
+></LI
+><LI
+><P
+>300 x 250 (Medium Rectangle)</P
+></LI
+><LI
+><P
+>250 x 250 (Square Pop-up)</P
+></LI
+></UL
+><P
+></P
+><UL
+><LI
+><P
+>Add a new client: In order to place a banner on your site, you first need to create a Client associated with the banner.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Client name: Enter the name of the client, for example: "Red Hat Linux".
+	</P
+></LI
+><LI
+><P
+>Contact name: Enter the full name of the contact, for example: "John Doe".
+	</P
+></LI
+><LI
+><P
+>Contact e-mail: Enter the complete email of the contact, for example: "jdoe@somewhere.com".
+	</P
+></LI
+><LI
+><P
+>Client login: Enter the username of the client here, for example: "johndoe".
+	</P
+></LI
+><LI
+><P
+>Client password: Enter the client's password.
+	</P
+></LI
+><LI
+><P
+>Extra Information: Extra information is free-form alphanumeric text that you can use to record information about the client, such as phone numbers, contact information, etc. It visible only to the Administrator from within the Banners module.
+	</P
+></LI
+></UL
+></LI
+></UL
+><P
+>Click "Add Client" to save your changes. Your Clients may log in to check their Banner statistics by pointing their browser to "http://www.yoursite.com/banners.php?op=login".
+</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>IMPORTANT NOTE: This account is NOT a standard PostNuke user account. When the Client logs in, they will be shown the statistics for the banners they have running on the site, but they will not be logged into the site as a user.
+</I
+></SPAN
+></P
+><P
+>The statistics that the Client will be shown are as follows:
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Banner ID: The ID number for the banner on the site.</P
+></LI
+><LI
+><P
+>Impressions Made: The number of times that the banner has been displayed to users.</P
+></LI
+><LI
+><P
+>Impressions Total: This field shows the total number of impressions that the Client purchased, or "0" if the Client has unlimited impressions.</P
+></LI
+><LI
+><P
+>Impressions Left: If the Client purchased a certain number of impressions, this field shows how many of those impressions remain.</P
+></LI
+><LI
+><P
+>Clicks: How many times the banner has been clicked from the site.</P
+></LI
+><LI
+><P
+>% Clicks: The percentage of Impressions Made that the Clicks comprise.</P
+></LI
+><LI
+><P
+>Functions:</P
+><P
+></P
+><UL
+><LI
+><P
+>Email Stats: Emails the statistics to the email address configured in "Contact e-mail", above.</P
+></LI
+><LI
+><P
+>Change URL: The Client may elect to change the URL where the banner will direct users that click on it. The Client will make the changes and click "Change" to change the URL.</P
+></LI
+></UL
+></LI
+></UL
+><P
+></P
+><UL
+><LI
+><P
+>Add a new banner: Once the client has been created, you may configure the banner to be displayed.</P
+><P
+></P
+><UL
+><LI
+><P
+>Client name: Select the name of the client from this drop-down list.</P
+></LI
+><LI
+><P
+>Purchased impressions: If the client has purchased a specific number of impressions, enter the number in this field. For example, if they purchased 1000 impressions, enter "1000". For unlimited impressions, enter "0".</P
+></LI
+><LI
+><P
+>Image URL: This is the full URL or path to the banner image. The image can reside on your own site, or the site of your client (or anywhere else, for that matter). For example, "http://www.yoursite.com/images/banners/banner1.gif".</P
+></LI
+><LI
+><P
+>Click URL: When a user views the banner and wishes to visit the site, this field tells PostNuke where to send the user. Enter the full URL of the link to visit. For example, "http://www.othersite.com".</P
+></LI
+></UL
+></LI
+></UL
+><P
+>Click "Add Banner" to save your changes.</P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="bannerreporting">Banners -&#62; Banner Reporting</H2
+><P
+>Once you have any Banners defined, a report will be displayed any time you enter Administration -&#62; Banners. This report shows the current Active Banners, the Banners that are Finished (have used all their purchased impressions), and a listing of Advertising Clients.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Current active Banners: This section of the report shows how many impressions the Banner has generated, the number of impressions remaining (if the client purchased a number of impressions), the number &#38; percentage of Clicks on the Banner that your site has generated, the Client name, and options to Edit or Delete the Banner.
+</P
+></LI
+><LI
+><P
+>Finished banners: This section of the report shows Banners that have used all their purchased impressions, along with numbers &#38; percentages of clicks, the dates that the banner was active, and options to Edit or Delete the Banner.
+</P
+></LI
+><LI
+><P
+>Advertising clients: This section of the report shows Client &#38; contact information, how many active Banners the client has on your site, and options to Edit or Delete the Client.
+</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="bannersconfig">Banners -&#62; Banners Configuration</H2
+><P
+></P
+><UL
+><LI
+><P
+>Activate banners in your site: Set to "Yes" if you wish to display banners on your site. This is a 'master switch'. Even if you have banner clients defined in the Banners module, the banners will not be displayed if this switch is set to "No". Banner placement on the page is a function of your particular theme. Entry example: "Yes".
+</P
+></LI
+><LI
+><P
+>Your IP to not count the hits: In order to keep from "padding" the hits to your site, you may enter your IP number to exclude hits from the count. If you are running your own server enter "127.0.0.1". If your site is hosted elsewhere, enter your external IP (assigned by your ISP).
+</P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="autolinks.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="config-blocks.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>AutoLinks</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="config-advanced.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Blocks</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

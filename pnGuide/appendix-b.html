@@ -1,0 +1,262 @@
+<HTML
+><HEAD
+><TITLE
+>APPENDIX B: Create the MySQL username and password that PostNuke will use</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="APPENDIX A: Create the MySQL database that PostNuke will use"
+HREF="appendix-a.html"><LINK
+REL="NEXT"
+TITLE="APPENDIX C: Configure the webserver"
+HREF="appendix-c.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="appendix-a.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="appendix-c.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="appendix-b">Chapter 20. APPENDIX B: Create the MySQL username and password that PostNuke will use</H1
+><P
+>Follow these steps to set up the database username and password:
+</P
+><P
+></P
+><UL
+><LI
+><P
+>"<TT
+CLASS="userinput"
+><B
+>mysql -u root -p</B
+></TT
+>"</P
+></LI
+></UL
+><P
+>You will be prompted to enter the root database password. When the MySQL monitor prompt appears, type in the following:
+</P
+><P
+>"<TT
+CLASS="userinput"
+><B
+>GRANT ALL PRIVILEGES ON &#60;dbname&#62;.* TO &#60;dbuser&#62;@&#60;dbhost&#62; IDENTIFIED BY '&#60;dbpass&#62;' WITH GRANT OPTION;</B
+></TT
+>"</P
+><P
+></P
+><UL
+><LI
+><P
+>&#60;dbname&#62;: The name of the database that PostNuke will use. Example: "rogue".</P
+></LI
+><LI
+><P
+>&#60;dbuser&#62;: The username that PostNuke will use to access the database. Example: "web".</P
+></LI
+><LI
+><P
+>&#60;dbpass&#62;: The password for &#60;dbuser&#62;.</P
+></LI
+><LI
+><P
+>&#60;dbhost&#62;: The hostname where &#60;dbname&#62; resides. Most users will use "localhost".</P
+></LI
+></UL
+><P
+>Press <TT
+CLASS="userinput"
+><B
+>RETURN</B
+></TT
+>. If the process was a success, it will be reported as "Query OK, 0 rows affected (0.05 sec)".
+</P
+><P
+>If you do not have root access to the database, a database username and password can be created using phpMyAdmin (http://phpwizard.net/projects/phpMyAdmin). To create a database username and password, follow these steps:
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Log in to phpMyAdmin.</P
+></LI
+><LI
+><P
+>Click "Users".</P
+></LI
+><LI
+><P
+>Under the section entitled "Add a new user", follow these steps:</P
+><P
+></P
+><UL
+><LI
+><P
+>- Set "Host" to "localhost" (or the host defined in &#60;dbhost&#62;.</P
+></LI
+><LI
+><P
+>- Set "Username" to &#60;dbuser&#62;.</P
+></LI
+><LI
+><P
+>- Set "Password" to &#60;dbpass&#62;, and re-type it to verify the password.</P
+></LI
+><LI
+><P
+>- ALL Privileges should be BLANK (unchecked).</P
+></LI
+><LI
+><P
+>- Click the "Go" link below Privileges.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>The user will be created. Next, follow the steps below to grant privileges to the user we just created.</P
+><P
+></P
+><UL
+><LI
+><P
+>- Click "Grants" next to the user that we just created.</P
+></LI
+><LI
+><P
+>- Set "Database" to the name of your PostNuke database &#60;dbname&#62;.</P
+></LI
+><LI
+><P
+>- Click "Check All" under Privileges.</P
+></LI
+><LI
+><P
+>- Click the "Go" link below Privileges.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>The user will be given full access to the PostNuke database, but nothing else.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="appendix-a.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="appendix-c.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>APPENDIX A: Create the MySQL database that PostNuke will use</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>APPENDIX C: Configure the webserver</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

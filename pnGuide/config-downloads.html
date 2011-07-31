@@ -1,0 +1,450 @@
+<HTML
+><HEAD
+><TITLE
+>Downloads</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Advanced Website Configuration & Use"
+HREF="config-advanced.html"><LINK
+REL="PREVIOUS"
+TITLE="Comments"
+HREF="config-comments.html"><LINK
+REL="NEXT"
+TITLE="Ephemerids"
+HREF="config-ephemerids.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="config-comments.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 16. Advanced Website Configuration &#38; Use</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="config-ephemerids.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="config-downloads">Downloads</H1
+><P
+>Your website can offer files for users to download. These downloads may be broken into categories and sub-categories to make it easier for users to locate just the files in which they are interested. This section of configuration is where you specify options relating to Downloads. By default, Downloads is not active and must be activated through Administration -&#62; Modules.
+</P
+><P
+>For the purpose of this documentation, we will assume that you wish to set up one main category called "Music", with one sub-category called "MP3 Files".
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Clean download votes: PostNuke allows users to vote on Downloads. This function resets the votes.
+</P
+></LI
+><LI
+><P
+>Broken downloads reports (#): If a user feels that a download points to a bad link, they can click "Report broken link" on the file to send a message to the Administrator to report that problem. When you go to Administration -&#62; Downloads, you will be shown the number of Broken Download reports.
+</P
+><P
+>Click "Broken downloads reports" to view the listing of reported Broken Downloads. From that menu, select "Edit" to be taken to the file's properties, which can be edited to correct a problem (click "Modify" to save any changes). Click "Ignore" to Ignore the Broken Download report (for example, if the file is good) and to remove any additional Broken Download reports for that particular file. Click "Delete" to delete the download link from your database (for example, if the file IS broken) and any additional Broken Download reports for that particular file.
+</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>IMPORTANT NOTE: There is no CONFIRMATION when you click to "Delete" a broken download! Be certain that you wish to delete the file from the database before clicking the "Delete" button.
+</I
+></SPAN
+></P
+></LI
+><LI
+><P
+>Download modification requests (#): Download modification requests may be submitted when a user wishes to inform you that the Download on your site is out-of-date (a newer version exists, for example). If there are Download modification requests, the number of requests (#) will be displayed. Click the Download Modification Request link. All the requests will be displayed. Select "Edit" to be taken to the file's properties, which can be edited to correct a problem (click "Modify" to save any changes). Click "Ignore" to Ignore the Broken Download report (for example, if the file is good) and to remove any additional Broken Download reports for that particular file. Click "Delete" to delete the download link from your database (for example, if the file IS broken) and any additional Broken Download reports for that particular file.
+</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>IMPORTANT NOTE: There is no CONFIRMATION when you click to "Delete" a broken download! Be certain that you wish to delete the file from the database before clicking the "Delete" button.
+</I
+></SPAN
+></P
+></LI
+><LI
+><P
+>Validate downloads: This function can assist in determining which files in your downloads section are no longer valid. Click "Validate downloads" to be taken to a screen with several options. Click "Check ALL Downloads" to have PostNuke automatically check each and every download on your site. Please note that this function may take several moments to finish, especially if you have lots of downloadable files. If you wish to validate only a category (and its sub-categories) of downloads, click the name of the category that you wish to validate. If you wish to validate only a sub-category, click the name of the sub-category that you wish to validate.
+</P
+><P
+>When the validation is complete, a screen with results will be displayed. If the files were found and the download is determined to be a valid link, "OK" will be displayed in the Status column.
+</P
+><P
+>If there was a problem with particular file(s), "Failed!" will be displayed in the Status column. You are offered options for files with errors. Select "Delete" to remove the file listing from the database. Select "Edit" to be taken to the file's properties for editing. Click "Modify" to save any changes, or "Delete" to remove the file listing from the database.
+</P
+></LI
+><LI
+><P
+>Add main category: This function adds a main category to your download listing, for example, "Music".
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Name: Enter the name of the category as you would like it displayed to your users, free-form alphanumeric text. Entry example: "Music".
+	</P
+></LI
+><LI
+><P
+>Description: A short (255 characters) free-form alphanumeric text description of this main category. Entry example: "Music files, tools, and utilities".
+	</P
+></LI
+></UL
+><P
+>Click "Add" to save your changes and create the main category.
+</P
+></LI
+><LI
+><P
+>Add Sub-category: You can create sub-categories (and sub-sub-categories, etc.) using this function.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Name: Enter the name of the sub-category you wish to create in free-form alphanumeric text. Entry example: "MP3 Files".
+	</P
+></LI
+><LI
+><P
+>In: This determines the parent category in which you wish to create the sub-category. For example, to create the "MP3 Files" as a sub-category of Music, select "Music" from this drop-down list.
+	</P
+></LI
+></UL
+><P
+>It is possible to create sub-sub-categories (etc.) by selecting the Main Category / Sub-Category (etc.) from the drop-down list. For example, if you wish to add a sub-sub-category called "Jazz Tunes" to the "MP3 Files" sub-category (which is a sub-category of "Music"), you would simply add another sub-category called "Jazz Tunes" and select In: "Music / MP3 Files" from the drop-down list.
+</P
+><P
+>Click "Add" to save your changes and create your sub-category.</P
+></LI
+><LI
+><P
+>Add a new download: Now that we've got the download categories configured, we can begin to add files for the users to download from the system.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Program name: Enter the title of the file as you would like it to appear in the download listing. Free-form alphanumeric text. Entry example: "Smooth Jazz from Duke Ellington"</P
+></LI
+><LI
+><P
+>File link: Enter the *complete* web link to download this file. Entry example: "http://www.yoursite.com/files/music/jazz/dukeellington.mp3". Make sure that the file to be linked exists before adding the download link.</P
+></LI
+><LI
+><P
+>Category: Select the category for this file from the drop-down list. Entry example: "Music / MP3 Files / Jazz Tunes".</P
+></LI
+><LI
+><P
+>Description: Enter up to 255 characters of free-form alphanumeric text to describe this file.</P
+></LI
+><LI
+><P
+>Author's name: (optional) Enter the name of the author (or person that provided the file) in this field.</P
+></LI
+><LI
+><P
+>Author's e-mail: (optional) Enter the author's (or person that provided the file) email address in this field.</P
+></LI
+><LI
+><P
+>Filesize: (optional) Specify the size of the file (in bytes) here. PostNuke cannot automatically determine the size of the file.</P
+></LI
+><LI
+><P
+>Version: (optional) If this is a specific version of the file, you can enter that version information here.</P
+></LI
+><LI
+><P
+>Homepage: (optional) Homepage for the file.</P
+></LI
+><LI
+><P
+>Hits: (optional) Number of hits that this file has received on your web site. If blank, the counter starts at 0.</P
+></LI
+></UL
+><P
+>Click "Add URL" to save your changes.</P
+></LI
+><LI
+><P
+>Modify category: If you wish to change the name or description of a category, or delete it altogether, select the category from the drop-down list and click "Modify". The category is displayed and you can edit the information. Click "Save Changes" to save your changes. If you modify the name of a category, that change is automatically applied to any sub-categories (etc.) under that category. For example, if you changed "Music" to "Songs", then "MP3 Files" and "Jazz Tunes" would be updated to reside under the "Songs / MP3 Files / Jazz Tunes" structure.
+</P
+><P
+>If you wish to delete a category or sub-category, you can select it from the drop-down list and then click "Delete" on the next page. You are asked to confirm your desire to delete the category. If you click "Yes", the category AND ALL SUB-CATEGORIES below it, are deleted. For example, if you chose "Songs" and then clicked "Delete" and said "Yes" to the confirmation, the "MP3 Files" and "Jazz Tunes" sub-categories &#38; pointers to the files would be deleted as well.
+</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>IMPORTANT NOTE: Deleting categories/sub-categories from the website DOES NOT delete the actual files from your system. For example, if you deleted the "Songs" category (or any of the sub-categories), the file "dukeellington.mp3" would NOT be deleted.
+</I
+></SPAN
+></P
+></LI
+><LI
+><P
+>Modify a download: To modify a download, enter its "Download ID" in this field and click the "Modify" button. To determine a download's Download ID, locate the Download entry that you wish to edit and "hover" the mouse over the title. In the browser's status bar, you will see the URL for the link, for example:
+</P
+><P
+>http://www.yoursite.com/modules.php?op=modload&#38;name=Downloads&#38;file=index&#38;req=getit&#38;lid=52. Look near the end of the line for "lid=##", where "##" is the Download ID. In this example, your Download ID is "52".
+</P
+><P
+>You may then modify any of the following fields.</P
+><P
+></P
+><UL
+><LI
+><P
+>Program name</P
+></LI
+><LI
+><P
+>File link</P
+><P
+></P
+><UL
+><LI
+><P
+>Check: Click "Check" to verify the location of the file.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Description</P
+></LI
+><LI
+><P
+>Author's name</P
+></LI
+><LI
+><P
+>Author's e-mail</P
+></LI
+><LI
+><P
+>Filesize</P
+></LI
+><LI
+><P
+>Version</P
+></LI
+><LI
+><P
+>Homepage</P
+><P
+></P
+><UL
+><LI
+><P
+>Visit: Click "Visit" to visit the homepage for the file. NOTE: This link opens in the current browser window.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Hits</P
+></LI
+><LI
+><P
+>Category</P
+></LI
+></UL
+><P
+>Click "Add" to save the changes.</P
+></LI
+><LI
+><P
+>Add editorial: If you wish to add an Editorial for the download, you may do so in this function. If an Editorial already exists for this download it will be displayed; you can edit the title or the text. Once an editorial is added, there is an icon next to the name of the file indicating that an Editorial exists, and a text link to the Editorial appears at the bottom of the file info.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Editorial title: Enter the title of the Editorial here. Free-form alphanumeric text.
+	</P
+></LI
+><LI
+><P
+>Editorial text: Enter the body of the Editorial here. Free-form alphanumeric text.
+	</P
+></LI
+></UL
+><P
+>Click "Add" or "Modify" to perform that action. Click "Delete" to delete an existing Editorial.
+</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>IMPORTANT NOTE: There is no CONFIRMATION SCREEN when you click to "Delete" an Editorial! Be certain that you wish to delete the Editorial before clicking the "Delete" button.
+</I
+></SPAN
+></P
+><P
+>Below the Add Editorial block is a display of the Comments and Votes that this download has received. Comments and votes may be deleted by clicking the "X" in the Delete column.
+</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>IMPORTANT NOTE: There is no CONFIRMATION SCREEN when you click to delete a Comment or a Vote! Be certain that you wish to delete the Comment or Vote before clicking the "X" button.
+</I
+></SPAN
+></P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="config-downloadconfig">Downloads -&#62; Download Configuration</H2
+><P
+></P
+><UL
+><LI
+><P
+>Let Anonymous users post new downloads?: If you wish to allow unregistered or not-logged-in users of your site post new downloads, set this to "Yes". If you wish to restrict posting of new downloads only to registered/logged-in users, set this to "No". It is recommended that only registered users are permitted to post new downloads. Entry example: "No".
+</P
+><P
+>Click "Submit" to save your changes.
+</P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="config-comments.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="config-ephemerids.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Comments</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="config-advanced.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Ephemerids</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,191 @@
+<HTML
+><HEAD
+><TITLE
+>Default PostNuke Permissions Explained</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Groups & Permissions"
+HREF="permissions.html"><LINK
+REL="PREVIOUS"
+TITLE="Groups & Permissions"
+HREF="permissions.html"><LINK
+REL="NEXT"
+TITLE="Advanced Group Permissions"
+HREF="perms-advanced.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="permissions.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 17. Groups &#38; Permissions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="perms-advanced.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="perms-explained">Default PostNuke Permissions Explained</H1
+><P
+>Your site has visitors -- Anonymous (tier zero) or Registered users (tier one) -- who read the news and Admins (tier two) who post the news. New users are automatically placed into the "users" group when they register for the system, though this is definable within PostNuke's configuration options by going to Administration -&#62; Settings -&#62; Initial group for users and typing the name of the group to which new users should be assigned.
+</P
+><P
+>Therefore, if we examine the "tiers" of Permissions in the default PostNuke configuration, we see:
+</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tier 0</I
+></SPAN
+>: Anonymous -- Visitors who have NOT registered for an account on the site</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tier 1</I
+></SPAN
+>: "Users" -- Users who have registered for an account on the site</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Tier 2</I
+></SPAN
+>: "Admins" -- Administrative control of the site</P
+></LI
+></UL
+><P
+>The PostNuke Group system allows users to be placed into any number of groups, which are used to control access to and administrative functions on the site. If a user is a member of two or more Groups, the Groups are evaluated in the order the Groups are listed in Administration -&#62; Permissions.
+</P
+><P
+>The mapping between users and groups is many-to-many relationship -- multiple users can be in a single Group, and each user can be in any number of Groups.
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="permissions.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="perms-advanced.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Groups &#38; Permissions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="permissions.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Advanced Group Permissions</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,24 @@
+html, body {
+  background-color: #e5e9e5;
+  color: black;
+}
+
+a:link {
+  color: #0000ee;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #000088;
+  background-color: transparent;
+}
+
+a:visited {
+  color: #551a8b;
+  background-color: transparent;
+}
+
+a:active {
+  color: #ff0000;
+  background-color: transparent;
+}

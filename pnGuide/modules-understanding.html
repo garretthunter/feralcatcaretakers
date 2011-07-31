@@ -1,0 +1,261 @@
+<HTML
+><HEAD
+><TITLE
+>Understanding Modules</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="HTML Options"
+HREF="config-html.html"><LINK
+REL="NEXT"
+TITLE="Advanced Website Configuration & Use"
+HREF="config-advanced.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="config-html.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="config-advanced.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="modules-understanding">Chapter 15. Understanding Modules</H1
+><P
+>PostNuke allows items to be virtually 'bolted on' to its engine. These items, 
+called "modules", add features or functionality to PostNuke. Because it is 
+extremely important to understand how modules function within PostNuke, we will 
+explain how any PostNuke module can be initialized, activated, edited, 
+deactivated, upgraded, and completely removed (deleted!). Any of these actions 
+may be taken on any PostNuke module.
+</P
+><P
+>The PostNuke distribution comes with a selection of popular modules already 
+configured for use with your system. The Administrator may choose which modules 
+to use on the site, and disable or even completely remove (delete!) those that 
+will not be used on the site. Additional modules for PostNuke may be downloaded 
+from the official module site at <A
+HREF="http://mods.postnuke.com/index.php"
+TARGET="_top"
+>http://mods.postnuke.com/index.php</A
+>.
+</P
+><P
+>From the Administration menu, click "Modules".
+</P
+><P
+></P
+><UL
+><LI
+><P
+>List: Display a listing of all modules on your site, sorted by Module name.
+</P
+></LI
+><LI
+><P
+>Regenerate: Regenerate the module listing. When a new module is added to or 
+deleted from the modules/ directory, the system needs to 'Regenerate' the file 
+structure to recognize the change in the modules/ directory. However, there is 
+no problem if you click "Regenerate" every time you wish to view the modules 
+listing, to make sure that you're working with the most up-to-date list.
+</P
+><P
+>After the listing has been regenerated any new modules are displayed in the modules listing 
+(sorted by Module name), and you are given the option to Initialize and then Activate them.</P
+><P
+></P
+><UL
+><LI
+><P
+>INITIALIZE: Calls a function which creates any necessary tables and 
+module variables that the module requires. Modules must be Initialized before 
+any other action can be done on them.</P
+></LI
+><LI
+><P
+>ACTIVATE: Informs PostNuke that the module is initialized and should 
+be activated. Modules must first be Initialized before they can be Activated so 
+tables and module variables are properly initialized.</P
+></LI
+></UL
+></LI
+></UL
+><P
+>To activate a specific module, from your site's Administration menu, select 
+"Modules" then "Regenerate". From the list that appears, select the module that 
+you wish to activate. Click "Initialize" to initialize the module, and then 
+click on "Activate" to turn the module on. Set the permissions (explained later 
+in this document), and the module is ready for use.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>EDIT: Allows the Administrator to change settings for a particular 
+module. The module Name, Description, AutoLinks (on/off) (if AutoLinks are 
+enabled, elsewhere), Ratings (on/off), and Wiki Encoding (on/off) may be 
+configured on a module-by-module basis.</P
+></LI
+><LI
+><P
+>DEACTIVATE: This function tells PostNuke that the services that this 
+module offers are to be taken offline (deactivated). A module must first be 
+Activated before it can be Deactivated. Once deactivated, the module is 
+inaccessible to users. NOTE: Deactivate does NOT delete the physical module 
+files (in modules/) and/or any specific module variables created during 
+initialization.</P
+></LI
+></UL
+><P
+>To remove a module's functionality, go to the Administration menu's Module 
+link, select "Regenerate", and click "Deactivate" next to the module to be 
+removed. This turns the module off but keeps the module variables and database 
+tables intact. This is all you need to do to make the module inaccessible to 
+your users, unless you wish to completely remove (uninstall) the module from 
+your site. Completely remove modules by deleting their sub-directories from 
+your modules/ directory.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>UPGRADE: This function will integrate new tables, module variables, 
+and user variables when you move from one version of a module to a newer 
+version of a module. Note that you must Activate again after Upgrading a module.</P
+></LI
+><LI
+><P
+>REMOVE: Completely remove (delete!) this module from your system. The 
+module must first be deactivated before it can be removed. Clicking "Remove" 
+will delete the modules's database tables and module variables from your web 
+site, but the physical files of the module (in modules/&#60;modulename&#62;) are NOT 
+deleted.</P
+></LI
+></UL
+><P
+>If you wish to completely remove a specific module, click "Remove" to remove 
+the module from your site. The only way to delete the physical files of the 
+module is to remove the directory yourself (for example, "rm 
+modules/&#60;modulename&#62;). If you wish to utilize the module's functionality again 
+in the future, you will need to re-initialize and re-activate the module.
+</P
+><P
+>IMPORTANT NOTE: There is no CONFIRMATION SCREEN when you click to "Remove" a 
+deactivated module!	Be certain that you wish to delete the module before 
+clicking the "Remove" button.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="config-html.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="config-advanced.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>HTML Options</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Advanced Website Configuration &#38; Use</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,168 @@
+<html>
+<head>
+<title>CELL PROPERTIES</title>
+<style>
+td {color:white; font-family:Arial; font-size:14px}
+input,select {color:blue; background:#eeffee; width:65px}
+</style>
+
+<script src="qblib.js"></script>
+
+
+<script language="Jscript">
+
+function init()
+{
+ CELL=window.opener.cellSelect ;
+ 
+ var fobj=document.FO  
+ with(CELL) 
+ {
+  fobj.CO_bgcolor.value= bgColor
+  OLDBGCOL= bgColor
+  fobj.TX_background.value= background
+  fobj.PI_height.value= height
+  fobj.PI_width.value= width
+  fobj.char.value= ch
+  fobj.charoff.value= chOff
+  fobj.headers.value= headers
+  fobj.OP_nowrap.value= noWrap
+  fobj.abbr.value= abbr
+
+  var al = align; al= al.toUpperCase()
+  fobj.OP_align.value= al
+  
+  al = vAlign; al= al.toUpperCase()
+  fobj.OP_valign.value= al
+ }
+
+}
+
+
+function retcellPropert()
+{
+ var fobj=document.FO
+
+ var reg= /gif|jpg|png/ ;
+ if(fobj.TX_background.value!='' &&  !reg.test(fobj.TX_background.value) )
+  { alert('File type was not a image type.'); return; }
+
+
+ with(CELL) 
+ {
+  abbr= fobj.abbr.value
+  background=fobj.TX_background.value
+  if(fobj.CO_bgcolor.value != OLDBGCOL )
+   {
+    bgColor=fobj.CO_bgcolor.value
+    window.opener.cellSelect.runtimeStyle.backgroundColor = "";
+    window.opener.cellSelect.runtimeStyle.color = "";
+   }
+  height=fobj.PI_height.value
+  width=fobj.PI_width.value
+  ch=fobj.char.value
+  chOff=fobj.charoff.value
+  headers=fobj.headers.value
+  noWrap=fobj.OP_nowrap.value
+  align= fobj.OP_align.value
+  vAlign= fobj.OP_valign.value
+ }
+
+}
+
+
+
+</script>
+
+
+</head>
+
+<body bgcolor=menu onFocus="init()" scroll=no>
+
+<center>
+<FORM name=FO>
+
+<TABLE border=1 bgColor=#999999 width=100% cellpading=0 cellspacing=0>
+<TBODY>
+<TR>
+<TD align=center bgColor=#aa4444 colSpan=4><FONT style="font-size=14px">Cell Properties</FONT></TD>
+</tr>
+
+<TR>
+<TD align=right>bgcolor</TD>
+<TD><INPUT name=CO_bgcolor onchange="retcellPropert()"></TD>
+<TD align=right>nowrap</TD>
+<TD>
+<select name=OP_nowrap onchange="retcellPropert()">
+<option value=''>
+<option value='true'>true
+</select>
+</TD>
+</TR>
+
+<TR>
+<TD align=right>align</TD>
+<TD>
+<select name=OP_align onchange="retcellPropert()">
+<option value=''>
+<option value='LEFT'>LEFT
+<option value='CENTER'>CENTER
+<option value='RIGHT'>RIGHT
+</select>
+</TD>
+<TD align=right>valign</TD>
+<TD>
+<select name=OP_valign onchange="retcellPropert()">
+<option value=''>
+<option value='TOP'>TOP
+<option value='MIDDLE'>MIDDLE
+<option value='BOTTOM'>BOTTOM
+</select>
+</TD></TR>
+<TR>
+<TD align=right>width</TD>
+<TD><INPUT name=PI_width onchange="retcellPropert()"></TD>
+<TD align=right>height</TD>
+<TD><INPUT name=PI_height onchange="retcellPropert()"></TD></TR>
+<TR>
+<TD align=right>abbr</TD>
+<TD><INPUT name=abbr onchange="retcellPropert()"></TD>
+<TD align=right>headers</TD>
+<TD><INPUT name=headers onchange="retcellPropert()"></TD></TR>
+<TR>
+<TD align=right>char</TD>
+<TD><INPUT name=char onchange="retcellPropert()"></TD>
+<TD align=right>charoff</TD>
+<TD><INPUT name=charoff onchange="retcellPropert()"></TD></TR>
+
+
+
+<tr><TD colspan=4 align=center>
+<INPUT onMouseDown=setObjectColor(0,'red','retcellPropert()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#FF0000; color:white">
+<INPUT onMouseDown=setObjectColor(1,'red','retcellPropert()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#FF0000; color:white">
+&nbsp;&nbsp;
+<INPUT onMouseDown=setObjectColor(0,'green','retcellPropert()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#00FF00; color:black">
+<INPUT onMouseDown=setObjectColor(1,'green','retcellPropert()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#00FF00; color:black">
+&nbsp;&nbsp;
+<INPUT onMouseDown=setObjectColor(0,'blue','retcellPropert()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#0000FF; color:white">
+<INPUT onMouseDown=setObjectColor(1,'blue','retcellPropert()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#0000FF; color:white">
+&nbsp;&nbsp;
+
+<INPUT onclick=retcellPropert() title=Button type=button value="Do" style="width:70px; height:22px; background:#aa4444; color:white">
+<INPUT onclick=self.close() title=Back type=button value="Close" style="width:70px; height:22px; background:#aa4444; color:white">
+&nbsp;&nbsp;
+
+<INPUT onmousedown=setValueSmaller('retcellPropert()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#aa4444; color:white">
+<INPUT onmousedown=setValueBigger('retcellPropert()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#aa4444; color:white">
+
+
+</TD></tr>
+
+
+
+</TBODY></TABLE>
+
+</FORM>
+</center>
+</body>
+</html>

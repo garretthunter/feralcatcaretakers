@@ -1,0 +1,198 @@
+<HTML
+><HEAD
+><TITLE
+>Setting up and configuring Groups</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Groups & Permissions"
+HREF="permissions.html"><LINK
+REL="PREVIOUS"
+TITLE="User Permissions"
+HREF="perms-user.html"><LINK
+REL="NEXT"
+TITLE="Permission Levels"
+HREF="perms-levels.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="perms-user.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 17. Groups &#38; Permissions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="perms-levels.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="perms-config">Setting up and configuring Groups</H1
+><P
+>Each user can be placed in a definable Group and the entire group can be given a permission set. If you are upgrading from an older version of PostNuke, PHPNuke, or myPHPNuke, you will have new Groups defined for each of the author permissions that you had previously defined. These groups are set up during the upgrade, but you will need to manually configure their permissions.
+</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>IMPORTANT NOTE: It is critically important that the ORDER of the Groups is correct. Permissions are applied in order, from the top down. The system stops looking for permissions when it finds the first Group that matches, so if one line gives everyone access to everything, a later line will NOT be able to take that access away. Be very careful.</I
+></SPAN
+>
+</P
+><P
+>If a user is a member of 2 or more Groups, the Groups are evaluated in the order they are listed in Administration -&#62; Permissions.
+</P
+><P
+>Example: The user is put into two Groups: "GroupA" and "GroupB". GroupA has explicit access to a particular feature. GroupB explicitly does NOT have access to that feature. Since GroupA is evaluated first, the user will have access to that particular feature.
+</P
+><P
+>From Administration -&#62; Groups:
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Creating Groups: To create a Group, select the 'Add A New Group' option. Type the name of the new group, and click the 'New Group' button. The group will be created.</P
+></LI
+><LI
+><P
+>Adding a User to a Group: To add a user to a Group, select the Group name, and click the 'Add a user to this Group' link. You will be shown a drop-down list of users who are not currently members of this Group. Choose the user to add to this Group and select the 'Confirm' button to add that user to the Group.</P
+></LI
+><LI
+><P
+>Removing a User from a Group: To remove a user from a Group, select the Group name. A list of users who are currently part of that Group is shown. To remove a user select the 'Delete' link next to the user's name.</P
+></LI
+><LI
+><P
+>Renaming a Group: To rename a Group, select the Group name and click the 'Modify Group' link. Rename the Group as desired, and then click 'Rename group' to save the changes.</P
+></LI
+><LI
+><P
+>Deleting a Group: To delete a Group, select the 'Delete' link next to the Group that you wish to delete. A confirmation page will be displayed. Select "Yes" to permanently delete this Group, or "No" to abort Group deletion.</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>IMPORTANT NOTE: The user accounts of members of a particular Group are NOT deleted when you delete a Group.</I
+></SPAN
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="perms-user.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="perms-levels.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>User Permissions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="permissions.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Permission Levels</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

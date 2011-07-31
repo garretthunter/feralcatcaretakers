@@ -1,0 +1,475 @@
+<HTML
+><HEAD
+><TITLE
+>Upgrade Installation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="New Installation"
+HREF="newinstall.html"><LINK
+REL="NEXT"
+TITLE="Testing The Installation/Upgrade"
+HREF="testinginstall.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="newinstall.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="testinginstall.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="upgradeinstall">Chapter 11. Upgrade Installation</H1
+><P
+>If you have a previously installed version of PostNuke, or if you were running PHPNuke or MyPHPNuke, and wish to switch to PostNuke, you can use the Upgrade features of the installation to migrate your older system into the new PostNuke system.
+</P
+><P
+>Previous versions of PostNuke (versions 0.50, 0.60, 0.62, 0.63, 0.64, and 0.7x) can be automatically upgraded to the latest version of PostNuke using the upgrade function. Additionally, upgrades from MyPHPNuke (versions 1.87 and 1.88) and PHPNuke (versions 4.40, 5.20, 5.30, 5.31, and 5.40) to the latest version of PostNuke are supported by the upgrade process. Upgrades from PHPNuke 5.5 and later will be available in a future PostNuke release.
+</P
+><P
+>Through the upgrade process, user accounts are preserved, as are the settings for Articles, Blocks, Comments, Downloads, Headlines, and Reviews. Features that are specific to other CMS software (for example, article ratings in PHPNuke) are not converted and will be removed from the PostNuke database. Some modules and blocks may need to be upgraded to newer versions before they will function with PostNuke.
+</P
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="upgradeinstall-pn">Step-by-step: Upgrading PostNuke</H1
+><P
+></P
+><UL
+><LI
+><P
+>Print this document and keep it handy during the installation.
+</P
+></LI
+><LI
+><P
+>Obtain the latest PostNuke release from http://www.postnuke.com in either ZIP or TAR.GZ format. Download the release to a temporary directory. Under *NIX, TAR.GZ is the preferred format since the files will possess the correct user privileges.
+</P
+></LI
+><LI
+><P
+>Using your compression program, VIEW the distribution file to make sure it will expand the files into the correct subdirectory path.
+</P
+></LI
+><LI
+><P
+>Completely back up your entire web directory (for example, /var/www/html).
+</P
+></LI
+><LI
+><P
+>Do a dump of your web site's database using "<TT
+CLASS="userinput"
+><B
+>mysqldump</B
+></TT
+>" (or equivalent utility). Try the following:"<TT
+CLASS="userinput"
+><B
+>mysqldump -u &#60;db_administrator_name&#62; -p --opt &#60;old_db_name&#62; &#62; DBbackup_10Apr02.sql</B
+></TT
+>".
+</P
+><P
+>You will be prompted for your administrator password and the contents of the database called "old_db_name" will be saved as "DBbackup_10Apr02.sql" in the current directory.
+</P
+></LI
+><LI
+><P
+>Move all previous-version PostNuke files &#38; directories from your web directory and sub-directories into another location. Be especially careful to move everything from the /includes and /modules directories. It is not necessary to move NON-PostNuke files from the web directory or sub-directories (for example, under *NIX, type "<TT
+CLASS="userinput"
+><B
+>mv -R /var/www/html/* /var/nukebackup</B
+></TT
+>").
+</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>IMPORTANT NOTE: If you do not move ALL previous-version PostNuke files from these directories, it will prevent your web site from functioning properly.</I
+></SPAN
+>
+</P
+></LI
+><LI
+><P
+>Extract the PostNuke archive into a temporary directory. Move the /html and /sql directories into your DocumentRoot (as specified by Apache) (for example, /var/www/html), preserving paths (for example, "<TT
+CLASS="userinput"
+><B
+>tar -xzvf &#60;PostNuke-archive.tar.gz&#62;</B
+></TT
+>", "<TT
+CLASS="userinput"
+><B
+>mv -R html /var/www/</B
+></TT
+>", "<TT
+CLASS="userinput"
+><B
+>mv -R sql /var/www/</B
+></TT
+>").
+</P
+></LI
+></UL
+><P
+>-or-</P
+><P
+></P
+><UL
+><LI
+><P
+>Upload the extracted PostNuke files into your web directory, preserving paths.
+</P
+></LI
+><LI
+><P
+>If you wish for your site to offer multiple languages, download and install appropriate language packs. English is included in the distribution by default. Language packs and installation instructions can be found on SourceForge's PostNuke page: <A
+HREF="http://sourceforge.net/projects/post-nuke"
+TARGET="_top"
+>http://sourceforge.net/projects/post-nuke</A
+> under "Files".
+</P
+></LI
+><LI
+><P
+>From your previous-version backup, copy "config.php" and "config-old.php" to your web directory (for example, under *NIX, type "<TT
+CLASS="userinput"
+><B
+>cp /var/nukebackup/config.php /var/www/html/</B
+></TT
+>", "<TT
+CLASS="userinput"
+><B
+>cp /var/nukebackup/config-old.php /var/www/html</B
+></TT
+>").
+</P
+></LI
+><LI
+><P
+>Additionally, copy "config.php" into the web directory with the name "pn7config.php" (for example, under *NIX, type "<TT
+CLASS="userinput"
+><B
+>cp /var/nukebackup/config.php /var/www/html/pn7config.php</B
+></TT
+>").
+</P
+></LI
+><LI
+><P
+>Set the permissions on these files located in your web directory:</P
+><P
+></P
+><UL
+><LI
+><P
+>"<TT
+CLASS="userinput"
+><B
+>chmod 666 config.php</B
+></TT
+>" (Windows: Remove the read-only file attribute with "<TT
+CLASS="userinput"
+><B
+>attrib -r config.php</B
+></TT
+>". If using NTFS, be certain that the proper NTFS permissions are set.)
+	</P
+></LI
+><LI
+><P
+>"<TT
+CLASS="userinput"
+><B
+>chmod 666 config-old.php</B
+></TT
+>" (Windows: Remove the read-only file attribute with "<TT
+CLASS="userinput"
+><B
+>attrib -r config-old.php</B
+></TT
+>". If using NTFS, be certain that the proper NTFS permissions are set.)
+	</P
+></LI
+><LI
+><P
+>"<TT
+CLASS="userinput"
+><B
+>chmod 666 pn7config.php</B
+></TT
+>" (Windows: Remove the read-only file attribute with "<TT
+CLASS="userinput"
+><B
+>attrib -r pn7config.php</B
+></TT
+>". If using NTFS, be certain that the proper NTFS permissions are set.)
+	</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Point your browser to the installation file (for example, http://www.yoursite.com/install.php).
+</P
+></LI
+><LI
+><P
+>Follow the prompts to modify databases, tables, and configuration options.</P
+><P
+></P
+><UL
+><LI
+><P
+>Select your language from the drop-down list. Click "Set Language" to continue.</P
+></LI
+><LI
+><P
+>Read the license. Click "Next" to agree with the license terms and continue installation. If you do not agree with the license terms, abort the installation.</P
+></LI
+><LI
+><P
+>CHMOD Check: PostNuke checks to make sure that critical files are appropriately writable in the web directory. If no errors are reported, click "Continue". If there are errors reported, correct them and click "Re-check" to perform the CHMOD check again.</P
+></LI
+><LI
+><P
+>Database configuration</P
+><P
+></P
+><UL
+><LI
+><P
+>Database Host: Enter the name of the host system where the database files are stored. If your database is on your local machine, this entry will be "<TT
+CLASS="userinput"
+><B
+>localhost</B
+></TT
+>".</P
+></LI
+><LI
+><P
+>Database Username: Enter the database username that will be used to add, edit, and delete files from the database.</P
+></LI
+><LI
+><P
+>Database Password: Enter the database password for the user defined above.</P
+></LI
+><LI
+><P
+>Database Name: Enter the name of the database to be upgraded. Entry example: "<TT
+CLASS="userinput"
+><B
+>postnuke</B
+></TT
+>".</P
+></LI
+><LI
+><P
+>Table Prefix (for Table Sharing): If you wish to prefix the table names, enter the prefix here. For most users that are not sharing tables, the recommended entry is "<TT
+CLASS="userinput"
+><B
+>nuke</B
+></TT
+>".</P
+></LI
+><LI
+><P
+>Database Type: Select the database type from this drop-down list. Entry example: "<TT
+CLASS="userinput"
+><B
+>MySQL</B
+></TT
+>"</P
+></LI
+><LI
+><P
+>Site is for intranet or other local (non-internet) use: Check this box if this site is intended for intranet or other local (non-internet) use.</P
+></LI
+></UL
+></LI
+></UL
+></LI
+></UL
+><P
+>Click "Continue" to move to the next step.</P
+><P
+>You are presented a review of the database configuration selections that you just made. If they are incorrect, click "Change Info" to modify the selections. If the settings are correct, select "Upgrade" to upgrade from a previous version of PostNuke, or if you are migrating from PHPNuke or MyPHPNuke.
+</P
+><P
+>The next screen is where you select the CMS from which you are upgrading.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Click "PHP-Nuke" to upgrade an existing PHP-Nuke install.</P
+><P
+></P
+><UL
+><LI
+><P
+>To continue, click the version of PHP-Nuke you wish to upgrade. Follow the prompts.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Click "PostNuke" to upgrade an existing PostNuke install.</P
+><P
+></P
+><UL
+><LI
+><P
+>To continue, click the version of PostNuke you wish to upgrade. Follow the prompts.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Click "MyPHPNuke" to upgrade an existing MyPHPNuke install.</P
+><P
+></P
+><UL
+><LI
+><P
+>To continue, click the version of MyPHPNuke you wish to upgrade. Follow the prompts.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>If you have a logo graphic for your site, upload it to the images directory (for example, /var/www/html/images). You may name the file anything you want. If you do not yet have a logo, you may skip this step and the default PostNuke logo will be displayed. Generally, the dimensions of this file should be 220 pixels wide by 80 pixels tall to fit into most pre-made themes. However, if you are satisfied with how a larger graphic looks, you may use a logo graphic that ignores these size recommendations. This graphic file is displayed at the top of the page within some themes, and at the top of every page that is printed from your site.
+</P
+><P
+>The graphic file must be located in the /images/ directory of your web site or within the theme's /images/ directory. The graphic file can be in PNG, GIF, or JPG format. The canonical location will be determined in a future release.
+</P
+></LI
+></UL
+><P
+>Click "Go to your PostNuke site" to enter your PostNuke site for the first time. Skip down to "Testing The Installation/Upgrade", below.
+</P
+><P
+>Once the upgrade has been tested to work, you may begin to migrate your NON-PostNuke files from the backup directory back into the web directory. You may now delete your previous-version backup files (for example, from /var/nukebackup)
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="newinstall.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="testinginstall.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>New Installation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Testing The Installation/Upgrade</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

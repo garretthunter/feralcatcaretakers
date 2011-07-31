@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<title>Editor</title>
+
+
+<style>
+., body, td, th { font-family:Arial; }
+</style>
+
+
+</HEAD>
+
+<BODY BGCOLOR=#F0F0D0>
+<CENTER>
+
+<h4>Jscript for Text-Formating with RightMouseButton (R1.0)</h4>
+<H4><FONT color=#aa0000> WYSIWYG-Text-Formating for any Textarea (R2.0)</FONT></H4>
+<H4><FONT color=#aa0000>with Security Check (R3.0)</FONT></H4>
+<H4><FONT color=#aa0000>* NEW * with Div-Tools for Online-Designing (R4.0) * NEW *</FONT></H4>
+<H3><FONT color=#ff0000>* NEW * Editor-Options, Open/Save-Local Files, Content Recover, Chipcard-Data Insert, Find (R5.0) * NEW *</FONT></H3>
+
+<FORM method=post action=".....">
+<table cellspacing=0 cellpadding=2 width=80%>
+
+<tr>
+<td align=right>Textarea 1: </td><td><textarea name='textarea1' cols=50 rows=10></textarea></td>
+</tr>
+
+
+<tr>
+<td align=right>Textarea 2: </td><td><textarea name='textarea2' cols=50 rows=10>For testing: Put some text, highlight it and click rightmouse..... or buttons....</textarea></td>
+</tr>
+
+<tr>
+<td colspan=2 align=center>
+<input type=button value='Value TA1' onclick=alert(this.form.textarea1.value)>
+<input type=button value='Value TA2' onclick=alert(this.form.textarea2.value)>
+</td>
+</tr>
+
+</TABLE>
+</center>
+</form>
+
+<H3>Very easy installation:</H3>
+<P>You need to add below lines at bottom of your HTML-Pages (e.g. direct before &lt;/BODY&gt; or between &lt;/BODY&gt; and &lt;/HTML&gt; or after &lt;/HTML&gt;) .<BR>That's all.<BR>Then you can input HTML-Codes (or something else) fast and correctly into any text-input element (input text, textarea).<br> By Textarea can user format their Text visually, if they want.<BR><BR>
+
+<TABLE align=center border=1>
+<TBODY>
+<TR>
+<TD><STRONG><FONT color=#ff0000>&lt;script&gt;QBPATH='http://....../jscript'; VISUAL=1; SECURE=1;&lt;/script&gt;<BR>&lt;script src='http://......./jscript/quickbuild.js'&gt;&lt;/script&gt;</FONT></STRONG><BR><STRONG><FONT color=#ff0000>&lt;script src='http://......./jscript/tabedit.js'&gt;&lt;/script&gt;</FONT></STRONG><BR>
+<P>With:<BR><P><FONT color=red>VISUAL=0</FONT> : Textarea turn to Editor after confirmation<BR><FONT color=orangered>VISUAL=1</FONT> : all Textareas turn to Editors<BR><FONT color=#ff0000>VISUAL=2</FONT> : some spezific iframes&nbsp;turn to Editors<BR> <FONT color=#ff0000>VISUAL=3</FONT> : all Iframe turn to Editors<BR><FONT color=#ff0000>VISUAL&gt;3</FONT> : no Visual-Editor, only use Rightmouse-Control</P>
+<P><FONT color=#ff0000>SECURE=1</FONT> : all tags &lt;script&gt;, &lt;meta&gt;, on-events.... turn to normal text</P><b><FONT color=#ff00ff>UPLOAD-feature needs also editing the file "upload.html" (see there).</font></B></TD></TR></TBODY></TABLE>
+
+<br>
+<TABLE align=center border=1>
+<TBODY>
+<TR>
+<TD>
+<P>If you want to turn on <b>only one</b> specific textarea, then :<BR><BR><STRONG>&lt;script&gt;QBPATH='http://....../jscript'; VISUAL=<FONT color=magenta>-1</FONT>; SECURE=1;&lt;/script&gt;<BR>&lt;script src='http://......./jscript/quickbuild.js'&gt;&lt;/script&gt;<BR>&lt;script src='http://......./jscript/tabedit.js'&gt;&lt;/script&gt;</STRONG><BR><STRONG><FONT color=magenta>&lt;script&gt;changetoIframeEditor(<FONT color=red>document.forms[xxx].yyy</FONT>);&lt;/script&gt;</FONT></STRONG></P>
+<P>with:<BR> <FONT color=red>xxx</FONT>= form index<BR><FONT color=red>yyy</FONT>= textarea name</P></TD></TR></TBODY></TABLE>
+
+
+<P><BR>Not required: registration&nbsp;&nbsp; :D<BR>Required: rating by hotscripts.com. Please choose a option below and click the button. Thanks.
+
+<!------ Start of HTML Code ------->
+<center>
+<form 
+action="http://www.hotscripts.com/cgi-bin/rate.cgi" method="POST"><input type="hidden" name="ID" value="15616"><table BORDER="0" CELLSPACING="0" bgcolor="#E2E2E2"><tr><td align="center"><font face="arial, verdana" size="2"><b>Rate Our Program</b><br><a href="http://www.hotscripts.com"><small>@ HotScripts.com</small></a></font></td></tr><tr><td align="center"><table border="0" cellspacing="0" width="100%" bgcolor="#FFFFEA"><tr><td><input type="radio" value="5" name="ex_rate"></td><td><font face="arial, verdana" size="2">Excellent!</font></td></tr><tr><td><input type="radio" value="4" name="ex_rate"></td><td><font face="arial, verdana" size="2">Very Good</font></td></tr><tr><td><input type="radio" value="3" name="ex_rate"></td><td><font face="arial, verdana" size="2">Good</font></td></tr><tr><td><input type="radio" value="2" name="ex_rate"></td><td><font face="arial, verdana" size="2">Fair</font></td></tr><tr><td><input type="radio" value="1" name="ex_rate"></td><td><font face="arial, verdana" size="2">Poor</font></td></tr></table></td></tr><tr><td align="center"><input type="submit" value="Cast My Vote!"></td></tr></table></form>
+</center>
+<!------ End of HTML Code ------>
+
+
+<BR><BR>Release by <A href="http://vietdev.sourceforge.net/">VIETDEV</A>, welcome
+<BR>R1.0 : 2002/04/23
+<BR>R2.0 : 2002/05/23
+<BR>R3.0 : 2002/06/12
+<BR>R4.0 : 2002/07/08
+<BR><b>R5.0 : 2002/09/26</b>
+<BR><b>GPL-Copyright</b>
+</P>
+
+
+
+</BODY>
+
+<script>QBPATH='.'; VISUAL=0; SECURE=1;</script>
+<script src='./quickbuild.js'></script>
+<script src='./tabedit.js'></script>
+
+</HTML>

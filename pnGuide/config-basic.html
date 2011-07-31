@@ -1,0 +1,536 @@
+<HTML
+><HEAD
+><TITLE
+>Basic Website Configuration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="A Lesson in PostNuke Terminology"
+HREF="terminology.html"><LINK
+REL="NEXT"
+TITLE="Footer Messages"
+HREF="config-footer.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="terminology.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="config-footer.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="config-basic">Chapter 14. Basic Website Configuration</H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="config-basic.html#config-basicsetup"
+>Basic Site Setup</A
+></DT
+><DT
+><A
+HREF="config-footer.html"
+>Footer Messages</A
+></DT
+><DT
+><A
+HREF="config-backend.html"
+>Backend Configuration</A
+></DT
+><DT
+><A
+HREF="config-security.html"
+>Security Options</A
+></DT
+><DT
+><A
+HREF="config-intranet.html"
+>Run On An Intranet</A
+></DT
+><DT
+><A
+HREF="config-html.html"
+>HTML Options</A
+></DT
+></DL
+></DIV
+><P
+>In order to configure your site, you will need to log in as the Administrator. We set up an Administrator username &#38; password during first-time installation, above. Upgrading users will use their existing Administrator username &#38; password.
+</P
+><P
+>Point your browser to your site (http://www.yoursite.com) and log in by entering the Administrator name and password in the "User's Login" and "Password" fields. Click "Login" to log in. You will see a new menu listing called "Administration" on the Main Menu. Click the Administration link to go to your site's administration tools, and click Settings.
+</P
+><P
+>Within the Settings section of configuration, you can 'personalize' PostNuke site to your tastes.</P
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="config-basicsetup">Basic Site Setup</H1
+><P
+></P
+><UL
+><LI
+><P
+>Site Name: This is your site's name. Something like "<TT
+CLASS="userinput"
+><B
+>PostNuke Central</B
+></TT
+>", "<TT
+CLASS="userinput"
+><B
+>Game Central</B
+></TT
+>", "<TT
+CLASS="userinput"
+><B
+>DrewVogel.COM</B
+></TT
+>", or "<TT
+CLASS="userinput"
+><B
+>Top 20 Hits of All Time</B
+></TT
+>".
+</P
+></LI
+><LI
+><P
+>Site Logo: This field names a graphic file that is the logo for your site. The file named in this field must exist in your /var/www/html/images directory. An example of what might be entered in this field: "<TT
+CLASS="userinput"
+><B
+>logo.gif</B
+></TT
+>".
+</P
+></LI
+><LI
+><P
+>Site Slogan: This field allows the administrator to define an optional slogan for the site. This slogan is displayed at the top of the page under the site name in some themes, and in the title bar of the browser by default.
+</P
+><P
+>If the Site Name is defined as "<TT
+CLASS="userinput"
+><B
+>Game Central</B
+></TT
+>" and the Site Slogan is defined as "<TT
+CLASS="userinput"
+><B
+>It's All About the Games!</B
+></TT
+>", the browser title bar would be:
+</P
+><P
+>Game Central :: It's All About the Games!</P
+></LI
+><LI
+><P
+>Meta Keywords: One of the challenges when running a web site is letting external search engines know that your site exists. Meta Keywords define words that categorize your site. Many search engines send out robots (also called spiders) to search the Web for content. When you define Meta Keywords for your site though this configuration option, you make it easier for the search-engine robots to categorize your site, and your site will be categorized more appropriately since you are defining the options. Enter words &#38; phrases, separated by commas, that describe the focus of your web site. Capitalization is not important in this field. Many search engines limit the number of keywords that you can use. Therefore, you should choose your words carefully and use no more than 10-15 keywords that best describe your site's content.  
+</P
+><P
+>If your site is all about rock and roll music, for example, you might enter the following information in this field: "<TT
+CLASS="userinput"
+><B
+>music, rock, roll, beatles, aerosmith, guitar, drum, bass, sing, singer, singing</B
+></TT
+>"
+</P
+><P
+>For additional information on Meta Keywords, please visit Web Developer-META Tag Resources (<A
+HREF="http://www.webdeveloper.com/html/html_metatag_res.html"
+TARGET="_top"
+>http://www.webdeveloper.com/html/html_metatag_res.html</A
+>) or The META Tag Builder (<A
+HREF="http://vancouver-webpages.com/META"
+TARGET="_top"
+>http://vancouver-webpages.com/META</A
+>).
+</P
+></LI
+><LI
+><P
+>Dynamic Meta Keywords: In addition to defining your own keywords for your site, you can choose to have meta keywords generated dynamically. When this option is enabled, meta keywords are generated dynamically whenever the full text of an article is being displayed. All the words in the article are used as meta keywords. Enabling this function (setting it to "<TT
+CLASS="userinput"
+><B
+>Yes</B
+></TT
+>") has a small performance cost.
+</P
+></LI
+><LI
+><P
+>Site Start Date: This simple field displays the site start date. Entry is free-form alphanumeric text. The contents of this field is displayed on Statistics pages, and other areas within the site.
+</P
+><P
+>Entry example: "<TT
+CLASS="userinput"
+><B
+>June 25, 2001</B
+></TT
+>"
+</P
+></LI
+><LI
+><P
+>Administrator E-Mail: This field is the email address where all administrative emails will be sent. This is the person who is responsible for maintaining the major parts of the site. Enter the complete email address. NOTE: If you do not have an installed &#38; working email subsystem on your webserver, it is not necessary to enter anything into this field.
+</P
+><P
+>Entry example: "<TT
+CLASS="userinput"
+><B
+>admin@yoursite.com</B
+></TT
+>"
+</P
+></LI
+><LI
+><P
+>Default Theme for your Site: From the drop-down list, select the name of the default theme you would like users to see when they access your site. When users register for access to your system, they may have the option to change the theme that they see when accessing the site. A user's theme settings are for THEIR account only; other users of the system will see the default theme as specified here unless the user has selected a different theme.
+</P
+></LI
+><LI
+><P
+>Allow users to override theme?: This setting indicates if you would like your users to be able to select from any additional themes that you may have installed, or if you would like to force the default theme (above) for all users. Entry example: "<TT
+CLASS="userinput"
+><B
+>Yes</B
+></TT
+>" (allows users to select their own theme).
+</P
+><P
+>IMPORTANT NOTE: If you allow users to override their theme setting but later change this setting to "<TT
+CLASS="userinput"
+><B
+>No</B
+></TT
+>" (do not allow users to select their own theme), you will need to manually edit the preferences of each user that has switched themes on your site. Edit the user's preferences to point to your system's DEFAULT theme otherwise the user will be 'locked' out of your system. For example, if you disable or remove a theme, or remove the ability for the user to change themes, and your user has previously specified a theme that you have deleted or are no longer allowing, the user will see a blank white page when they try to access your site. Edit that user's preferences and select the DEFAULT theme you specified, above. Be sure to save your changes. For more assistance with this problem, please visit IRC Support.
+</P
+></LI
+><LI
+><P
+>Display Right Blocks in Articles?: When a user selects a story to read, this function determines if a Right Block is displayed next to the story. This Right Block includes "Related links" and other features. "Related Links" are links that PostNuke determines to be related to the specific news article, either because the two articles are in the same topic, or because they are by the same author. Set to "<TT
+CLASS="userinput"
+><B
+>No</B
+></TT
+>" if you do not wish for the Right Block to be displayed.
+</P
+></LI
+><LI
+><P
+>Locale time format: This determines the format for time and date display on the site -- 12 hour or 24 hour, date format, etc. Most US residents will use "<TT
+CLASS="userinput"
+><B
+>en_US</B
+></TT
+>".
+</P
+></LI
+><LI
+><P
+>Timezone Offset: Set for the timezone that your SERVER is in. Example: My server is hosted in the Eastern US timezone, so I set the Timezone Offset in the Administration panel to that timezone (GMT -5:00 hours). A user on my site might be located on the West Coast of the United States which is 3 timezones away. Now when that user sets his preferences in his user options, the time will be displayed to that user in his timezone instead of the timezone of my server.
+</P
+></LI
+><LI
+><P
+>Start Page: The module to which index.php is pointing... Essentially, the module you wish to have displayed as the "front page" to your site -- the very first thing that users see when they visit your site. Select from the drop-down list of modules. The most common setting is "<TT
+CLASS="userinput"
+><B
+>News</B
+></TT
+>" as the default Start Page.
+</P
+></LI
+><LI
+><P
+>Number of articles on Admin menu: Indicates the number of articles you wish to have displayed in the Administration menu. This setting is useful because stories can be edited easily from the Administration menu. Select a number from the drop-down list. Example: 20
+</P
+></LI
+><LI
+><P
+>Stories # on Home Page: This determines the number of news items that are displayed on the home page. A smaller number in this box makes your pages load faster, while a larger number shows more items to the user at a time. Entry example: 20
+</P
+></LI
+><LI
+><P
+>Graphics in Administration menu?: This Yes or No switch determines if icon graphics should be displayed in the Administration menu. Selecting "<TT
+CLASS="userinput"
+><B
+>Yes</B
+></TT
+>" will display the graphics, while "<TT
+CLASS="userinput"
+><B
+>No</B
+></TT
+>" will not display them.
+</P
+></LI
+><LI
+><P
+>Send Error reports by: PostNuke has the ability to alert the Administrator if it detects that a user is requesting a non-existent page. This setting determines how that notification takes place. 	
+</P
+><P
+></P
+><UL
+><LI
+><P
+>"<TT
+CLASS="userinput"
+><B
+>Don't send error reports</B
+></TT
+>": Disable this feature.</P
+></LI
+><LI
+><P
+>"<TT
+CLASS="userinput"
+><B
+>For referrers from this domain only</B
+></TT
+>": Send an error report to the site administrator only when the broken link is from this site.
+</P
+></LI
+><LI
+><P
+>"<TT
+CLASS="userinput"
+><B
+>For all referrers</B
+></TT
+>": Send an error report to the site administrator when the broken link is on this site or other sites. "For all referrers" can be used to check that sites that are linking to your site are linking to valid pages -- this is especially useful after an upgrade.
+</P
+></LI
+></UL
+><P
+>Entry example: "<TT
+CLASS="userinput"
+><B
+>For referrers from this domain only</B
+></TT
+>" (recommended setting).
+</P
+></LI
+><LI
+><P
+>Enable funny error messages in error.php: <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>APACHE ONLY -- DOES NOT WORK WITH IIS</I
+></SPAN
+>. If your page/module reference isn't found, your visitors are presented with a helpful page of instructions. To enable this error-handling feature, add the following line into a .htaccess file located in your web's root directory (for example, /var/www/html):
+</P
+><P
+>--- CUT HERE ---</P
+><PRE
+CLASS="programlisting"
+>ErrorDocument 404 http://www.yoursite.com/error.php?op=404</PRE
+><P
+>--- CUT HERE ---</P
+><P
+>If you enable "Funny error messages", users will additionally see some Java-scripted nonsense ala Hitchhikers Guide to the Galaxy, the only purpose of which is to entertain the visitors, rather than to inform. Entry example: "<TT
+CLASS="userinput"
+><B
+>Yes</B
+></TT
+>" (displays funny error message and helpful error page), or "<TT
+CLASS="userinput"
+><B
+>No</B
+></TT
+>" (display only the helpful error page)
+</P
+><P
+>An example of this feature can be found at: <A
+HREF="http://www.postnuke.com/error.php?error=404"
+TARGET="_top"
+>http://www.postnuke.com/error.php?error=404</A
+> or <A
+HREF="http://www.drewvogel.com/error.php?error=404"
+TARGET="_top"
+>http://www.drewvogel.com/error.php?error=404</A
+>.
+</P
+><P
+>An alternate way to configure error.php handling, if you have httpd.conf access, is to edit your Apache httpd.conf (usually in /etc/httpd/conf) to specify the error handler. For example:
+</P
+><P
+>--- CUT HERE ---</P
+><PRE
+CLASS="programlisting"
+>&#13;ErrorDocument 401 /error.php?error=401
+ErrorDocument 403 /error.php?error=403
+ErrorDocument 404 /error.php?error=404
+ErrorDocument 500 /error.php?error=500
+</PRE
+><P
+>--- CUT HERE ---</P
+><P
+>Note that you need to restart your Apache session (for example, "<TT
+CLASS="userinput"
+><B
+>httpd restart</B
+></TT
+>") in order for the configuration changes to be reflected in your running site.
+</P
+></LI
+><LI
+><P
+>Initial group for users: In this field, you type the name of the Group that new users to your site are automatically assigned. Groups and Permissions are discussed in detail further in this manual. For the default PostNuke Permissions system, the appropriate entry is "<TT
+CLASS="userinput"
+><B
+>users</B
+></TT
+>".
+</P
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>** PLEASE NOTE: THIS FIELD WILL BE REMOVED FROM FUTURE VERSIONS OF POSTNUKE. CONFIGURE THE DEFAULT LANGUAGE FROM ADMINISTRATION -&#62; LANGUAGES -&#62; LANGUAGES CONFIGURATION. **</I
+></SPAN
+>
+</P
+></LI
+><LI
+><P
+>Select the language for your site: This is the default language for use on your site. If you have Multi-Lingual options enabled (see Administration -&#62; Languages -&#62; Languages Configuration, further in this manual) and additional language packs installed, your users may be able to display the site in a different language. Language packs can be found on SourceForge's PostNuke page: <A
+HREF="http://sourceforge.net/projects/post-nuke"
+TARGET="_top"
+>http://sourceforge.net/projects/post-nuke</A
+> under "Files". Entry example: "<TT
+CLASS="userinput"
+><B
+>[eng] English</B
+></TT
+>"
+</P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="terminology.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="config-footer.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>A Lesson in PostNuke Terminology</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Footer Messages</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

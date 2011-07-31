@@ -1,0 +1,326 @@
+<HTML
+><HEAD
+><TITLE
+>Surveys</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Advanced Website Configuration & Use"
+HREF="config-advanced.html"><LINK
+REL="PREVIOUS"
+TITLE="Submit News"
+HREF="config-news.html"><LINK
+REL="NEXT"
+TITLE="Topics"
+HREF="config-topics.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="config-news.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 16. Advanced Website Configuration &#38; Use</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="config-topics.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="config-surveys">Surveys</H1
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>** IMPORTANT NOTE: THE SURVEY MODULE WILL BE RELEASED AFTER 0.714. 'SURVEYS' WILL REPLACE 'POLLS'. **
+</I
+></SPAN
+></P
+><P
+>Surveys allow you to gather information from your users using a 'voting booth' method. PostNuke supports an unlimited number of different surveys, and surveys optionally support selection of multiple options (for example, for surveys like 'Which of these items do you own?').
+</P
+><P
+></P
+><UL
+><LI
+><P
+>New Survey: Before Surveys will be displayed on your website, you must create them. To create a Survey, click "New Survey". There is no limit to the number of different surveys you may have on your site.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Title: Enter the title of the Survey in this field. Entry example: "<TT
+CLASS="userinput"
+><B
+>Who is your favorite Beatle?</B
+></TT
+>".
+	</P
+></LI
+><LI
+><P
+>Type: Select the type of survey you wish to create. If you want your users to be able to select only one option, choose "<TT
+CLASS="userinput"
+><B
+>Select one of the options</B
+></TT
+>" (for example, "John") from the drop-down list. If you want your users to be able to select multiple options (for example, "John" and "Paul"), choose "<TT
+CLASS="userinput"
+><B
+>Select multiple options</B
+></TT
+>" from the drop-down list.
+	</P
+></LI
+><LI
+><P
+>Initial options: Enter the different options, or answers, in these fields, one entry per line. For example, you might enter:
+	</P
+><P
+>"<TT
+CLASS="userinput"
+><B
+>George</B
+></TT
+>"
+		</P
+><P
+>"<TT
+CLASS="userinput"
+><B
+>John</B
+></TT
+>"
+		</P
+><P
+>"<TT
+CLASS="userinput"
+><B
+>Paul</B
+></TT
+>"
+		</P
+><P
+>"<TT
+CLASS="userinput"
+><B
+>Ringo</B
+></TT
+>"
+		</P
+></LI
+></UL
+><P
+>Click "Create Survey" to create the new survey with the options you specified above.</P
+></LI
+><LI
+><P
+>View Surveys: If you wish to review, edit, or delete the surveys on your site, you may do so with this function. Click "View Surveys" to be shown a listing of all surveys on your site.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Name: The name of the Survey as displayed on your site.
+	</P
+></LI
+><LI
+><P
+>Type: The Survey's type, either "Select one of the options" or "Select multiple options".
+	</P
+></LI
+><LI
+><P
+>State: "Open" means that the survey is available and accepting new votes, "Closed" means that the survey is no longer accepting new votes.
+	</P
+></LI
+><LI
+><P
+>Total Votes: The total number of votes that the Survey has received.
+	</P
+></LI
+><LI
+><P
+>Survey Options: Click this link to edit the options available for a Survey.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>Order: Specify the display order for the option item. Click the UP arrow to move the option up in the order; click the DOWN arrow to move the option down in the order.
+		</P
+></LI
+><LI
+><P
+>Option name: This is the word or phrase in each option, and is what the user sees as selection choices in this Survey.
+		</P
+></LI
+><LI
+><P
+>Option votes: How many votes each option has received.
+		</P
+></LI
+><LI
+><P
+>Options: Select "Edit" to edit the option, or "Delete" to delete the option.
+		</P
+><P
+></P
+><UL
+><LI
+><P
+>Edit: Modify the Option name in this field. Click "Create option" to save the changes.
+			</P
+></LI
+><LI
+><P
+>Delete: Click "Delete" to delete the option. A confirmation screen will be displayed. If you wish to delete the option, click "Confirm" to delete it; otherwise, click "Cancel deletion".
+			</P
+></LI
+></UL
+></LI
+><LI
+><P
+>New Option: To add an additional option selection for the Survey, click "New Option". Enter the Option name in the field and click "Create option" to save the changes. You may wish to re-order the options after adding a new field.
+		</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Close: Click "Close" to mark this Survey as "Closed", and to prevent any new votes from being cast in this Survey. Be aware that once a Survey is closed, there is no way to Open it again. IMPORTANT NOTE: There is no confirmation after clicking "Close".
+	</P
+></LI
+><LI
+><P
+>Edit: Allows editing of the Survey Title and Survey Type. Click "Update Survey" to save the changes.
+	</P
+></LI
+><LI
+><P
+>Delete: Click "Delete" to delete the Survey and all its responses. A confirmation screen will be displayed. If you wish to delete the Survey, click "Confirm" to delete it; otherwise, click "Cancel deletion".
+	</P
+></LI
+></UL
+></LI
+></UL
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="config-news.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="config-topics.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Submit News</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="config-advanced.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Topics</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

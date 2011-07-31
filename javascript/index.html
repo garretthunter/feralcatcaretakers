@@ -1,0 +1,177 @@
+<HTML>
+<HEAD>
+<title>Readme</title>
+
+
+<style>
+., body, td, th { font-family:Arial; }
+</style>
+
+
+</HEAD>
+
+<BODY BGCOLOR=#F0F0D0>
+
+<P align=center><FONT color=#aa0000><STRONG>Welcome To Typetool-Quickbuild-Script</STRONG> </FONT></P>
+<P align=left><FONT color=#aa0000><STRONG><U>History:</U></STRONG></P>
+<OL>
+<LI>Jscript for Text-Formating with RightMouseButton (R1.0) 
+<LI>WYSIWYG-Text-Formating for any Textarea (R2.0) 
+<LI>with Security Check (R3.0) 
+<LI>with Div-Tools for Online-Designing (R4.0) </LI>
+<LI>Editor-Options, Open/Save-Local Files, Content Recover, Chipcard-Data Insert, Find (R5.0)</LI>
+<LI>Simpler And Flexibler Integration (R5.5)</LI>
+</OL>
+
+<P><STRONG><U><FONT color=red>Actual Version:</FONT></U></STRONG></P></FONT>
+<CENTER>
+<H3><FONT color=#ff0000>* NEW * Highlight-Hotkeys, Return/Shift+Return, Security Uploads (R6.0) * NEW *</FONT></H3>
+<FORM action=..... method=post>
+<TABLE cellSpacing=0 cellPadding=2 width="80%">
+<TBODY>
+<TR>
+<TD align=right>Textarea 1: </TD>
+<TD><TEXTAREA name=textarea1 rows=10 cols=50></TEXTAREA></TD></TR>
+<TR>
+<TD align=right>Textarea 2: </TD>
+<TD><TEXTAREA name=textarea2 rows=10 cols=50>For testing: Put some text, highlight it and click rightmouse..... or buttons....</TEXTAREA></TD></TR>
+<TR>
+<TD align=middle colSpan=2><INPUT onclick=alert(this.form.textarea1.value) type=button value="Value TA1"> <INPUT onclick=alert(this.form.textarea2.value) type=button value="Value TA2"> </TD></TR></TBODY></TABLE></CENTER></FORM>
+<H3>Very easy integration:</H3>
+<P>You need to add below lines at bottom of your HTML-Pages (e.g. direct before &lt;/BODY&gt; or between &lt;/BODY&gt; and &lt;/HTML&gt; or after &lt;/HTML&gt;) .<BR>That's all.<BR>Then you can input HTML-Codes (or something else) fast and correctly into any text-input element (input text, textarea).<BR>By Textarea can user format their Text visually.<BR><BR>
+<TABLE align=center border=1>
+<TBODY>
+<TR>
+<TD><STRONG><FONT color=#ff0000>&lt;script&gt;QBPATH='http://....../jscript';&lt;/script&gt;<BR>&lt;script src='http://......./jscript/quickbuild.js'&gt;&lt;/script&gt;<BR><BR></FONT><FONT color=#ff00ff>UPLOAD-feature needs also editing the file "upload.html" (see there).</FONT></STRONG></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE align=center border=1>
+<TBODY>
+<TR>
+<TD>
+<P><STRONG><FONT color=#ff0000>If you don't like default configuation, you can modify it with 3 methods.</FONT></STRONG></P>
+<OL>
+<LI><STRONG>Once for whole site: Change global Variables, which you need, &nbsp;<FONT color=red>in</FONT> file QUICKBUILD.JS.</STRONG></LI>
+<LI><STRONG>Flexible for a specific page: Set global Variales, which you need,&nbsp;<FONT color=red>after the varialbes QBPATH</FONT> of the over 1st line.<BR>e.g: &lt;script&gt;QBPATH='http://....../jscript'; VISUAL=0; SECURE=0; USEFORM=1;&lt;/script&gt;</STRONG></LI>
+<LI><STRONG>Combine between both showed methods.</STRONG></LI></OL>
+<P><BR><BR><BR>
+<TABLE border=1>
+<TBODY>
+<TR>
+<TD colSpan=3>
+<P align=center><STRONG>LIST OF GLOBAL VARIABLES</STRONG></P></TD></TR>
+<TR>
+<TD>
+<P align=center>Default</P></TD>
+<TD>
+<P align=center>Posible Values</P></TD>
+<TD>
+<P align=center>Description</P></TD></TR>
+<TR>
+<TD>QBPATH='.'</TD>
+<TD>'http://....../jscript'</TD>
+<TD>Where is quickbuild.js on web-server ?</TD></TR>
+<TR>
+<TD>SECURE=1;</TD>
+<TD>0,1;&nbsp; </TD>
+<TD>all tags &lt;script&gt;, &lt;meta&gt;, on-events.... turn to normal text.</TD></TR>
+<TR>
+<TD>VISUAL=1;&nbsp;</TD>
+<TD>0,1,2,3,4,..</TD>
+<TD>see under</TD></TR>
+<TR>
+<TD>POPWIN=1;&nbsp;</TD>
+<TD>1,0</TD>
+<TD>Enable Right-click Popup dialog</TD></TR>
+<TR>
+<TD>DFFACE='';</TD>
+<TD>'times new roman';</TD>
+<TD>Default fontFamily of Editor</TD></TR>
+<TR>
+<TD>DFSIZE='';&nbsp;&nbsp;&nbsp;</TD>
+<TD>'14px';</TD>
+<TD>Default fontSize </TD></TR>
+<TR>
+<TD>DCOLOR='';&nbsp;</TD>
+<TD>'blue';</TD>
+<TD>Default color</TD></TR>
+<TR>
+<TD>DBGCOL='';&nbsp;</TD>
+<TD>'green';</TD>
+<TD>Default backgroundColor</TD></TR>
+<TR>
+<TD>DBGIMG='';&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD>Default URL-backgroundImage&nbsp;</TD></TR>
+<TR>
+<TD>DCSS='';&nbsp;&nbsp;&nbsp;</TD>
+<TD>'test.css';</TD>
+<TD>Default External Stylesheet-URL</TD></TR>
+<TR>
+<TD>SYMBOLE='&lt;QBFBR&gt;' ;&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD>Symbole for end-of-field in clipboard-chipcard.</TD></TR>
+<TR>
+<TD>USETABLE=1;&nbsp;</TD>
+<TD>0,1</TD>
+<TD>Support table editor</TD></TR>
+<TR>
+<TD>USEFORM=0;</TD>
+<TD>0,1</TD>
+<TD>Support inputing forms and their elements</TD></TR>
+<TR>
+<TD>RETURNNL=1;</TD>
+<TD>0,1</TD>
+<TD>1=Newline by pressing RETURN-Button and New paragraph by SHIFT+RETURN</TD></TR>
+<TR>
+<TD>FULLCTRL=0;</TD>
+<TD>0,1</TD>
+<TD>0=fast loading; 1=display all control buttons</TD></TR>
+
+</TBODY></TABLE><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR><FONT color=#ff0000>VISUAL=0</FONT> : Textarea turn to Editor after confirmation<BR><FONT color=orangered>VISUAL=1</FONT> : all Textareas turn to Editors<BR><FONT color=#ff0000>VISUAL=2</FONT> : spezific textareas turn to Editors<BR><FONT color=#ff0000>VISUAL=3</FONT> : all Iframes turn to Editors<BR><FONT color=#ff0000>VISUAL=4</FONT> : spezific Iframes turn to Editors<BR><FONT color=#ff0000>VISUAL=other</FONT> : no Visual-Editor</TD></TR></TBODY></TABLE><BR>
+<TABLE align=center border=1>
+<TBODY>
+<TR>
+<TD>
+<P>If you want to turn on <B>only one</B> specific textarea, then :<BR><BR><STRONG>&lt;script&gt;QBPATH='http://....../jscript'; VISUAL=<FONT color=magenta>-1</FONT>;&lt;/script&gt;<BR>&lt;script src='http://......./jscript/quickbuild.js'&gt;&lt;/script&gt;</STRONG><BR><STRONG><FONT color=magenta>&lt;script&gt;changetoIframeEditor(<FONT color=red>document.forms[xxx].yyy</FONT>);&lt;/script&gt;</FONT></STRONG></P>
+<P>with:<BR><FONT color=red>xxx</FONT>= form index&nbsp; (=0....n)<BR><FONT color=red>yyy</FONT>= textarea name</P></TD></TR></TBODY></TABLE>
+<P><BR>Not required: registration&nbsp;&nbsp; :D<BR>Required: rating by hotscripts.com. Please choose a option below and click the button. Thanks. <!------ Start of HTML Code ------->
+<CENTER>
+<FORM action=http://www.hotscripts.com/cgi-bin/rate.cgi method=post><INPUT type=hidden value=15616 name=ID> 
+<TABLE cellSpacing=0 bgColor=#e2e2e2 border=0>
+<TBODY>
+<TR>
+<TD align=middle><FONT face="arial, verdana" size=2><B>Rate Our Program</B><BR><A href="http://www.hotscripts.com/"><SMALL>@ HotScripts.com</SMALL></A></FONT></TD></TR>
+<TR>
+<TD align=middle>
+<TABLE cellSpacing=0 width="100%" bgColor=#ffffea border=0>
+<TBODY>
+<TR>
+<TD><INPUT type=radio value=5 name=ex_rate></TD>
+<TD><FONT face="arial, verdana" size=2>Excellent!</FONT></TD></TR>
+<TR>
+<TD><INPUT type=radio value=4 name=ex_rate></TD>
+<TD><FONT face="arial, verdana" size=2>Very Good</FONT></TD></TR>
+<TR>
+<TD><INPUT type=radio value=3 name=ex_rate></TD>
+<TD><FONT face="arial, verdana" size=2>Good</FONT></TD></TR>
+<TR>
+<TD><INPUT type=radio value=2 name=ex_rate></TD>
+<TD><FONT face="arial, verdana" size=2>Fair</FONT></TD></TR>
+<TR>
+<TD><INPUT type=radio value=1 name=ex_rate></TD>
+<TD><FONT face="arial, verdana" size=2>Poor</FONT></TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD align=middle><INPUT type=submit value="Cast My Vote!"></TD></TR></TBODY></TABLE></FORM></CENTER><!------ End of HTML Code ------>
+<P><BR><BR>Release by <A href="http://vietdev.sourceforge.net/">VIETDEV</A>, welcome <BR>R1.0 : 2002/04/23 <BR>R2.0 : 2002/05/23 <BR>R3.0 : 2002/06/12 <BR>R4.0 : 2002/07/08 
+<BR>R5.0 : 2002/09/26 
+<BR>R5.5 : 2002/10/20
+<BR><B>R6.0 : 2002/11/02</B> 
+<BR><B>GPL-Copyright</B></P>
+
+
+
+</BODY>
+
+<script>QBPATH='.'; VISUAL=0; FULLCTRL=1</script>
+<script src='./quickbuild.js'></script>
+
+</HTML>

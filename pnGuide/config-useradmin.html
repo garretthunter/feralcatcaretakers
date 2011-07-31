@@ -1,0 +1,316 @@
+<HTML
+><HEAD
+><TITLE
+>User Administration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Advanced Website Configuration & Use"
+HREF="config-advanced.html"><LINK
+REL="PREVIOUS"
+TITLE="Top List"
+HREF="config-toplist.html"><LINK
+REL="NEXT"
+TITLE="Web Links"
+HREF="config-weblinks.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="config-toplist.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 16. Advanced Website Configuration &#38; Use</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="config-weblinks.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="config-useradmin">User Administration</H1
+><P
+>Within this module, you may edit or delete an existing user, add a new user, or modify user configuration options, including Dynamic User Data.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Edit a user: Enter the complete username of the user you wish to edit, select "Modify", and click "OK". You will be shown the user's information and allowed to change it as you wish. Click "Save changes" to save any changes you make.
+</P
+></LI
+><LI
+><P
+>Delete a user: Enter the complete username of the user you wish to delete, select "Delete", and click "OK". You will be asked, "Are you sure you want to delete user &#60;username&#62;?". Click "Yes" to delete the user, or "No" to abort this function.
+</P
+></LI
+><LI
+><P
+>Add a new user: To add a new user, fill out the Username, E-mail, and Password fields for the user and click "Add user". The user account will be created.
+</P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="config-useradminconfig">User Administration -&#62; User Configuration</H2
+><P
+>Within this section, you can configure options that affect every user of your site.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Minimum age: You can specify a minimum age to access your site. Enter the age in years in this field, or "0" to disable age-checking. Entry example: "13"
+</P
+></LI
+><LI
+><P
+>User menu images path: This is the path where icon graphics for the user menu are stored. Entry example: "images/menu".
+</P
+></LI
+><LI
+><P
+>Graphics in the user page: Click "Yes" to have icon graphics displayed in the user's menu (accessed when the user visits their account options). Click "No" to have no icons displayed, or "Yes" to display the icons. Entry example: "Yes"
+</P
+></LI
+><LI
+><P
+>Minimum users password length: Specify the minimum length for user passwords. The longer the password, the more secure. Choose a good balance between security and user convenience. Entry example: "5"
+</P
+></LI
+></UL
+><P
+>Click "Submit" to save your changes.</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="config-dynuserdata">User Administration -&#62; Dynamic User Data</H2
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>** IMPORTANT NOTE: THE DYNAMIC USER DATA MODULE IS BEING REWRITTEN. THIS SECTION OF THE GUIDE IS, THEREFORE, INCOMPLETE. **
+</I
+></SPAN
+></P
+><P
+>After a user registers for an account on your web site, they may edit their personal profile by selecting "Your Account" -&#62; "Change Your Info". The Dynamic User Data Administration screen allows the Administrator to specify which of the pre-configured fields to display, which of the pre-configured fields to hide, and to optionally add custom fields requesting additional user information.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Dynamic User Data: Click this link to be shown a listing of the current User Data that is requested from your users when they visit "Your Account" -&#62; "Change Your Info". This listing is shown in the order that it is displayed to users, with Inactive fields at the top.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Active: If this field is Active (displayed to and allowing input from users), there will be a green icon in this field. If the field is Inactive, the icon will be red. Click the icon to toggle the state of the field.
+	</P
+></LI
+><LI
+><P
+>Field Label: Displays the label and text for each field. The label is on the left side of the column, and might be "_UREALNAME", for example. The Field Label must be unique. The text is on the right side, and might be "Real name", for example.
+	</P
+></LI
+><LI
+><P
+>Weight: Specify the display order for the Field. Click the UP arrow to move the Field up in the order; click the DOWN arrow to move the Field down in the order.
+	</P
+></LI
+><LI
+><P
+>Data Type: "Core", "Core Required", "String", "Text", "Float", or "Integer".
+	</P
+></LI
+><LI
+><P
+>Length: "N/A" or the string length defined for this Field.
+	</P
+></LI
+><LI
+><P
+>Delete: "N/A" or "Delete". "Core" and "Core Required" Fields are not deletable and can only be made Inactive if you wish for them not to appear to users. Before a Field can be deleted, it must first be made Inactive (see above). If the Field is deletable, click "Delete" to remove it. You will be presented with a confirmation screen. Click "Yes" to delete the Field and all its data, or click "No" to skip deletion.
+	</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Add Fields: Administrators may add custom User Data fields through this function. Your users will be prompted for these custom fields (as well as any enabled standard fields) when they visit the "Your Account" -&#62; "Change Your Info" page on the website.
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Field Label: Enter the Field Label here. The Field Label must correspond to an entry in the language definition file (language/&#60;current language&#62;/global.php). For example, if you wanted to add a field requesting a user's eye color, you would first edit the language/&#60;current language&#62;/global.php file and add the following line:
+	</P
+><P
+>--- CUT HERE ---</P
+><P
+>define('_EYECOLOR','Your Eye Color');</P
+><P
+>--- CUT HERE ---</P
+><P
+>Once the file has been edited and saved, enter "_EYECOLOR" in this Field Label.</P
+></LI
+><LI
+><P
+>Data Type: Determine the data type for entries in this field.</P
+><P
+></P
+><UL
+><LI
+><P
+>String:</P
+></LI
+><LI
+><P
+>Text:</P
+></LI
+><LI
+><P
+>Float:</P
+></LI
+><LI
+><P
+>Integer:</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Length: Enter the length of the string for STRINGS ONLY. This determines how many characters a user is allocated for response. For example, if you wanted the user to be able to enter only one character, enter "1" in this field. The maximum length is 1254.
+	</P
+></LI
+></UL
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="config-toplist.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="config-weblinks.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Top List</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="config-advanced.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Web Links</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

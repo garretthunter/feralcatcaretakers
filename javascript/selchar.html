@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<TITLE>Characters</TITLE>
+
+<STYLE TYPE="text/css">
+ BODY   {margin-left:10; font-family:Verdana; font-size:12; background:menu}
+ BUTTON {width:5em}
+ P      {text-align:center}
+ TABLE  {cursor:hand}
+ TD     {font-size:16px}
+</STYLE>
+
+
+<SCRIPT LANGUAGE=JavaScript FOR=CTable EVENT=onclick>
+  var idx= event.srcElement.title;
+  CreateString.value += String.fromCharCode(idx);
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=CTable EVENT=onmouseover>
+  var idx= event.srcElement.title;
+  var fontface= document.all['Fontface'].value
+  RGB.innerHTML= "<font face="+fontface+">"+String.fromCharCode(idx)+"</font> " + String.fromCharCode(idx) ;
+  event.srcElement.style.backgroundColor='cyan'
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=CTable EVENT=onmouseout>
+  RGB.innerText = " ";
+  event.srcElement.style.backgroundColor=''
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=Ok EVENT=onclick>
+  window.returnValue = document.all['CreateString'].style.fontFamily + ';QuIcKbUiLd;' + CreateString.value;
+  window.close();
+</SCRIPT>
+
+<script>
+function createTable(fontface)
+{
+  if(!fontface) fontface='Webdings'
+
+  // check font
+  document.all['fntLyr1'].style.fontFamily= fontface + ",Courier"
+  if(fontface.toLowerCase()!='courier' && document.all['fntLyr1'].scrollWidth==document.all['fntLyr0'].scrollWidth)
+   { alert('Font not installed'); return }
+
+
+  document.all['CreateString'].style.fontFamily= fontface
+  document.all['Fontface'].value= fontface
+
+  var tabstr= "<br><P><TABLE ID=CTable bgcolor=white BORDER=1 BORDERCOLOR=SILVER BORDERCOLORLIGHT=WHITE BORDERCOLORDARK=BLACK CELLSPACING=0 CELLPADDING=0>"
+
+  var temp='', idx=33, col=0;
+  while(idx<=126)
+   {
+    if(col==0) temp += "<TR align=center>"
+	temp += "<TD TITLE='" + idx + "' style='font-family:"+fontface+"'>" + String.fromCharCode(idx) + "</TD>"
+	if(col==15){temp += "</TR>" ; col=-1 }
+	col++; idx++
+   }
+
+  while(col<16)
+   {
+	temp += "<TD TITLE='32'>&nbsp;</TD>"
+	if(col==15)temp += "</TR>" ;
+	col++; 
+   }
+
+  tabstr += temp + "</TABLE>"
+  document.all['table'].innerHTML= tabstr
+
+}
+</script>
+
+</HEAD>
+
+<body onload=createTable() scroll=no>
+
+<DIV id=table></DIV>
+
+<P>
+<SPAN ID=RGB style="color:white; background:blue; width:150px; font-size:45px">&nbsp;</SPAN>
+<BR><BR>
+<LABEL FOR=CreateString>String:</LABEL>
+<INPUT TYPE=TEXT SIZE=20 ID=CreateString>
+
+
+<P>
+<LABEL FOR=Fontface>FontFamily:</LABEL>
+<INPUT TYPE=TEXT SIZE=20 ID=Fontface onchange="createTable(this.value)">
+
+
+<SPAN ID=fntLyr0 STYLE='position:absolute; visibility:hidden; width:30;font:12pt Courier'>abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVXYZ</SPAN>
+<SPAN ID=fntLyr1 STYLE='position:absolute; visibility:hidden; width:30;font-size:12pt;'>abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVXYZ</SPAN>
+
+<P>
+<BUTTON ID=Ok TYPE=SUBMIT>OK</BUTTON>
+<BUTTON ONCLICK="window.close();">Cancel</BUTTON>
+
+</BODY>
+</HTML>

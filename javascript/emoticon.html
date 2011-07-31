@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<TITLE>EmotionIcons</TITLE>
+
+<STYLE TYPE="text/css">
+ BODY   {margin-left:10; font-family:Verdana; font-size:12; background:menu}
+ BUTTON {width:5em}
+ P      {text-align:center}
+ TABLE  {cursor:hand}
+</STYLE>
+
+<SCRIPT LANGUAGE=JavaScript FOR=ColorTable EVENT=onclick>
+  SelColor.value = event.srcElement.title;
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=ColorTable EVENT=onmouseover>
+  text = event.srcElement.title;
+  var idx = text.lastIndexOf('/') ;
+  var idx1 = text.lastIndexOf('.') ;
+  text= text.substring(idx+1,idx1) ;
+
+  RGB.innerText = text;
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=ColorTable EVENT=onmouseout>
+  RGB.innerText = " ";
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=Ok EVENT=onclick>
+  window.returnValue = SelColor.value;
+  window.close();
+</SCRIPT>
+
+</HEAD>
+
+<body scroll=no>
+<br>
+<P>
+<TABLE ID=ColorTable BORDER=1
+ BORDERCOLOR=SILVER BORDERCOLORLIGHT=WHITE BORDERCOLORDARK=BLACK
+ CELLSPACING=0 CELLPADDING=0>
+
+<script>
+<!--
+var imgA = new Array("alien","angry","biggrin","blush","bored","cheesy","colgate","confused","cool","cry",
+                                "devil","dontgetit","dozingoff","happy","inlove","lookaround","mad","music","nervous","notify",
+                                "plain","sad","sadlike","sarcasm","satisfied","sigh","sleepy","sly","smile","sneaky","sneaky2",
+                                "thumbs-up","tounge","tounge2","turn","whatsthat","wink","wow","xmas","yinyang",
+                                "baaa","withstupid"
+                               ) ;
+
+var QBPATH= window.dialogArguments; 
+var refe, refe1;
+var htmlstr = "<TR>";
+var j=0 ;
+for( var i=0; i<imgA.length-2; i++)
+ {
+  refe1 = './emotion/' + imgA[i] + ".gif" ;
+  refe = QBPATH + '/emotion/' + imgA[i] + ".gif" ;
+  htmlstr += "<TD><img src=" + refe1 + " title=" + refe + ">"
+  if(++j==8){ htmlstr += "<tr>" ; j=0 ;}
+ }
+
+htmlstr += "<td colspan=8 align=center>"
+refe1 = './emotion/' + imgA[imgA.length-2] + ".gif" ;
+refe = QBPATH + '/emotion/' + imgA[i] + ".gif" ;
+
+htmlstr += "<img src=" + refe1 + " title=" + refe + ">"
+refe1 = './emotion/' + imgA[imgA.length-1] + ".gif" ;
+refe = QBPATH + '/emotion/' + imgA[i] + ".gif" ;
+htmlstr += "<img src=" + refe1 + " title=" + refe + ">"
+
+
+document.write(htmlstr);
+
+//-->
+</script>
+
+
+</TABLE>
+
+<P>
+<LABEL FOR=SelColor>Smilie:</LABEL>
+<INPUT TYPE=TEXT SIZE=20 ID=SelColor>
+<BR>
+<SPAN ID=RGB>&nbsp;</SPAN>
+
+<P>
+<BUTTON ID=Ok TYPE=SUBMIT>OK</BUTTON>
+<BUTTON ONCLICK="window.close();">Cancel</BUTTON>
+
+</BODY>
+</HTML>

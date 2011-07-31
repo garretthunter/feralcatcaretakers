@@ -1,0 +1,594 @@
+
+INTRODUCTION:
+~~~~~~~~~~~~~
+
+First off, thank you for taking the time read this manual and become more
+familiar with Post-Nuke.
+
+We suggest you take the time to install Post-Nuke before reading any further.
+
+An install script has been provided with this release to ease the installation
+of Post-Nuke for first time users.
+
+After you finish the installation, refer back to this manual for more details on
+what Post-Nuke offers you and how to fully take advantage of its features.
+
+BTW, remember what your username and password are for the administration account,
+we'll need those later.
+
+Regards,
+
+-Post-Nuke development team.
+
+
+CHANGING YOUR SITE PREFERENCES:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+NOTE: 
+
+It should be stated that the term stories and articles are interchangeable throughout
+this manual.
+
+
+Much of Post-Nuke's configuration can be done via your web browser which means
+no messing about with configuration files.
+
+To do this, you must login as the administrator.
+
+And to do this, in the address bar of your browser type;
+
+---( snip )---
+
+http://www.yoursite.com/admin.php
+
+---( snip )---
+
+Now, if all goes well, you'll be presented with a screen prompting you for your
+Admin ID and Password.  These two pieces of information should have been set when
+you ran the install script.
+
+After completing this step, you should now be presented with the administration interface
+of Post-Nuke.  From here find "Preferences" and we'll proceed.
+
+The first field you'll run into is "Site Name."  Very self-explanatory.
+
+Next is "Site URL."  This is the web address of your site.  It must be in the format of
+
+http://www.yoursite.com
+
+No ending slash is required here.  Also, should you be running Post-Nuke in a 'folder'
+of it's own, that should also be specified.  For example;
+
+http://www.yoursite.com/postnuke
+
+Again, no trailing slash required.  If this is set improperly, Post-Nuke won't be able
+to find some required files for it's proper operation.
+
+Next is "Site Logo."  This is the image that is shown on your homepage and in other various
+places.  Any format is valid here, .jpg/.png, etc.  The image itself should be put in your 'images'
+directory.
+
+Now we come to "Site Start Date."  Preferably, this should be filled in with date that your site
+'goes live.'  Using the month-year method is prefered here.
+
+Next is "Site Slogan."  Again, anything will work here.  Or you can leave it blank, it's totally
+up to you.
+
+Continuing on you'll come to "Administrator email."  Fill this in with a valid email address of
+your own.  Post-Nuke has certain options available that will mail you when triggered.
+
+Next is "Number of items in Top page."  Post-Nuke keep tracks of users who submit stories/reviews, etc.
+Setting the number here reflects how many 'top' users will be shown on the top statistics page.
+
+"Stories Number in Home."  Setting this number reflects exactly how many stories are shown on your
+homepage. Once the maximum number is reached, these stories become 'old stories'.
+
+"Stories in old Articles Box."  Just because a story has become old doesn't mean your user's can't
+access it.  If activated (which we'll talk about later), Post-Nuke will show a box on your homepage
+allowing user's to read older stories.  This number reflects the amount of old stories to actually
+display in that box.
+
+"Activate Ultramode?"  With this feature turned on, it's off by default, webmasters from other sites
+can 'syndicate' stories published on your site on theirs.
+
+We're now up to "Allow Anonymous to Post?"  If you'd prefer unregistered user's not be able to post
+replies to your stories, select no here.  Anonymous posting is allowed by default.
+
+"Default Theme."  This area will be touched on later.  For now though, Post-Nuke has some default
+themes included in the release.  This is where you can select a default theme for your site.
+
+As a note.  User's have the ability to select a theme of their own and override your default theme.
+
+This now brings you to "Select the Language for your Site."  Post-Nuke has numerous languages from
+which to chose.  If your native language isn't 'supported' in this release, check the Post-Nuke downloads
+section on the web.  If you still can't find it, perhaps you could write your own and make it available for
+others.
+
+To round out this section you'll see "Locale Time Format."  Different nationalities display the time
+differently.  Changing this option allows you to set the correct time format for your nationality.
+
+The above completes the site preferences you have available.  But we're not finished yet.
+
+Let's move on to the next section, 'Banner's Options'.  If you don't plan on running banners on your
+site, leave this as is.  However, if you'd like to run banners, select yes.
+
+"Your IP to not count the hits?"  If you're on a dialup connection this setting is largely irrelevant.
+However, should you have a 'static address' to the internet, it's only fair to your banner advertisers
+that you not include hits from your address as you're likely to visit your site quite often ;^)
+
+Moving on you'll come to "Footer Messages."  It should be noted that all text/html here is optional.
+
+Anything goes here.  As stated above, html is fine.  These footer messages are shown on every page
+of your site.
+
+"Backend Configuration."
+
+The first option here is "Backend Title."  Remember from above when you had the ability to activate
+'Ultramode'?  If you selected yes, then here you would put your site name, or whatever you'd like displayed
+on the other site(s) 'syndicating' your stories.
+
+Next is "Backend Language."  It's possible to syndicate your stories in any language that is available
+on your site.  For a listing of language files included with Post-Nuke, browse through the 'language'
+directory.
+
+The next section is "Web Links Default Config."
+
+"Links per Page."  This is strictly limit the number of links to be listed per page on your site.
+
+"Hits to be Popular."  When a certain number of user's click on a link, it will be denoted with a
+'popular' icon.  You can change this number to whatever you like.
+
+"Number of Links as New."  Blowin smoke here?
+
+"Number of Links as Best."  Blowin smoke here?
+
+"Links in Search Results." This allows you again to limit the number of links to be displayed per
+page when a user does a search.
+
+"Let Anonymous users post new Links?"  If you'd prefer unregistered user not be able to post new links,
+select no.  Yes is selected by default.
+
+"Mail New Stories to Admin"
+
+This section really doesn't need much explanation.  If you'd like to receive notifications about new
+story submission's from your users, select yes here and fill in the required fields as you see fit.
+Post-Nuke has these pre-filled.
+
+NOTE:  With no selected by default, the rest of the areas are irrelevant.
+
+"Comments Moderation"
+
+blowin smoke?  Not broke?
+
+"Comment Option"
+
+"Comments Limit in Bytes."  The default should suffice here for most people.  4096 bytes is roughly 4k
+worth of text.  What happens here is when a story/comment gets posted that is larger then this value
+a "read the rest of this comment" option is presented.
+
+"Anonymous Default Name."  It is suggested you leave this as is.  However, should you wish to change it,
+it's recommended you also create a user account with this name.
+
+"Surveys/Polls Options"
+
+Blowin smoke?  Scale bar?
+
+"Graphics Options"
+
+Should you wish to change the default location of where images are stored on your site this is where
+you would do it.  There shouldn't be much call for changing these.
+
+"Graphics in Administration Menu?"  If you'd prefer icons in your administration menu instead of basic
+hyperlinks, select yes.  This feature is off by default.
+
+One last area to cover.
+
+"Miscellaneous Options"
+
+"Articles Number in Admin."  If you noticed when you first logged in as the administrator, you would have seen
+the default article that is setup with Post-Nuke listed.  You can change here how many articles are displayed
+on the main administration panel.
+
+"Minimum Users Password Length."  Self-explanatory.  Should a user try to register with a password less then
+this minimum they will be told to re-enter a new password that is long enough.
+
+"Activate HTTP Referers?"  Yes is selected default.  This keep's stastics in your database as to who has
+been visiting your site.  It should be stated that this can take up a fair bit of room in your database, so
+it is recommended you delete your HTTP Referers log now and again.  You'll see this option listed in the
+administration menu under 'HTTP Referers'.
+
+"Activate Comments in Polls?"  When you have polls/surveys on your site (which we'll discuss later), it is
+possible for your user's to post comments to them.  If you'd prefer they didn't, just select no here.
+
+That's it.  Any changes you've made can now be set by clicking 'Save Changes'.
+
+This ends all the preference settings for your Post-Nuke powered website.
+
+We'll now move on to administering your new site.
+
+
+ADMINISTERING POST-NUKE:
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+For this step you'll need to log in and identify yourself as the administrator
+of your site if you haven't already.
+
+To accomplish this, in the address bar of your browser, type in;
+
+---( snip )---
+
+http://www.yoursite.com/admin.php
+
+---( snip )---
+
+Or if you're already logged in, simply click on "Administration Menu" at the very top of your page.
+
+After completing this step, you should now be presented with the administration interface
+of Post-Nuke.
+
+
+BASIC USAGE:
+~~~~~~~~~~~~
+
+The following will be a step-by-step account of what each function does.
+
+
+ADD STORY:
+~~~~~~~~~~
+
+This option allows you post new stories/articles on your site.
+
+There are some options presented here that we'll come back to later and explain in more
+detail.  For now though, let's publish our first story.
+
+The first field you'll run across is "Title."  This is the topic, or byline of
+the story you'd like to publish.
+
+Fill this in with whatever you'd like.
+
+Next, you'll see "Topic" which has a dropdown box listing all the default topics created
+during Post-Nuke's installation.  Choose any topic you'd like from here.
+
+We'll discuss adding/deleting topics a little later.
+
+Moving on from there, we come to "Category."  The default install only has "Articles"
+available.  We'll discuss this later also.
+
+Now we're up to "Publish in Home?", by default, yes is selected.  Selecting no at this
+point is not an option.  We'll get into explaining this part later as well.
+
+This brings us to the "Story Text" text field.  This is where the actual story
+you'd like post gets written.  Type whatever you'd like here.
+
+The next field ties into the above, the "Extended Text."  When stories get posted to
+the 'front page' of your site, it's possible to treat them much like a newspaper would.
+Example, you have your byline, perhaps a paragraph or two describing said byline, and then
+finally, you invite your readers to read more (the "Extended Text").
+
+Don't worry if it doesn't make sense now, it will after you try it here.  Go ahead and
+type anything you'd like.
+
+A note should be made here that either of the text field's will accept basic HTML.
+
+At this point it should be noted that you've completed enough to actually publish
+a story on your site.  But let's walk through the remaining options you have available.
+
+The next feature we run across is "Do you want to program this story?"  Yes, it does
+exactly what it says.  If you were to take some holidays, or just want to build up a log
+of stories, this function would be ideal.  Post-Nuke will post the stories you program
+in your absense.  The current date is displayed, and from there, you use the dropdown
+boxes provided to select the date you'd like your story to be published on.  It should
+be noted that the time is based on the 24 hour time format.
+
+Two last options are available.  You'll see a dropdown box that has "Preview Story" listed.
+If you simply hit "OK" you'll get just that, a preview of what your story will look like.
+Also, you could make changes to your story from here.  You can preview your story and edit
+it as many times as you'd like.
+
+Here we go, let's publish the story on your site.  Instead of hitting "OK" with "Preview Story"
+selected, select "Post Story" from the dropdown box and hit "OK."
+
+That's it!  You've just published a story on your website.  You'll now be back to the main
+administration screen.
+
+Don't worry, we haven't forgot about adding/deleting topics.  Let's tackle that right now.
+
+TOPICS MANAGER:
+~~~~~~~~~~~~~~~
+
+If you hunt around on the administration panel you'll see "Topics Manager", that's what you're
+after.
+
+When this is selected you'll be presented with a listing of all the topics of the default
+Post-Nuke install.
+
+Let's dive right in and edit one of these topics so you'll see how it works before we
+actually add one of our own.
+
+Pick any topic you'd like and we'll continue.
+
+Ok, the first item we see is "Topic Name."  This denotes what your topic is called in the
+Post-Nuke database.  Obviously, unique name's for each topic will be required when you actually
+add your own.
+
+Next is the "Topic Text."  This is the text that is used to describe your topic.  Again, anything
+will work here.
+
+Moving on you'll see "Topic Image."  All images for the topics are stored in one central directory called
+'images'.  There is no need to type in the location of your image, Post-Nuke knows where to find them.
+
+Any image format will work here, .jpg/.png, etc.
+
+The next part is strictly optional and is not required for the above to function properly.
+
+"Add Related Links."  When you publish stories under a topic and your users click the "Read more.."
+or "comments?" link, there is a 'box' that will show up on the right hand side of your screen called 
+"Related Links."  This is where this feature can be implemented.  Say you have a topic called "Computer Science",
+if you wanted, you could fill the related link in as such;
+
+Site Name: Computer Science Collective
+Site URL : http://www.csc.com
+
+Now any time a story gets published in the "Computer Science" topic, the above related link would be shown
+as a link of interest to your readers.  As many related links as you like can be added for individual topics.
+
+You can also "Edit/Delete" related links as you see fit from your topic.
+
+And to round out this section, your last two choices are to either "Save Changes" you've made, or outright
+delete this topic from the database.
+
+WARNING: Deleting a topic will also delete *all* comments/posts associated with it.
+
+NOTE: The image file for the topic is not automatically deleted.
+
+So with this knowledge you should be able, after you click on "Topics Manager" again and scroll past the default
+topics, be able to add your very own topic specific to the type of site you're running.
+
+
+USER ADMINISTRATION:
+~~~~~~~~~~~~~~~~~~~~
+
+Let's focus on the other major component of any website, the users.  Considering Post-Nuke allows user's to
+register on your site, it only makes sense you can edit their information if need be.
+
+From the administration menu look for "Edit Users."  After clicking this the first thing you'll see is
+"Edit User."  Considering at this point the only 'real user' your Post-Nuke installation has is the default
+'Anonymous' user, let's start by editing this profile.
+
+In the text area type '1' (without qoutes).  You'll notice beside this area there is a dropdown box.  The two
+options you have available here are 'Modify/Delete'.  Modify is selected by default, so just hit "OK."
+
+After doing that you'll now be presented with a screen covering the areas you may edit for any given user.
+
+We won't detail all the area's here as they are fairly self-explanatory.
+
+Let's go back and now add a user to your site.  We'll treat this as just a regular account that you can use.
+
+So find "Edit Users" again at the top of the administration menu and click it.  Now move past the "Edit User"
+portion and down to the "Add a New User" part.  Fill in the required fields as you see fit and save your
+changes.  That's it, you've now created your first account.
+
+You've now seen how to modify a user and add a user, all that is left to do is delete one.  Let's delete the
+account you just made.  Again, click on "Edit Users", and instead of typing '1' and hitting "OK", type '2'
+into this field and from the dropdown box select "Delete."  Now hit "OK."  You'll now be prompted and asked
+if you're sure you want to delete this user.
+
+We'll leave this decision up to you.
+
+This ends the administration aspect for users.
+
+
+BLOCKS OVERVIEW:
+~~~~~~~~~~~~~~~~
+
+The next area to cover is the "Blocks."  This is a major feature of Post-Nuke and can totally change the
+look and feel of your site quickly.
+
+From the administration menu find the "Blocks" option and click on it.
+
+At this point it's necessary to perhaps approach the block system from a conceptual point of view
+to help you understand what they do.
+
+Blocks all have the following things in common;
+
+Title    : This is the title that is displayed above any functions in said box.
+
+Position : Blocks can be positioned in two spots on your site, the left or right hand side.
+
+Weight   : The weight option allows you to set in what order blocks appear.  The lower the number the higher
+	   the priority your block has.  Having blocks with the same weight number is not a problem.  As a note,
+	   'Fixed System Blocks' have priority over 'User Defined Blocks'.
+
+Status   : This displays whether any given block is actually activated and viewable to your users.
+
+Functions: You have two options here for 'Fixed System Blocks, 'Edit/De-activate'.  There are three options
+	   for 'User Defined blocks, 'Edit/De-activate/Delete'.
+
+With this in mind, lets first manipulate some blocks and then create one of your own.
+
+
+EDITING/CREATING BLOCKS:
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Click on the "Blocks" option in the administration menu.
+
+Lets start by editing the "Main Menu" which is the first item to appear.  Read across this line until
+you see the option to 'edit', choose that and we'll proceed.
+
+You'll now see the heading "Edit Fixed Block."  As discussed above you see the "Title" first, in this case,
+"Main Menu."  Change that to something different so you get a feel for it.
+
+The next area, "Content", is where all the good stuff happens.  As you can see, this is where you actually
+put links, or other HTML, etc.  It should be noted that PHP code cannot reside in these blocks.
+
+If you're making links in these blocks please use the following format for HTML compliance;
+
+<strong><big>&middot;</big></strong><a href="yourlink.php">Link text</a><br>
+
+Of course, you can link .html, etc files, not just .php files ;^)  If you happen to have a file on your server
+you'd like to try here, go ahead and enter it.
+
+After you were done filling in your content, you'd move further down and now pick the position you'd like
+this block to have.  Your options here are, as stated above, left or right.  For fun, change the default
+from left to right.  You can always change it back later.
+
+The next option you have available is "Activate?" For the sake of this tutorial we'll leave it active.  However,
+should you wish to de-activate it just for trial and error, go ahead.
+
+And lastly, you'd now proceed to "Save Block" and commit your changes.
+
+
+ADDING BLOCKS:
+~~~~~~~~~~~~~~
+
+Adding blocks doesn't differ much from what we did above.  The only big difference is that you have a couple
+of more options you have to deal with before committing your changes.  We'll discuss those now.
+
+Passing over the basics we covered above the first different thing you'll notice is "RSS/RDF File URL."
+
+Remember earlier we talked about 'syndicating' news to other sites?  This is where you have the option to
+do the same in a new block of your own.
+
+Post-Nuke comes with many ready made sites you can use to 'syndicate' news from.  Clicking on "Custom" will
+show you a complete listing of these sites.
+
+If you'd like to 'syndicate' news from sites not present on this list you'll have to visit said site and
+confirm the file name they use for this.
+
+Once that is done, you'd type in the address of the file in this format;
+
+http://www.example.com/newsfeed.rss (or whatever format they use .xml/.rdf, etc.)
+
+After that the last remaining difference is "Refresh Time."  Select the amount of time you'd like your site
+to wait before connecting to the site you're 'syndicating' news from to gather any new information it may have
+posted.  It's a good idea to check for any information a site may have about syndicating its news as some sites
+don't like other sites hitting theirs constantly.  The 1 hour option is usually okay however.
+
+Bear in mind, "RSS/RDF" is totally optional.  You could have proceeded to enter links, etc into your "Content"
+box and passed by the "RSS/RDF" configuration options.
+
+After clicking on "Create Block", you've succeeded in adding your very own block to your site.
+
+This covers the Blocks system on your Post-Nuke powered site.  Lets spend some time now with a neat
+feature you can use for a myriad of things on your site.
+
+MESSAGES:
+~~~~~~~~~
+
+On your administration menu look for the "Messages" link.  After clicking on this you'll be presented
+with "Title."  As it says, this will be the title for the message you create.
+
+Next is the "Content" area, like above, this is where your text/html is entered for the actual message
+you'd like displayed.  After you enter your content you can enter the "Expiration" for your message.
+There is a dropdown list provided for you to select how long you'd like your message to be shown.
+Next, much like the blocks you can also select whether this message is activated or not.
+
+After the above you come to "Change start date to today."  This is as simple as it sounds, selecting
+yes will start your message immediately and run as long as you specified.
+
+Lastly, you have a few more options as to who can actually view this message.  The option's are as
+follows and are fairly self-explanatory;
+
+All visitors
+Anonymous users only
+Registered users only
+Administrators only
+
+With all that said and done you can now "Save changes."
+
+That wrap's up the messaging function of Post-Nuke.
+
+Now that you've had a bit of a break, let's dive back in again.
+
+Let's now look at "Edit Admins" and the options available to you.
+
+EDITING ADMINS:
+~~~~~~~~~~~~~~~
+
+To start with, Post-Nuke only has one admininstrator account.  Let's take a look at editing this account.
+
+On the administration menu find "Edit Admins" and we'll proceed.
+
+"Username" is the first field you'll encounter here, and this is name you used to log into the administration
+panel in the first place.  This can be changed to whatever you like down the road.
+
+"E-Mail" is self-explanatory.
+
+"URL" is likely where you'll want to type in the address of your website.
+
+"Permissions."  I'll explain this part in more detail when we actually add a new admin to your site.
+Your initial 'admin' should always have 'Superuser' status.  This means you'll have access to all the features
+on your site.
+
+And lastly, you can enter a new password for this account by typing a new password into the supplied fields twice,
+and then proceeding to "Save."
+
+Now, let's add another administrator to your site.
+
+ADDING ADMINS:
+~~~~~~~~~~~~~~
+
+Click on "Edit Admins" again on the administration menu and scroll past your main account to where you
+see "Add a new administrator."
+
+The fields here are identical to the ones from above so we'll skip onto explaining the permission settings.
+
+
+ADMIN PERMISSIONS:
+~~~~~~~~~~~~~~~~~~
+
+Even though you can let other people help with the administration of your site, that doesn't mean they
+are allowed to do everything you are.  But, you could make it so they could if you were so inclined.
+
+Let's walk through and explain all your options here.
+
+"Articles."  If checked, this allows someone to 'Add a story' exactly like you can.  There is a difference
+however between your 'Superuser' account and another admin with the "Articles" option selected.  They cannot
+edit/delete stories they themselves have not published on the homepage.
+
+So, moving further across the top row you'll see "Topics."  If this option is selected the new admin
+can add/edit topics on the site just like you can.
+
+"Users."  If selected, the new admin has the ability to add/edit users on your site as well.
+
+Next you have the "Survey" option.  Enabling this allows your new admin to add/delete surveys/polls
+on your site.
+
+"Sections."  This allows another admin to add/delete different categories on your site.  Categories will
+explained in more detail a bit later.
+
+"Web links."  From here an admin can reset votes, approve new links, delete links, etc etc.  Everything you
+can do, the new admin can also do.
+
+"Empheremids."  This option being checked allows another admin to add new "Empheremids" to your site.  This
+function will be described later as well.
+
+"File manager."  It should be stated here that you should make sure you trust the person you give access to
+this option as they can delete/rename,etc files on your system.  This can be a dangerous option to allow for
+just anyone.  Proceed with caution.
+
+"FAQ."  Frequently Asked Questions, with this enabled a new admin can add categories and questions/answers
+on your site.  The FAQ option will be explained in more detail later on.
+
+"Download."  This option allows the admin the same powers your 'Superuser' account would, such as adding/deleting
+downloads, etc.  The "Download" feature will be talked about later on as well.
+
+"Reviews."  From here a new admin could add/delete, etc reviews on your site.  We'll touch on the "Reviews"
+function later too.
+
+And lastly, you have the "Super user" option.  With this checked, the admin automatically has access to *all*
+the above.  So as stated with the "File manager", proceed with caution here and be sure you trust the person.
+
+Now, for your new admin to be able to login you must set a password.  Do that in the last field you see.
+
+After you've set the permissions and password you'd like your new admin to have, proceed to "Add author" 
+to make the changes final.
+
+This rounds out "Editing/Adding Admins."
+
+Next we'll shift our focus to adding a "FAQ" (Frequently Asked Questions) section to your site.
+
+FAQ:
+~~~~
+
+

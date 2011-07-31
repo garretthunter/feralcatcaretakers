@@ -1,0 +1,218 @@
+<html>
+<head>
+<title>Editor-Options</title>
+<style>
+td {color:white; font-family:Arial; font-size:14px}
+input,select {color:blue; background:#eeffee; width:120px}
+</style>
+
+<script src="qblib.js"></script>
+
+<script language="Jscript">
+
+var oStyleSheet;
+
+function retStyle()
+{
+ var fobj= document.FO
+ var objF= window.opener.document.frames[window.opener.fID]
+
+ var reg= /gif|jpg|png/ ;
+ if(fobj.TX_backgroundimage.value!='' &&  !reg.test(fobj.TX_backgroundimage.value) )
+   { alert("File type isn't a image type."); return; }
+
+ with(BODYSTYLE)
+ {
+  color= fobj.CO_color.value
+  backgroundColor= fobj.CO_backgroundcolor.value
+
+  var temp= fobj.TX_backgroundimage.value
+  if( temp ) { backgroundImage= "url(" + temp + ")";  }
+  else backgroundImage=''
+  
+  fontSize= fobj.PI_fontsize.value
+  fontFamily= fobj.OP_fontfamily.value
+ }
+
+  
+
+ with(BODYSIZE)
+ {
+  width= fobj.PI_width.value;
+  height= fobj.PI_height.value;
+ }
+
+
+  // special  external stylesheet
+  if(oStyleSheet && fobj.TX_importstyle.value != oStyleSheet.href)
+  {
+   removeStyleSheet(oStyleSheet) 
+   oStyleSheet= objF.document.createStyleSheet(fobj.TX_importstyle.value);
+   window.opener.CSS[window.opener.fID]= oStyleSheet
+  }
+
+
+  window.opener.FACE[window.opener.fID]= fobj.OP_fontfamily.value
+  window.opener.SIZE[window.opener.fID]= fobj.PI_fontsize.value
+  window.opener.COLOR[window.opener.fID]= fobj.CO_color.value
+  window.opener.BCOLOR[window.opener.fID]= fobj.CO_backgroundcolor.value
+  window.opener.BIMAGE[window.opener.fID]= fobj.TX_backgroundimage.value
+  
+}
+
+
+
+
+function removeStyleSheet(oSS) 
+{
+  for(var i=0; i<oSS.rules.length; i++) oSS.removeRule(i);
+}
+
+
+
+
+function init()
+{
+ if(!window.opener.fID){alert('Please click to select the editor');return}
+
+ var objF= window.opener.document.frames[window.opener.fID];
+ BODYSTYLE= objF.document.body.style
+
+ var fobj= document.FO
+ with(BODYSTYLE) 
+ {
+  fobj.CO_color.value= color
+
+  fobj.CO_backgroundcolor.value= backgroundColor
+  if(fobj.CO_backgroundcolor.value.indexOf('none')>=0) fobj.CO_backgroundcolor.value= ''
+
+  var temp= backgroundImage
+  if(temp) temp= temp.substring(temp.indexOf("(")+1, temp.indexOf(")"))
+  fobj.TX_backgroundimage.value= temp
+
+  fobj.PI_fontsize.value= parseInt(fontSize)
+  if(isNaN(fobj.PI_fontsize.value)) fobj.PI_fontsize.value=''
+
+  temp= fontFamily
+  fobj.OP_fontfamily.value= temp.toLowerCase();
+ }
+
+ 
+ BODYSIZE= window.opener.document.all[window.opener.fID].style
+ with(BODYSIZE) 
+ {
+  fobj.PI_width.value= pixelWidth
+  fobj.PI_height.value= pixelHeight
+ }
+
+
+  // special Stylesheet
+  if(window.opener.CSS[window.opener.fID])
+  {
+    fobj.TX_importstyle.value= window.opener.CSS[window.opener.fID].href
+	oStyleSheet= window.opener.CSS[window.opener.fID]
+  }
+
+}
+
+
+
+
+
+/****************************************************/
+
+</script>
+
+
+</head>
+
+<body bgcolor=menu onFocus="init()" scroll=no>
+
+<center>
+<FORM name="FO">
+
+<TABLE bgColor=#999999 border=1 width=100% cellpading=0 cellspacing=0>
+<TBODY>
+
+<!-- 1st row -->
+<TR>
+<TD align=middle bgColor=#aa4444 colSpan=6>DEFAULT-EDITOR-OPTIONS</TD>
+</TR>
+
+
+<!-- 3rd row -->
+<TR>
+
+<TD align=right>ClientWidth</TD><TD><INPUT name=PI_width onchange="retStyle()"></TD>
+<TD align=right>ClientHeight</TD><TD><INPUT name=PI_height onchange="retStyle()"></TD>
+<TD align=right>Background</TD><TD><INPUT name=CO_backgroundcolor onchange="retStyle()"></TD>
+
+</TR>
+
+
+
+<!-- 4st row -->
+<TR>
+<TD align=right>fontFamily</TD>
+<TD>
+<select name=OP_fontfamily onchange="retStyle()">
+<option value=''>
+<option value='arial'>arial
+<option value='times new roman'>times new roman
+</select>
+</TD>
+
+<TD align=right>fontSize</TD><TD><INPUT name=PI_fontsize onchange="retStyle()"></TD>
+<TD align=right>textColor</TD><TD><INPUT name=CO_color onchange="retStyle()"></TD>
+
+
+</TR>
+
+
+<!-- 5st row -->
+<TR>
+<TD align=right>BackgroundImage-URL</TD>
+<TD colspan=5>
+<INPUT name="TX_backgroundimage" style="width:350px" onchange="retStyle()">
+<INPUT type=file name="f_backgroundimage" style="width:0px" onchange="checkFiletype(this.form,this.name); retStyle()"></TD>
+</TR>
+
+
+<!-- 5st row -->
+<TR>
+<TD align=right>ImportStyle-URL</TD>
+<TD colspan=5>
+<INPUT name="TX_importstyle" style="width:350px" onchange="retStyle()">
+<INPUT type=file name="f_importstyle" style="width:0px" onchange="this.form['TX_importstyle'].value= this.value; retStyle()"></TD>
+</TR>
+
+
+<!-- last row -->
+<tr><TD colSpan=6 align=center>
+<INPUT onMouseDown=setObjectColor(0,'red','retStyle()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#FF0000; color:white">
+<INPUT onMouseDown=setObjectColor(1,'red','retStyle()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#FF0000; color:white">
+&nbsp;&nbsp;
+<INPUT onMouseDown=setObjectColor(0,'green','retStyle()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#00FF00; color:black">
+<INPUT onMouseDown=setObjectColor(1,'green','retStyle()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#00FF00; color:black">
+&nbsp;&nbsp;
+<INPUT onMouseDown=setObjectColor(0,'blue','retStyle()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#0000FF; color:white">
+<INPUT onMouseDown=setObjectColor(1,'blue','retStyle()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#0000FF; color:white">
+&nbsp;&nbsp;
+
+<INPUT onclick=retStyle() title=Button type=button value="Do" style="width:70px; height:22px; background:#aa4444; color:white">
+<INPUT onclick=self.close() title=Back type=button value="Close" style="width:70px; height:22px; background:#aa4444; color:white">
+&nbsp;&nbsp;
+
+<INPUT onmousedown=setValueSmaller('retStyle()') title=Minus type=button value="-" style="width:22px; height:22px;  background:#aa4444; color:white">
+<INPUT onmousedown=setValueBigger('retStyle()') title=Plus type=button value="+" style="width:22px; height:22px;  background:#aa4444; color:white">
+
+
+</TD></tr>
+
+</TBODY></TABLE>
+
+</FORM>
+</center>
+</body>
+</html>
+

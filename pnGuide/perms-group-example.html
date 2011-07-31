@@ -1,0 +1,203 @@
+<HTML
+><HEAD
+><TITLE
+>An example of Group Permissions</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.76b+
+"><LINK
+REL="HOME"
+TITLE="The Official PostNuke Installation & Getting Started Guide"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Groups & Permissions"
+HREF="permissions.html"><LINK
+REL="PREVIOUS"
+TITLE="Permission Levels"
+HREF="perms-levels.html"><LINK
+REL="NEXT"
+TITLE="An example of User Permissions"
+HREF="perms-user-example.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="selfdocbook.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The Official PostNuke Installation &#38; Getting Started Guide: Revision 9939 / Preview</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="perms-levels.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 17. Groups &#38; Permissions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="perms-user-example.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="perms-group-example">An example of Group Permissions</H1
+><P
+>The following is an example of a Group Permissions model as used on <A
+HREF="http://www.drewvogel.com"
+TARGET="_top"
+>http://www.drewvogel.com</A
+>. The line numbers, shown below, are for this Guide only (they do not appear in PostNuke), and are explained below.
+</P
+><P
+CLASS="literallayout"
+><br>
+&nbsp;&nbsp;&nbsp;Group		Component	Instance		Perm.&nbsp;level<br>
+&nbsp;&nbsp;&nbsp;------------------------------------------------------------------------<br>
+1.&nbsp;Admins&nbsp;		Menublock::&nbsp;	Administration::*.&nbsp;	Admin<br>
+2.&nbsp;Admins&nbsp;		.*&nbsp;		.*			Admin<br>
+3.&nbsp;All&nbsp;groups&nbsp;		Menublock::&nbsp;	Administration::*.&nbsp;	None<br>
+4.&nbsp;Users&nbsp;		.*		.*			Comment<br>
+5.&nbsp;Unregistered&nbsp;	Menublock::&nbsp;	Main&nbsp;Menu:(Andromeda|	None<br>
+					Logout|Forums|Submit<br>
+					News|Members&nbsp;List|<br>
+					Messages):<br>
+6.&nbsp;Unregistered&nbsp;	.*		.*			Read<br>
+</P
+><P
+></P
+><UL
+><LI
+><P
+>Line 1: Grant all members of Group "Admins" a Permission level of "Admin" for all Instances matching a Menublock called "Administration". Administrators have full access to the Administration menu.
+	</P
+></LI
+><LI
+><P
+>Line 2: Grant all members of Group "Admins" a Permission level of "Admin" for all Instances of EVERYTHING on the site -- this grants all Admins unlimited access for everything on the site.
+	</P
+></LI
+><LI
+><P
+>Line 3: Remove access to Menublock "Administration" for members of "All groups". This disables access to Administration functions from ALL users, unless specifically allowed by a special user or group permission. Line 1, above, is an example of a special group permission.
+	</P
+></LI
+><LI
+><P
+>Line 4: Allow all members of Group "Users" (registered users) access to "Comment" on everything on the site.
+	</P
+></LI
+><LI
+><P
+>Line 5: Remove access (set to "None") to specific items "Andromeda|Logout|Forums|Submit News|Members List|Messages" from the "Main Menu" of "Unregistered" users.
+	</P
+></LI
+><LI
+><P
+>Line 6: Allow all "Unregistered" users access to "Read" everything on the site.</P
+></LI
+></UL
+><P
+>As you can see, Permissions are evaluated by PostNuke from the top first, moving down through the permissions.
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="perms-levels.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="perms-user-example.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Permission Levels</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="permissions.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>An example of User Permissions</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
