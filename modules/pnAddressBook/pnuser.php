@@ -1699,6 +1699,17 @@ function pnAddressBook_user_export() {
 					adr_custom_12,
 					adr_custom_13,
 					adr_custom_14,
+					adr_custom_17,
+					adr_custom_18,
+					adr_custom_19,
+					adr_custom_20,
+					adr_custom_21,
+					adr_custom_22,
+					adr_custom_23,
+
+					adr_custom_15,
+					adr_custom_16,
+
 				   " . $address_column['note'] . ",
 				   " . $address_column['date'];
 
@@ -1721,8 +1732,34 @@ function pnAddressBook_user_export() {
 	$address_export  = '"Prefix","First Name","Last Name","Title","Company","Address 1","Address 2","City","State","Zipcode","Country",';
 	$address_export .= '"Contact 1","Contact 2","Contact 3","Contact 4","Contact 5",';
 //geh Custom fields
-	$address_export .= '"Donor","Caretaker","Member","TNR","Volunteer","Foster","Feeder","Food Source","Packet","Contact Date",';
-	$address_export .= '"2002 Donations","2003 Donations","2004 Donations","2005 Donations","Note","Last Updated"'."\n";
+	$address_export .= '"Donor",'; 			// adr_custom_1
+	$address_export .= '"Caretaker",'; 		// adr_custom_2
+	$address_export .= '"Member",';			// adr_custom_3		
+	$address_export .= '"TNR",'; 			// adr_custom_4
+	$address_export .= '"Volunteer",'; 		// adr_custom_5
+	$address_export .= '"Foster",';			// adr_custom_6
+	$address_export .= '"Feeder",';			// adr_custom_7
+	$address_export .= '"Food Source",';	// adr_custom_8
+	$address_export .= '"Packet",';			// adr_custom_9
+	$address_export .= '"Contact Date",';	// adr_custom_10
+	$address_export .= '"2002 Donations",';	// adr_custom_11
+	$address_export .= '"2003 Donations",';	// adr_custom_12
+	$address_export .= '"2004 Donations",';	// adr_custom_13
+	$address_export .= '"2005 Donations",';	// adr_custom_14
+	$address_export .= '"2006 Donations",';	// adr_custom_17
+	$address_export .= '"2007 Donations",';	// adr_custom_18
+	$address_export .= '"2008 Donations",';	// adr_custom_19
+	$address_export .= '"2009 Donations",';	// adr_custom_20
+	$address_export .= '"2010 Donations",';	// adr_custom_21
+	$address_export .= '"2011 Donations",';	// adr_custom_22
+	$address_export .= '"2012 Donations",';	// adr_custom_23
+
+	$address_export .= '"Referred By",';	// adr_custom_15
+	$address_export .= '"Graduate",';		// adr_custom_16
+
+	$address_export .= '"Note",';			// note
+	$address_export .= '"Last Updated"';	// date
+	$address_export .= '"\n"';
 
 	for (; !$result->EOF; $result->MoveNext()) {
 		list($prefix
@@ -1755,6 +1792,17 @@ function pnAddressBook_user_export() {
 			,$custom_12
 			,$custom_13
 			,$custom_14
+			,$custom_17
+			,$custom_18
+			,$custom_19
+			,$custom_20
+			,$custom_21
+			,$custom_22
+			,$custom_23
+
+			,$custom_15		// Referred By
+			,$custom_16		// Graduate
+
 			,$note
 			,$lastupdate) = $result->fields;
 
@@ -1797,6 +1845,16 @@ function pnAddressBook_user_export() {
 		$address_export .= '"'.$custom_12.'",';
 		$address_export .= '"'.$custom_13.'",';
 		$address_export .= '"'.$custom_14.'",';
+		$address_export .= '"'.$custom_17.'",';
+		$address_export .= '"'.$custom_18.'",';
+		$address_export .= '"'.$custom_19.'",';
+		$address_export .= '"'.$custom_20.'",';
+		$address_export .= '"'.$custom_21.'",';
+		$address_export .= '"'.$custom_22.'",';
+		$address_export .= '"'.$custom_23.'",';
+
+		$address_export .= '"'.$custom_15.'",';
+		$address_export .= '"'.$custom_16.'",';
 
 		$address_export .= '"'.$note.'",';
 		$address_export .= '"'.date("m-d-Y",$lastupdate).'"';
